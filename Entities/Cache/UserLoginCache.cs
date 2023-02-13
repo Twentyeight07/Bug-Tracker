@@ -14,5 +14,6 @@ namespace Entities.Cache
         public static string LastName { get; set;}
         public static bool Admin { get; set;}
         public static string Email { get; set;}
+        public static string Password { get; set;}
     }
 }

@@ -12,7 +12,7 @@ namespace DbTests
         {
             UserDao userDao = new UserDao();
 
-            bool result = userDao.EditProfile(3, "kevin@gmail.com", "kev1234");
+            bool result = userDao.EditProfile(3, "kevin@gmail.com","kev123");
             Assert.IsTrue(result);
 
         }

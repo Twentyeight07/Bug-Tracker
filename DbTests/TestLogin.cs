@@ -13,7 +13,7 @@ namespace DbTests
         {
             UserDao userDao = new UserDao();
 
-           bool result = userDao.Login("test@gmail.com", "123456");
+           bool result = userDao.Login("test@gmail.com", "test123");
             Assert.IsTrue(result);
 
         }

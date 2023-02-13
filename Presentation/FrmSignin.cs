@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Presentation
 {
@@ -19,6 +21,20 @@ namespace Presentation
         }
 
         #region "Methods"
+        private void Reset()
+        {
+            TxtCompanyName.Text = "Company Name *";
+            TxtName.Text = "Name *";
+            TxtLastName.Text = "Last Name";
+            TxtEmail.Text = "Email *";
+            TxtPass.Text = "Password *";
+        }
+
+        private void MsgError(string msg)
+        {
+            lblErrorMessage.Text = "     " + msg;
+            lblErrorMessage.Visible = true;
+        }
         #endregion
 
         #region "Functionality"
@@ -161,5 +177,34 @@ namespace Presentation
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            if (TxtCompanyName.Text != "Company Name *" && TxtName.Text != "Name *" && TxtEmail.Text != "Email *" && TxtPass.Text != "Password *")
+            {
+                
+                    UserModel user = new UserModel();
+                    var validSignin = user.SigninUser(TxtCompanyName.Text.Trim(),
+                        Convert.ToBoolean(txtAdmin.Text),
+                        TxtName.Text.Trim(),
+                        TxtLastName.Text == "Last Name" ? "" : TxtLastName.Text.Trim(),
+                        TxtEmail.Text.Trim(),
+                        TxtPass.Text.Trim());
+                    if (validSignin == true)
+                    {
+                        MessageBox.Show("User registered successfully, now you have access to the program with admin role, this mean you can now create your team, add projects and start to track progress. Good hacking", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error registering the user", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }                
+
+            }
+            else MsgError("The (*) fields are mandatory");
+            
+        }
+
+
     }
 }

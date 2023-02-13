@@ -199,6 +199,11 @@ namespace Presentation
             }
         }
 
+        private void BtnSettings_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmEditProfile>();
+        }
+
         private void BtnMaximize_Click(object sender, EventArgs e)
         {
             //We capture the size and location of the form at the start, so we can get back to it when we don't want the window maximized

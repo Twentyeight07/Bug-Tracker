@@ -35,6 +35,7 @@
             this.PnlMenu = new System.Windows.Forms.Panel();
             this.BtnProjects = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnSettings = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.BtnLogOut = new System.Windows.Forms.Button();
             this.BtnReports = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).BeginInit();
             this.PnlTittleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimize)).BeginInit();
@@ -125,6 +127,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.BtnSettings);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,6 +135,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 100);
             this.panel1.TabIndex = 4;
+            // 
+            // BtnSettings
+            // 
+            this.BtnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSettings.Image = global::Presentation.Properties.Resources.settings___light;
+            this.BtnSettings.Location = new System.Drawing.Point(211, 6);
+            this.BtnSettings.Name = "BtnSettings";
+            this.BtnSettings.Size = new System.Drawing.Size(33, 26);
+            this.BtnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnSettings.TabIndex = 1;
+            this.BtnSettings.TabStop = false;
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
             // 
             // lblName
             // 
@@ -304,6 +319,7 @@
             this.PnlMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).EndInit();
             this.PnlTittleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimize)).EndInit();
@@ -331,6 +347,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button BtnProjects;
+        private System.Windows.Forms.PictureBox BtnSettings;
     }
 }
 

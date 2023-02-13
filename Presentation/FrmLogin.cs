@@ -56,21 +56,24 @@ namespace Presentation
             {
                 if (TxtPass.Text != "Password")
                 {
-                    UserModel user = new UserModel();
-                    var validLogin = user.LoginUser(TxtUser.Text, TxtPass.Text);
-                    if (validLogin == true)
-                    {
-                        FrmDashboard mainMenu = new FrmDashboard();
-                        mainMenu.Show();
-                        mainMenu.FormClosed += Logout;
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MsgError("Email or Password incorrect. \n     Please try again.");
-                        TxtPass.Text = "Password";
-                        TxtPass.Focus();
-                    }
+                    
+                        UserModel user = new UserModel();
+                        var validLogin = user.LoginUser(TxtUser.Text.Trim(), TxtPass.Text.Trim());
+                        if (validLogin == true)
+                        {
+                            FrmDashboard mainMenu = new FrmDashboard();
+                            mainMenu.Show();
+                            mainMenu.FormClosed += Logout;
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MsgError("Email or Password incorrect. \n     Please try again.");
+                            TxtPass.Text = "Password";
+                            TxtPass.Focus();
+                        }
+                
+                    
                 }
                 else MsgError("Please enter Password");
             }

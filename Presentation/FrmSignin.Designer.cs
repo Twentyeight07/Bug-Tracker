@@ -38,13 +38,14 @@
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.TxtLastName = new System.Windows.Forms.TextBox();
             this.TxtPass = new System.Windows.Forms.TextBox();
-            this.BtnAccess = new System.Windows.Forms.Button();
+            this.BtnRegister = new System.Windows.Forms.Button();
             this.BtnHiddePass = new System.Windows.Forms.PictureBox();
             this.BtnShowPass = new System.Windows.Forms.PictureBox();
             this.BtnMinimize = new System.Windows.Forms.PictureBox();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAdmin = new System.Windows.Forms.TextBox();
+            this.lblErrorMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnHiddePass)).BeginInit();
@@ -165,22 +166,23 @@
             this.TxtPass.Enter += new System.EventHandler(this.TxtPass_Enter);
             this.TxtPass.Leave += new System.EventHandler(this.TxtPass_Leave);
             // 
-            // BtnAccess
+            // BtnRegister
             // 
-            this.BtnAccess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.BtnAccess.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnAccess.FlatAppearance.BorderSize = 0;
-            this.BtnAccess.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(79)))), ((int)(((byte)(53)))));
-            this.BtnAccess.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.BtnAccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAccess.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnAccess.Location = new System.Drawing.Point(331, 376);
-            this.BtnAccess.Name = "BtnAccess";
-            this.BtnAccess.Size = new System.Drawing.Size(357, 40);
-            this.BtnAccess.TabIndex = 6;
-            this.BtnAccess.Text = "REGISTER";
-            this.BtnAccess.UseVisualStyleBackColor = false;
+            this.BtnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegister.FlatAppearance.BorderSize = 0;
+            this.BtnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(79)))), ((int)(((byte)(53)))));
+            this.BtnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegister.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            this.BtnRegister.Location = new System.Drawing.Point(331, 409);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(357, 40);
+            this.BtnRegister.TabIndex = 6;
+            this.BtnRegister.Text = "REGISTER";
+            this.BtnRegister.UseVisualStyleBackColor = false;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // BtnHiddePass
             // 
@@ -247,22 +249,38 @@
             this.txtAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtAdmin.Location = new System.Drawing.Point(728, 115);
+            this.txtAdmin.Location = new System.Drawing.Point(723, 116);
             this.txtAdmin.Name = "txtAdmin";
             this.txtAdmin.Size = new System.Drawing.Size(45, 26);
             this.txtAdmin.TabIndex = 14;
             this.txtAdmin.Text = "True";
+            this.txtAdmin.Visible = false;
+            // 
+            // lblErrorMessage
+            // 
+            this.lblErrorMessage.AutoSize = true;
+            this.lblErrorMessage.Font = new System.Drawing.Font("Roboto", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lblErrorMessage.Image = global::Presentation.Properties.Resources.cancel;
+            this.lblErrorMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorMessage.Location = new System.Drawing.Point(328, 353);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(98, 17);
+            this.lblErrorMessage.TabIndex = 15;
+            this.lblErrorMessage.Text = "Error Message";
+            this.lblErrorMessage.Visible = false;
             // 
             // FrmSignin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 500);
+            this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.txtAdmin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnHiddePass);
             this.Controls.Add(this.BtnShowPass);
-            this.Controls.Add(this.BtnAccess);
+            this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.TxtPass);
             this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.TxtLastName);
@@ -303,10 +321,11 @@
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.TextBox TxtLastName;
         private System.Windows.Forms.TextBox TxtPass;
-        private System.Windows.Forms.Button BtnAccess;
+        private System.Windows.Forms.Button BtnRegister;
         private System.Windows.Forms.PictureBox BtnShowPass;
         private System.Windows.Forms.PictureBox BtnHiddePass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAdmin;
+        private System.Windows.Forms.Label lblErrorMessage;
     }
 }
