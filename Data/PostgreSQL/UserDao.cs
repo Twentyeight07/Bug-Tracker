@@ -129,23 +129,32 @@ namespace Data
                 connection.Open();
                 using (var cmd = new NpgsqlCommand())
                 {
-                    cmd.Connection= connection;
-                    cmd.CommandText= "SELECT * FROM users WHERE email=@email";
-                    cmd.Parameters.AddWithValue("@email", userRequesting);
-                    NpgsqlDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.Read() == true)
+                    Random rdm = new Random();
+                    string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
+                    int length = characters.Length;
+                    char letter;
+                    int passLength = 10;
+                    string randomPass = string.Empty;
+                    for (int i = 0; i < passLength; i++)
                     {
-                        string userName = reader.GetString(3);
-                        string userEmail = reader.GetString(5);
-                        string accountPass = reader.GetString(6);
+                        letter = characters[rdm.Next(length)];
+                        randomPass += letter.ToString();
+                    }
+
+                    cmd.Connection= connection;
+                    cmd.CommandText= @"SELECT * FROM recover_password(:_email,:_pass)";
+                    cmd.Parameters.AddWithValue("_email", userRequesting);
+                    cmd.Parameters.AddWithValue("_pass", randomPass);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
 
                         //We make an instance of the support service
                         var mailService = new MailServices.SystemSupportMail();
-                        mailService.SendEmail(subject: "SYSTEM: Password recovery request.", body: "Hi " + userName + "\nYou requested to recover your password.\n" +
-                            "Your current password is: " + accountPass +
+                        mailService.SendEmail(subject: "SYSTEM: Password recovery request.", body: "Hi " +
+                            "\nYou requested to recover your password.\n" +
+                            "Your current password is: " + randomPass +
                             "\nHowever, we ask that you change your password inmediately once you enter the system!",
-                            recipientMail: new List<string> { userEmail }
+                            recipientMail: new List<string> { userRequesting }
                             );
                         return true;
                     }

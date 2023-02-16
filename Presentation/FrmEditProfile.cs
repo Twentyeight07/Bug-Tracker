@@ -1,5 +1,6 @@
 ﻿using Domain;
 using Entities.Cache;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Interop;
+using System.Xml.Linq;
 
 namespace Presentation
 {
@@ -66,7 +69,40 @@ namespace Presentation
             {
                 pnlCompanyName.Visible= false;
                 lblCompanyProfile.Visible= false;
+                pnlAddMember.Visible = false;
             }
+        }
+
+        private void AddMemberState(bool state)
+        {
+            TxtNameMember.Enabled = state;
+            TxtLastNameMember.Enabled = state;
+            TxtEmailMember.Enabled = state;
+            TxtPasswordMember.Enabled = state;
+
+            BtnShowPass.Enabled = state;
+            BtnHiddePass.Enabled = state;
+
+            lblMandatoryMember.Visible = state;
+            
+            BtnAddMember.Visible= !state;
+            BtnCancelMember.Visible = state;
+            BtnSaveMember.Visible = state;
+
+        }
+
+        private void ResetAddMemberTxt()
+        {
+            TxtNameMember.Text = string.Empty;
+            TxtLastNameMember.Text = string.Empty;
+            TxtEmailMember.Text = string.Empty;
+            TxtPasswordMember.Text = string.Empty;
+        }
+
+        private void MsgError(string msg)
+        {
+            lblErrorMessage.Text = "     " + msg;
+            lblErrorMessage.Visible = true;
         }
 
         #endregion
@@ -209,6 +245,84 @@ namespace Presentation
                 txtNewPass.Enabled = false;
                 txtRepeatPass.Enabled = false;
             }
+        }
+
+        private void BtnAddMember_Click(object sender, EventArgs e)
+        {
+            AddMemberState(true);
+            TxtPasswordMember.UseSystemPasswordChar = true;
+            pnlAddMember.Focus();
+        }
+
+        private void BtnCancelMember_Click(object sender, EventArgs e)
+        {
+            AddMemberState(false);
+            BtnShowPass.Visible = true;
+            BtnHiddePass.Visible = false;
+            ResetAddMemberTxt();
+        }
+
+        private void BtnShowPass_Click(object sender, EventArgs e)
+        {
+            TxtPasswordMember.UseSystemPasswordChar = false;
+            BtnShowPass.Visible = false;
+            BtnHiddePass.Visible = true;
+        }
+
+        private void BtnHiddePass_Click(object sender, EventArgs e)
+        {
+            TxtPasswordMember.UseSystemPasswordChar = true;
+            BtnShowPass.Visible = true;
+            BtnHiddePass.Visible = false;
+        }
+
+        private void BtnSaveMember_Click(object sender, EventArgs e)
+        {
+            if (TxtNameMember.Text != String.Empty && TxtEmailMember.Text != String.Empty && TxtPasswordMember.Text != String.Empty)
+            {
+
+                UserModel user = new UserModel();
+                var validSignin = user.SigninUser(
+                    UserLoginCache.CompanyName,
+                    false,
+                    TxtNameMember.Text.Trim(),
+                    TxtLastNameMember.Text == "Last Name" ? "" : TxtLastNameMember.Text.Trim(),
+                    TxtEmailMember.Text.Trim(),
+                    Encrypt.GetSHA256(TxtPasswordMember.Text.Trim()));
+                if (validSignin == true)
+                {
+                    txtResEmail.Text = TxtEmailMember.Text;
+                    TxtResPass.Text = TxtPasswordMember.Text;
+                    pnlResMember.Location = new Point(305, 30);
+                    pnlResMember.Visible = true;
+                    AddMemberState(false);
+                    BtnShowPass.Visible = true;
+                    BtnHiddePass.Visible = false;
+                    ResetAddMemberTxt();
+                }
+                else
+                {
+                    MessageBox.Show("Error registering the user", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else MsgError("The (*) fields are mandatory");
+
+        }
+
+        private void BtnCopyToClipboard_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject("User Email: "+txtResEmail.Text+ " | " + "Password: "+TxtResPass.Text);
+
+            lblSuccessMessage.Text = "     " + "Copied to Clipboard";
+            lblSuccessMessage.Visible = true;
+
+        }
+
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            pnlResMember.Visible = false;
+            pnlResMember.Location = new Point(842, 238);
         }
     }
 }

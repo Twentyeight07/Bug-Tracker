@@ -23,17 +23,6 @@ namespace Presentation
         }
 
         #region "Methods"
-        public static string GetSHA256(string pass)
-        {
-            SHA256 sha256= SHA256Managed.Create();
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] stream = null;
-            StringBuilder sb = new StringBuilder();
-            stream = sha256.ComputeHash(Encoding.ASCII.GetBytes(pass));
-            for(int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
-            return sb.ToString();
-        }
-
         private void MsgError(string msg)
         {
             lblErrorMessage.Text = "     " + msg;
@@ -58,7 +47,7 @@ namespace Presentation
                 {
                     
                         UserModel user = new UserModel();
-                        var validLogin = user.LoginUser(TxtUser.Text.Trim(), TxtPass.Text.Trim());
+                        var validLogin = user.LoginUser(TxtUser.Text.Trim(), Encrypt.GetSHA256(TxtPass.Text.Trim()));
                         if (validLogin == true)
                         {
                             FrmDashboard mainMenu = new FrmDashboard();

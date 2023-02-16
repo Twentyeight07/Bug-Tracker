@@ -99,7 +99,7 @@
             this.linkPass.TabStop = true;
             this.linkPass.Text = "Have an account?";
             this.linkPass.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.linkPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPass_LinkClicked);
+            this.linkPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPass_LinkClicked);
             // 
             // TxtName
             // 
@@ -188,7 +188,7 @@
             // 
             this.BtnHiddePass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnHiddePass.Image = global::Presentation.Properties.Resources.hidden;
-            this.BtnHiddePass.Location = new System.Drawing.Point(694, 289);
+            this.BtnHiddePass.Location = new System.Drawing.Point(694, 292);
             this.BtnHiddePass.Name = "BtnHiddePass";
             this.BtnHiddePass.Size = new System.Drawing.Size(24, 24);
             this.BtnHiddePass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,7 +201,7 @@
             // 
             this.BtnShowPass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnShowPass.Image = global::Presentation.Properties.Resources.show;
-            this.BtnShowPass.Location = new System.Drawing.Point(694, 289);
+            this.BtnShowPass.Location = new System.Drawing.Point(694, 292);
             this.BtnShowPass.Name = "BtnShowPass";
             this.BtnShowPass.Size = new System.Drawing.Size(24, 24);
             this.BtnShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -278,7 +278,6 @@
             this.Controls.Add(this.lblErrorMessage);
             this.Controls.Add(this.txtAdmin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnHiddePass);
             this.Controls.Add(this.BtnShowPass);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.TxtPass);
@@ -291,6 +290,7 @@
             this.Controls.Add(this.BtnMinimize);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BtnHiddePass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSignin";

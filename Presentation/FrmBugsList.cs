@@ -34,38 +34,43 @@ namespace Presentation
             dgvPrincipal.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvPrincipal.Columns[1].FillWeight = 120;
             /********************************************/
-            dgvPrincipal.Columns[2].Width = 250;
-            dgvPrincipal.Columns[2].HeaderText = "Description";
+            dgvPrincipal.Columns[2].Width = 120;
+            dgvPrincipal.Columns[2].HeaderText = "Title";
             dgvPrincipal.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvPrincipal.Columns[2].FillWeight = 250;
+            dgvPrincipal.Columns[2].FillWeight = 200;
             /********************************************/
-            dgvPrincipal.Columns[3].Width = 100;
-            dgvPrincipal.Columns[3].HeaderText = "Created by";
+            dgvPrincipal.Columns[3].Width = 250;
+            dgvPrincipal.Columns[3].HeaderText = "Description";
+            dgvPrincipal.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPrincipal.Columns[3].FillWeight = 250;
             /********************************************/
-            dgvPrincipal.Columns[4].Width = 85;
-            dgvPrincipal.Columns[4].HeaderText = "Created at";
+            dgvPrincipal.Columns[4].Width = 100;
+            dgvPrincipal.Columns[4].HeaderText = "Created by";
             /********************************************/
-            dgvPrincipal.Columns[5].Width = 90;
-            dgvPrincipal.Columns[5].HeaderText = "Modified at";
+            dgvPrincipal.Columns[5].Width = 85;
+            dgvPrincipal.Columns[5].HeaderText = "Created at";
             /********************************************/
-            dgvPrincipal.Columns[6].Width = 100;
-            dgvPrincipal.Columns[6].HeaderText = "Modified by";
+            dgvPrincipal.Columns[6].Width = 90;
+            dgvPrincipal.Columns[6].HeaderText = "Modified at";
             /********************************************/
-            dgvPrincipal.Columns[7].Width = 80;
-            dgvPrincipal.Columns[7].HeaderText = "Deadline";
+            dgvPrincipal.Columns[7].Width = 100;
+            dgvPrincipal.Columns[7].HeaderText = "Modified by";
             /********************************************/
-            dgvPrincipal.Columns[8].Width = 60;
-            dgvPrincipal.Columns[8].HeaderText = "Severe";
+            dgvPrincipal.Columns[8].Width = 80;
+            dgvPrincipal.Columns[8].HeaderText = "Deadline";
             /********************************************/
             dgvPrincipal.Columns[9].Width = 60;
-            dgvPrincipal.Columns[9].HeaderText = "State";
+            dgvPrincipal.Columns[9].HeaderText = "Severe";
+            /********************************************/
+            dgvPrincipal.Columns[10].Width = 60;
+            dgvPrincipal.Columns[10].HeaderText = "State";
             /********************************************/
         }
         private void ListBugs()
         {
             try
             {
-                dgvPrincipal.DataSource = ProjectModel.ListBugs();
+                dgvPrincipal.DataSource = dataSource;
                 this.FormatBugsList();
             }
             catch (Exception ex)
@@ -76,7 +81,7 @@ namespace Presentation
         #endregion
 
         #region "Variables"
-     
+        DataTable dataSource = ProjectModel.ListBugs();
         #endregion
 
         #region "Functionality"
@@ -98,8 +103,27 @@ namespace Presentation
            
         }
 
-      
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(TxtSearch.Text != "Search by Title") dataSource.DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+        }
 
-        
+        private void TxtSearch_Enter(object sender, EventArgs e)
+        {
+            if (TxtSearch.Text == "Search by Title")
+            {
+                TxtSearch.ForeColor = ColorTranslator.FromHtml("#4A1F21");
+                TxtSearch.Text = "";
+            }
+        }
+
+        private void TxtSearch_Leave(object sender, EventArgs e)
+        {
+            if(TxtSearch.Text == "")
+            {
+                TxtSearch.ForeColor = Color.DarkGray;
+                TxtSearch.Text = "Search by Title";
+            }
+        }
     }
 }

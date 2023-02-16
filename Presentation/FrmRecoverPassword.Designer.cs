@@ -74,7 +74,6 @@
             this.TxtUser.TabIndex = 2;
             this.TxtUser.Text = "Email";
             this.TxtUser.Enter += new System.EventHandler(this.TxtUser_Enter);
-            this.TxtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtUser_KeyDown);
             this.TxtUser.Leave += new System.EventHandler(this.TxtUser_Leave);
             // 
             // BtnSend

@@ -55,14 +55,14 @@ namespace Presentation
                 BtnDashboard.BackColor = Color.FromArgb(216, 104, 70);
             }
 
-            if (Application.OpenForms["Form2"] == null)
+            if (Application.OpenForms["FrmBugsList"] == null)
             {
                 BtnBugs.BackColor = Color.FromArgb(216, 104, 70);
             }
 
             if (Application.OpenForms["Form3"] == null)
             {
-                BtnReports.BackColor = Color.FromArgb(216, 104, 70);
+                BtnProjects.BackColor = Color.FromArgb(216, 104, 70);
             }
         }
 
@@ -171,22 +171,22 @@ namespace Presentation
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnDashboard_Click(object sender, EventArgs e)
         {
             OpenForm<Form1>();
             BtnDashboard.BackColor= Color.FromArgb(165, 79, 53);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BtnBugs_Click(object sender, EventArgs e)
         {
             OpenForm<FrmBugsList>();
             BtnBugs.BackColor = Color.FromArgb(165, 79, 53);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BtnProjects_Click(object sender, EventArgs e)
         {
             OpenForm<Form3>();
-            BtnReports.BackColor = Color.FromArgb(165, 79, 53);
+            BtnProjects.BackColor = Color.FromArgb(165, 79, 53);
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)

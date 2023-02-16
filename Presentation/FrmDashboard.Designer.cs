@@ -123,6 +123,7 @@
             this.BtnProjects.TabIndex = 5;
             this.BtnProjects.Text = "Projects";
             this.BtnProjects.UseVisualStyleBackColor = false;
+            this.BtnProjects.Click += new System.EventHandler(this.BtnProjects_Click);
             // 
             // panel1
             // 
@@ -196,7 +197,6 @@
             this.BtnReports.TabIndex = 2;
             this.BtnReports.Text = "Reports";
             this.BtnReports.UseVisualStyleBackColor = false;
-            this.BtnReports.Click += new System.EventHandler(this.button3_Click);
             // 
             // BtnBugs
             // 
@@ -215,7 +215,7 @@
             this.BtnBugs.TabIndex = 1;
             this.BtnBugs.Text = "Bugs";
             this.BtnBugs.UseVisualStyleBackColor = false;
-            this.BtnBugs.Click += new System.EventHandler(this.button2_Click);
+            this.BtnBugs.Click += new System.EventHandler(this.BtnBugs_Click);
             // 
             // BtnDashboard
             // 
@@ -234,7 +234,7 @@
             this.BtnDashboard.TabIndex = 0;
             this.BtnDashboard.Text = "Dashboard";
             this.BtnDashboard.UseVisualStyleBackColor = false;
-            this.BtnDashboard.Click += new System.EventHandler(this.button1_Click);
+            this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
             // PnlTittleBar
             // 

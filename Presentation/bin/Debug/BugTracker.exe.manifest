@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="2237904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="2268624">
       <assemblyIdentity name="BugTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ogg9oo7fEWu8FHO45jkRJ2BLepZ4+h0D4GMdt75EBoc=</dsig:DigestValue>
+        <dsig:DigestValue>81tXAK18Z/GdTMyBnkGyTwYzvsH3nuAPA71p0uAeB8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="11264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="11776">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TXO0y1khN3qvXOVjByuKlAQdd7W3oqa1pIakaQhlA0s=</dsig:DigestValue>
+        <dsig:DigestValue>rJPg36IaI9dwCqE0X8pNA6JD6/Hr4mZfpqIiBKtzFMI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -153,7 +153,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pZOf45pRxfA4DVu9odY6dPY7B9gizBu9o2pDF4WwZYo=</dsig:DigestValue>
+      <dsig:DigestValue>ffnX8SAVG029Tmil5RglqfEMC2DO0jjC8L1z+D15BhQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

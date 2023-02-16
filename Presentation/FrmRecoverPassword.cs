@@ -48,14 +48,6 @@ namespace Presentation
             }
         }
 
-        private void TxtUser_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                
-            }
-        }
-
         private void BtnSend_Click(object sender, EventArgs e)
         {
             var user = new UserModel();
