@@ -179,7 +179,7 @@ namespace Presentation
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenForm<Form2>();
+            OpenForm<FrmBugsList>();
             BtnBugs.BackColor = Color.FromArgb(165, 79, 53);
         }
 

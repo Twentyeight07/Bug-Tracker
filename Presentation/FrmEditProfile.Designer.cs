@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlProfile = new System.Windows.Forms.Panel();
+            this.linkEditPass = new System.Windows.Forms.LinkLabel();
             this.lblMandatory = new System.Windows.Forms.Label();
             this.lblCurrentPass = new System.Windows.Forms.Label();
             this.txtCurrentPass = new System.Windows.Forms.TextBox();
@@ -46,15 +47,14 @@
             this.lblProfile = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.pnlCompanyName = new System.Windows.Forms.Panel();
+            this.lblPassCompany = new System.Windows.Forms.Label();
             this.BtnCancelCompnay = new System.Windows.Forms.Button();
+            this.txtPassCompany = new System.Windows.Forms.TextBox();
             this.BtnEditCompany = new System.Windows.Forms.Button();
             this.BtnSaveCompany = new System.Windows.Forms.Button();
             this.lblEditCompany = new System.Windows.Forms.Label();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyProfile = new System.Windows.Forms.Label();
-            this.linkEditPass = new System.Windows.Forms.LinkLabel();
-            this.lblPassCompany = new System.Windows.Forms.Label();
-            this.txtPassCompany = new System.Windows.Forms.TextBox();
             this.pnlProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             this.pnlCompanyName.SuspendLayout();
@@ -62,8 +62,9 @@
             // 
             // pnlProfile
             // 
+            this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
-            this.pnlProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlProfile.Controls.Add(this.linkEditPass);
             this.pnlProfile.Controls.Add(this.lblMandatory);
             this.pnlProfile.Controls.Add(this.lblCurrentPass);
@@ -81,8 +82,23 @@
             this.pnlProfile.Controls.Add(this.lblName);
             this.pnlProfile.Location = new System.Drawing.Point(50, 52);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(1000, 289);
+            this.pnlProfile.Size = new System.Drawing.Size(1000, 295);
             this.pnlProfile.TabIndex = 0;
+            // 
+            // linkEditPass
+            // 
+            this.linkEditPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkEditPass.AutoSize = true;
+            this.linkEditPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.linkEditPass.Location = new System.Drawing.Point(734, 74);
+            this.linkEditPass.Name = "linkEditPass";
+            this.linkEditPass.Size = new System.Drawing.Size(26, 13);
+            this.linkEditPass.TabIndex = 19;
+            this.linkEditPass.TabStop = true;
+            this.linkEditPass.Text = "Edit";
+            this.linkEditPass.Visible = false;
+            this.linkEditPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkEditPass_LinkClicked);
             // 
             // lblMandatory
             // 
@@ -98,6 +114,7 @@
             // 
             // lblCurrentPass
             // 
+            this.lblCurrentPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentPass.AutoSize = true;
             this.lblCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
@@ -110,6 +127,7 @@
             // 
             // txtCurrentPass
             // 
+            this.txtCurrentPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCurrentPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
@@ -121,6 +139,7 @@
             // 
             // lblEditRepeatPass
             // 
+            this.lblEditRepeatPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditRepeatPass.AutoSize = true;
             this.lblEditRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
@@ -133,6 +152,7 @@
             // 
             // lblEditPass
             // 
+            this.lblEditPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditPass.AutoSize = true;
             this.lblEditPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
@@ -145,6 +165,7 @@
             // 
             // txtRepeatPass
             // 
+            this.txtRepeatPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRepeatPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtRepeatPass.Enabled = false;
             this.txtRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +178,7 @@
             // 
             // txtNewPass
             // 
+            this.txtNewPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNewPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtNewPass.Enabled = false;
             this.txtNewPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,6 +252,7 @@
             // 
             // BtnEdit
             // 
+            this.BtnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
             this.BtnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEdit.FlatAppearance.BorderSize = 0;
@@ -270,12 +293,14 @@
             // 
             // lblProfile
             // 
+            this.lblProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProfile.AutoSize = true;
-            this.lblProfile.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfile.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblProfile.Location = new System.Drawing.Point(46, 29);
+            this.lblProfile.Location = new System.Drawing.Point(46, 24);
             this.lblProfile.Name = "lblProfile";
-            this.lblProfile.Size = new System.Drawing.Size(54, 19);
+            this.lblProfile.Size = new System.Drawing.Size(72, 25);
             this.lblProfile.TabIndex = 1;
             this.lblProfile.Text = "Profile";
             // 
@@ -293,6 +318,8 @@
             // 
             // pnlCompanyName
             // 
+            this.pnlCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCompanyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.pnlCompanyName.Controls.Add(this.lblPassCompany);
             this.pnlCompanyName.Controls.Add(this.BtnCancelCompnay);
@@ -305,6 +332,20 @@
             this.pnlCompanyName.Name = "pnlCompanyName";
             this.pnlCompanyName.Size = new System.Drawing.Size(1000, 167);
             this.pnlCompanyName.TabIndex = 8;
+            // 
+            // lblPassCompany
+            // 
+            this.lblPassCompany.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPassCompany.AutoSize = true;
+            this.lblPassCompany.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lblPassCompany.Location = new System.Drawing.Point(423, 19);
+            this.lblPassCompany.Name = "lblPassCompany";
+            this.lblPassCompany.Size = new System.Drawing.Size(145, 19);
+            this.lblPassCompany.TabIndex = 21;
+            this.lblPassCompany.Text = "Current Password *";
+            this.lblPassCompany.Visible = false;
             // 
             // BtnCancelCompnay
             // 
@@ -319,14 +360,26 @@
             this.BtnCancelCompnay.Location = new System.Drawing.Point(91, 93);
             this.BtnCancelCompnay.Name = "BtnCancelCompnay";
             this.BtnCancelCompnay.Size = new System.Drawing.Size(93, 40);
-            this.BtnCancelCompnay.TabIndex = 19;
+            this.BtnCancelCompnay.TabIndex = 11;
             this.BtnCancelCompnay.Text = "Cancel";
             this.BtnCancelCompnay.UseVisualStyleBackColor = false;
             this.BtnCancelCompnay.Visible = false;
             this.BtnCancelCompnay.Click += new System.EventHandler(this.BtnCancelCompnay_Click);
             // 
+            // txtPassCompany
+            // 
+            this.txtPassCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.txtPassCompany.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.txtPassCompany.Location = new System.Drawing.Point(427, 41);
+            this.txtPassCompany.Name = "txtPassCompany";
+            this.txtPassCompany.Size = new System.Drawing.Size(357, 27);
+            this.txtPassCompany.TabIndex = 10;
+            this.txtPassCompany.Visible = false;
+            // 
             // BtnEditCompany
             // 
+            this.BtnEditCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnEditCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
             this.BtnEditCompany.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEditCompany.FlatAppearance.BorderSize = 0;
@@ -356,7 +409,7 @@
             this.BtnSaveCompany.Location = new System.Drawing.Point(190, 93);
             this.BtnSaveCompany.Name = "BtnSaveCompany";
             this.BtnSaveCompany.Size = new System.Drawing.Size(93, 40);
-            this.BtnSaveCompany.TabIndex = 20;
+            this.BtnSaveCompany.TabIndex = 12;
             this.BtnSaveCompany.Text = "Save";
             this.BtnSaveCompany.UseVisualStyleBackColor = false;
             this.BtnSaveCompany.Visible = false;
@@ -364,6 +417,8 @@
             // 
             // lblEditCompany
             // 
+            this.lblEditCompany.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEditCompany.AutoSize = true;
             this.lblEditCompany.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
@@ -382,55 +437,20 @@
             this.txtCompanyName.Location = new System.Drawing.Point(33, 41);
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(319, 27);
-            this.txtCompanyName.TabIndex = 21;
+            this.txtCompanyName.TabIndex = 9;
             // 
             // lblCompanyProfile
             // 
+            this.lblCompanyProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompanyProfile.AutoSize = true;
-            this.lblCompanyProfile.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyProfile.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanyProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblCompanyProfile.Location = new System.Drawing.Point(46, 381);
+            this.lblCompanyProfile.Location = new System.Drawing.Point(46, 375);
             this.lblCompanyProfile.Name = "lblCompanyProfile";
-            this.lblCompanyProfile.Size = new System.Drawing.Size(123, 19);
+            this.lblCompanyProfile.Size = new System.Drawing.Size(161, 25);
             this.lblCompanyProfile.TabIndex = 9;
             this.lblCompanyProfile.Text = "Company Name";
-            // 
-            // linkEditPass
-            // 
-            this.linkEditPass.AutoSize = true;
-            this.linkEditPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.linkEditPass.Location = new System.Drawing.Point(734, 74);
-            this.linkEditPass.Name = "linkEditPass";
-            this.linkEditPass.Size = new System.Drawing.Size(26, 13);
-            this.linkEditPass.TabIndex = 19;
-            this.linkEditPass.TabStop = true;
-            this.linkEditPass.Text = "Edit";
-            this.linkEditPass.Visible = false;
-            this.linkEditPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkEditPass_LinkClicked);
-            // 
-            // lblPassCompany
-            // 
-            this.lblPassCompany.AutoSize = true;
-            this.lblPassCompany.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblPassCompany.Location = new System.Drawing.Point(423, 19);
-            this.lblPassCompany.Name = "lblPassCompany";
-            this.lblPassCompany.Size = new System.Drawing.Size(145, 19);
-            this.lblPassCompany.TabIndex = 21;
-            this.lblPassCompany.Text = "Current Password *";
-            this.lblPassCompany.Visible = false;
-            // 
-            // txtPassCompany
-            // 
-            this.txtPassCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
-            this.txtPassCompany.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtPassCompany.Location = new System.Drawing.Point(427, 41);
-            this.txtPassCompany.Name = "txtPassCompany";
-            this.txtPassCompany.Size = new System.Drawing.Size(357, 27);
-            this.txtPassCompany.TabIndex = 20;
-            this.txtPassCompany.Visible = false;
             // 
             // FrmEditProfile
             // 

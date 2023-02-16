@@ -21,7 +21,6 @@ namespace Data
                 connection.Open();
                 using (var cmd = new NpgsqlCommand())
                 {
-                    
                         cmd.Connection = connection;
                         cmd.CommandText = @"SELECT * FROM update_email_pass(:_code,:_email,:_password)";
                         cmd.Parameters.AddWithValue("_code", id);

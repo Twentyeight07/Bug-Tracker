@@ -90,6 +90,7 @@
             this.TxtPass.Size = new System.Drawing.Size(357, 27);
             this.TxtPass.TabIndex = 2;
             this.TxtPass.Text = "Password";
+            this.TxtPass.TextChanged += new System.EventHandler(this.TxtPass_TextChanged);
             this.TxtPass.Enter += new System.EventHandler(this.TxtPass_Enter);
             this.TxtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPass_KeyDown);
             this.TxtPass.Leave += new System.EventHandler(this.TxtPass_Leave);

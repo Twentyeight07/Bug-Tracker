@@ -70,6 +70,7 @@ namespace Presentation
                         {
                             MsgError("Email or Password incorrect. \n     Please try again.");
                             TxtPass.Text = "Password";
+                            TxtPass.UseSystemPasswordChar = false;
                             TxtPass.Focus();
                         }
                 
@@ -178,6 +179,14 @@ namespace Presentation
         {
             var recoverPassword = new FrmRecoverPassword();
             recoverPassword.ShowDialog();
+        }
+
+        private void TxtPass_TextChanged(object sender, EventArgs e)
+        {
+            if(TxtPass.Text != "Password")
+            {
+                TxtPass.UseSystemPasswordChar = true;
+            }
         }
     }
 }
