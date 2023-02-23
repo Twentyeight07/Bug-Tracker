@@ -147,11 +147,11 @@ namespace Presentation
             {
                 if (txtNewPass.Text == txtRepeatPass.Text)
                 {
-                    if (txtCurrentPass.Text == UserLoginCache.Password)
+                    if (Encrypt.GetSHA256(txtCurrentPass.Text) == UserLoginCache.Password)
                     {
                         var userModel = new UserModel(id: UserLoginCache.IdUser,
                             email: txtEmail.Text.Trim(),
-                            password: txtNewPass.Text == "" ? txtCurrentPass.Text.Trim() : txtNewPass.Text.Trim());
+                            password: txtNewPass.Text == "" ? Encrypt.GetSHA256(txtCurrentPass.Text.Trim()) : Encrypt.GetSHA256(txtNewPass.Text.Trim()));
                         var res = userModel.EditUserProfile();
                         MessageBox.Show(res, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -50,7 +50,7 @@ namespace Presentation
                         var validLogin = user.LoginUser(TxtUser.Text.Trim(), Encrypt.GetSHA256(TxtPass.Text.Trim()));
                         if (validLogin == true)
                         {
-                            FrmDashboard mainMenu = new FrmDashboard();
+                            FrmMainMenu mainMenu = new FrmMainMenu();
                             mainMenu.Show();
                             mainMenu.FormClosed += Logout;
                             this.Hide();

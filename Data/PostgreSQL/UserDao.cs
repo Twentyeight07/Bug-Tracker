@@ -122,29 +122,17 @@ namespace Data
             }
         }
         
-        public bool RecoverPassword(string userRequesting)
+        public bool RecoverPassword(string userRequesting, string randomPass, string encryptedPass)
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
                 using (var cmd = new NpgsqlCommand())
                 {
-                    Random rdm = new Random();
-                    string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
-                    int length = characters.Length;
-                    char letter;
-                    int passLength = 10;
-                    string randomPass = string.Empty;
-                    for (int i = 0; i < passLength; i++)
-                    {
-                        letter = characters[rdm.Next(length)];
-                        randomPass += letter.ToString();
-                    }
-
                     cmd.Connection= connection;
                     cmd.CommandText= @"SELECT * FROM recover_password(:_email,:_pass)";
                     cmd.Parameters.AddWithValue("_email", userRequesting);
-                    cmd.Parameters.AddWithValue("_pass", randomPass);
+                    cmd.Parameters.AddWithValue("_pass", encryptedPass);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
 

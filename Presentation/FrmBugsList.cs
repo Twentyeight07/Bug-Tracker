@@ -23,6 +23,7 @@ namespace Presentation
         {
 
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPrincipal.ColumnHeadersDefaultCellStyle.Font = new Font("Roboto", 13.50F, FontStyle.Bold, GraphicsUnit.Pixel);
             this.dgvPrincipal.ColumnHeadersHeight = 50;
             this.dgvPrincipal.RowHeadersWidth= 50;
 
@@ -91,6 +92,7 @@ namespace Presentation
         private void FrmBugsList_Load(object sender, EventArgs e)
         {
             ListBugs();
+            
         }
 
         private void BtnClose_Click(object sender, EventArgs e)

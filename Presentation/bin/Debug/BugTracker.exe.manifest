@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="2268624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="2301392">
       <assemblyIdentity name="BugTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>81tXAK18Z/GdTMyBnkGyTwYzvsH3nuAPA71p0uAeB8g=</dsig:DigestValue>
+        <dsig:DigestValue>8cDowcyipNXWcipNc2v6g6pRVoyFkOAnIcoJB7xzHyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="11776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="12800">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rJPg36IaI9dwCqE0X8pNA6JD6/Hr4mZfpqIiBKtzFMI=</dsig:DigestValue>
+        <dsig:DigestValue>Rzzmr1L4QvO++9k5aYOai8k67j9hFZDGb8ihosT/HnY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

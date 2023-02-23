@@ -83,7 +83,20 @@ namespace Domain
 
         public string RecoverPassword(string userRequesting)
         {
-            var res = userDao.RecoverPassword(userRequesting);
+            Random rdm = new Random();
+            string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
+            int length = characters.Length;
+            char letter;
+            int passLength = 10;
+            string randomPass = string.Empty;
+            for (int i = 0; i < passLength; i++)
+            {
+                letter = characters[rdm.Next(length)];
+                randomPass += letter.ToString();
+            }
+            string encryptedPass = Encrypt.GetSHA256(randomPass);
+
+            var res = userDao.RecoverPassword(userRequesting, randomPass, encryptedPass);
 
             if(res == true)
             {
