@@ -105,34 +105,32 @@ namespace Data.PostgreSQL
                 connection.Open();
                 using (var cmd = new NpgsqlCommand())
                 {
-                    try
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"SELECT * FROM create_new_project(
+	                :_creator_code,
+	                :_company_name,
+	                :_title,
+	                :_description,
+	                :_start_date,
+	                :_end_date,
+	                :_members_code)";
+                    cmd.Parameters.AddWithValue("_creator_code", creator_code);
+                    cmd.Parameters.AddWithValue("_company_name", company_name);
+                    cmd.Parameters.AddWithValue("_title", title);
+                    cmd.Parameters.AddWithValue("_description", description);
+                    cmd.Parameters.AddWithValue("_start_date", start_date);
+                    cmd.Parameters.AddWithValue("_end_date", end_date);
+                    cmd.Parameters.AddWithValue("_members_code", members_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
-                        cmd.Connection = connection;
-                        cmd.CommandText = @"SELECT * FROM create_project(:_creator_code,:_company_name,:_title,:_description,:_start_date,:_end_date,:_members_code)";
-                        cmd.Parameters.AddWithValue("_creator_code", creator_code);
-                        cmd.Parameters.AddWithValue("_company_name", company_name);
-                        cmd.Parameters.AddWithValue("_title", title);
-                        cmd.Parameters.AddWithValue("_description", description);
-                        cmd.Parameters.AddWithValue("_start_date", start_date);
-                        cmd.Parameters.AddWithValue("_end_date", end_date);
-                        cmd.Parameters.AddWithValue("_members_code", members_code);
-                        if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
-                        {
-                            return true;
-                        }
-                        else return false;
+                        return true;
                     }
-                    catch (Exception ex)
-                    {
-                        return false;
-                        throw ex;
-                    }
+                    else return false;
 
                 }
             }
-
-
-            return true;
         }
+
+
     }
 }

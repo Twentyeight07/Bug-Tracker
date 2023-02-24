@@ -63,11 +63,11 @@ namespace Presentation
                         
            
         }
-        private void ListProjects()
+        private void List_Projects()
         {
             try
             {
-                dgvPrincipal.DataSource = dataSource;
+                dgvPrincipal.DataSource = LoadData();
                 this.FormatProjectsList();
             }
             catch (Exception ex)
@@ -76,16 +76,23 @@ namespace Presentation
             }
         }
 
+        private DataTable LoadData()
+        {
+            DataTable dataSource = ProjectModel.ListProjects();
+            return dataSource;
+        }
+
+
+
         #endregion
 
         #region "Variables"
-        DataTable dataSource = ProjectModel.ListProjects();
         public static int parentX,parentY;
         #endregion
 
         private void FrmProjects_Load(object sender, EventArgs e)
         {
-            ListProjects();
+            List_Projects();
             
         }
 
@@ -119,7 +126,7 @@ namespace Presentation
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (TxtSearch.Text != "Search by Title") dataSource.DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+            if (TxtSearch.Text != "Search by Title") LoadData().DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
         }
 
         private void BtnAddProject_Click(object sender, EventArgs e)
@@ -142,7 +149,8 @@ namespace Presentation
 
                 modal.ShowDialog();
                 modalBackground.Dispose();
-                ListProjects();
+                LoadData();
+                List_Projects();
             }
         }
     }

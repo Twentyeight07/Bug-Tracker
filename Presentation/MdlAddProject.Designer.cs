@@ -97,7 +97,7 @@
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(141, 32);
             this.StartDate.TabIndex = 27;
-            this.StartDate.Value = new System.DateTime(2023, 2, 22, 15, 58, 51, 0);
+            this.StartDate.Value = new System.DateTime(2023, 2, 24, 0, 0, 0, 0);
             // 
             // lblStartDate
             // 

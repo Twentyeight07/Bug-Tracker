@@ -66,17 +66,10 @@ namespace Domain
             return Data.Load_members(companyName);
         }
 
-        public string CreateProject()
+        public bool CreateProject()
         {
-            try
-            {
-                projectDao.Create_Project(_creator_code,_company_name,_title,_description,_start_date,_end_date,_members_code);
-                return "Project created successfully!";
-            }
-            catch (Exception ex)
-            {
-                return "Error creating the project. Error: " + ex.Message;
-            }
+            return projectDao.Create_Project(_creator_code,_company_name,_title,_description,_start_date,_end_date,_members_code);
+          
         }
     }
 }

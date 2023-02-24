@@ -62,26 +62,33 @@ namespace Presentation
 
         private void BtnSaveProject_Click(object sender, EventArgs e)
         {
-            foreach (string item in chkMembers.CheckedItems)
+            try
             {
-                int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
-                codes.Add(code);
-            }
+                foreach (string item in chkMembers.CheckedItems)
+                {
+                    int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                    codes.Add(code);
+                }
 
-            Object[] itemobj = codes.Cast<object>().ToArray();
+                int[] itemobj = codes.Cast<int>().ToArray();
 
-            var projectModel = new ProjectModel(
+                var projectModel = new ProjectModel(
                 creator_code: UserLoginCache.IdUser,
                 company_name: UserLoginCache.CompanyName,
                 title: txtProjectTitle.Text.Trim(),
                 description: txtDescription.Text,
                 start_date: StartDate.Value,
-                end_date:  EndDate.Value,
+                end_date: EndDate.Value,
                 members_code: itemobj
                 );
-            var res = projectModel.CreateProject();
-            MessageBox.Show(res, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                var res = projectModel.CreateProject();
+                MessageBox.Show("Project created successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
