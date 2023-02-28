@@ -29,7 +29,7 @@ namespace Domain
         private DateTime _created_at;
         private DateTime _modified_at;
         private int _modified_by;
-        private string _deadline;
+        private DateTime _deadline;
         private string _severe;
 
 
@@ -50,7 +50,7 @@ namespace Domain
         }
 
         //Constructor for Bugs
-        public ProjectModel(int project_code,string title, string description, int creator_code,Array members_code, DateTime created_at, DateTime modified_at, int modified_by, string deadline, string severe)
+        public ProjectModel(int project_code,string title, string description, int creator_code,Array members_code, DateTime created_at, DateTime modified_at, int modified_by, DateTime deadline, string severe)
         {
             _project_code = project_code;
             _title = title;

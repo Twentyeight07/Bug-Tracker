@@ -95,13 +95,13 @@ namespace Presentation
 
                 int[] itemobj = codes.Cast<int>().ToArray();
                 int projectCode = Convert.ToInt32(cmbProject.Text.Substring(sliceStart, sliceLength).Trim());
-                string bugDeadline;
+                DateTime bugDeadline;
 
                 if (Deadline.Enabled == true)
                 {
-                    bugDeadline = Deadline.Value.ToString();
+                    bugDeadline = Deadline.Value;
                 }
-                else bugDeadline = "";
+                else bugDeadline = DateTime.Today;
 
                 var projectModel = new ProjectModel(
                 project_code: projectCode,

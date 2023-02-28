@@ -159,7 +159,7 @@ namespace Data.PostgreSQL
             }
         }
 
-        public bool Create_Bug(int project_code, string title, string description, int creator_code, Array members_code, DateTime created_at, DateTime modified_at, int modified_by, string deadline, string severe)
+        public bool Create_Bug(int project_code, string title, string description, int creator_code, Array members_code, DateTime created_at, DateTime modified_at, int modified_by, DateTime deadline, string severe)
         {
             
             using (var connection = GetConnection())
@@ -168,7 +168,9 @@ namespace Data.PostgreSQL
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = @"SELECT * FROM create_new_bug(
+                    if(DateTime.Compare(DateTime.Today, deadline) != 0)
+                    {
+                    cmd.CommandText = @"SELECT * FROM create_bug(
 	                :_project_code,
 	                :_title,
 	                :_description,
@@ -177,8 +179,22 @@ namespace Data.PostgreSQL
 	                :_created_at,
 	                :_modified_at,
 	                :_modified_by,
-	                :_deadline,
+	                :_severe,
+	                :_deadline)";
+                    }
+                    else
+                    {
+                        cmd.CommandText = @"SELECT * FROM create_bug(
+	                :_project_code,
+	                :_title,
+	                :_description,
+	                :_created_by,
+	                :_users_assigned,
+	                :_created_at,
+	                :_modified_at,
+	                :_modified_by,
 	                :_severe)";
+                    }
                     cmd.Parameters.AddWithValue("_project_code", project_code);
                     cmd.Parameters.AddWithValue("_title", title);
                     cmd.Parameters.AddWithValue("_description", description);
@@ -187,8 +203,8 @@ namespace Data.PostgreSQL
                     cmd.Parameters.AddWithValue("_created_at", created_at);
                     cmd.Parameters.AddWithValue("_modified_at", modified_at);
                     cmd.Parameters.AddWithValue("_modified_by", modified_by);
-                    cmd.Parameters.AddWithValue("_deadline", deadline);
                     cmd.Parameters.AddWithValue("_severe", severe);
+                    if (DateTime.Compare(DateTime.Today, deadline) != 0) cmd.Parameters.AddWithValue("_deadline", deadline);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
                         return true;
