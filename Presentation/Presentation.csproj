@@ -256,6 +256,12 @@
     <Compile Include="FrmBugsList.Designer.cs">
       <DependentUpon>FrmBugsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProjectPage.Designer.cs">
+      <DependentUpon>FrmProjectPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProjects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,12 @@
     <Compile Include="FrmSignin.Designer.cs">
       <DependentUpon>FrmSignin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MdlAddBug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdlAddBug.Designer.cs">
+      <DependentUpon>MdlAddBug.cs</DependentUpon>
+    </Compile>
     <Compile Include="MdlAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBugsList.resx">
       <DependentUpon>FrmBugsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProjectPage.resx">
+      <DependentUpon>FrmProjectPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProjects.resx">
       <DependentUpon>FrmProjects.cs</DependentUpon>
@@ -323,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSignin.resx">
       <DependentUpon>FrmSignin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdlAddBug.resx">
+      <DependentUpon>MdlAddBug.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MdlAddProject.resx">
       <DependentUpon>MdlAddProject.cs</DependentUpon>

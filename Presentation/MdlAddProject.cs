@@ -40,7 +40,7 @@ namespace Presentation
         {
             int i = FrmProjects.parentY + 220;
             this.Location = new Point(FrmProjects.parentX + 380, FrmProjects.parentY + 220);
-            LoadCrewMembers();
+            this.LoadCrewMembers();
         }
 
         private void modalEffect_timer_Tick(object sender, EventArgs e)

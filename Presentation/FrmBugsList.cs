@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,11 +68,11 @@ namespace Presentation
             dgvPrincipal.Columns[10].HeaderText = "State";
             /********************************************/
         }
-        private void ListBugs()
+        private void List_Bugs()
         {
             try
             {
-                dgvPrincipal.DataSource = dataSource;
+                dgvPrincipal.DataSource = LoadData();
                 this.FormatBugsList();
             }
             catch (Exception ex)
@@ -79,10 +80,18 @@ namespace Presentation
                 MessageBox.Show("Error when try to show the Bugs list. Error: " + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
         }
+
+
+        private DataTable LoadData()
+        {
+            DataTable dataSource = ProjectModel.ListBugs();
+            return dataSource;
+        }
         #endregion
 
         #region "Variables"
         DataTable dataSource = ProjectModel.ListBugs();
+        public static int parentX,parentY;
         #endregion
 
         #region "Functionality"
@@ -91,7 +100,7 @@ namespace Presentation
 
         private void FrmBugsList_Load(object sender, EventArgs e)
         {
-            ListBugs();
+            List_Bugs();
             
         }
 
@@ -102,12 +111,33 @@ namespace Presentation
 
         private void BtnAddBug_Click(object sender, EventArgs e)
         {
-           
+            
+            Form modalBackground = new Form();
+            using (MdlAddBug modal = new MdlAddBug())
+            {
+                modalBackground.StartPosition = FormStartPosition.Manual;
+                modalBackground.FormBorderStyle = FormBorderStyle.None;
+                modalBackground.Opacity = .50d;
+                modalBackground.BackColor = Color.Black;
+                modalBackground.Size = new Size(FrmMainMenu.msw, FrmMainMenu.msh);
+                modalBackground.Location = new Point(FrmMainMenu.mlx, FrmMainMenu.mly);
+                modalBackground.ShowInTaskbar = false;
+                modalBackground.Show();
+                modal.Owner = modalBackground;
+
+                parentX = this.Location.X;
+                parentY = this.Location.Y;
+
+                modal.ShowDialog();
+                modalBackground.Dispose();
+                LoadData();
+                List_Bugs();
+            }
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if(TxtSearch.Text != "Search by Title") dataSource.DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+            if(TxtSearch.Text != "Search by Title") LoadData().DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
         }
 
         private void TxtSearch_Enter(object sender, EventArgs e)

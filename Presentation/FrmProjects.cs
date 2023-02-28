@@ -82,7 +82,34 @@ namespace Presentation
             return dataSource;
         }
 
+        //Method to open Forms into the panel
+        private void OpenForm<MyForm>() where MyForm : Form, new()
+        {
+            Form form;
+            //This search into the collection if the form we want to open exists or not
+            form = this.Controls.OfType<MyForm>().FirstOrDefault();
 
+            if (form == null)
+            {
+                form = new MyForm
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill,
+                };
+                this.Controls.Add(form);
+                this.Tag = form;
+                form.Show();
+                form.BringToFront();
+            }
+            else
+            {
+                //if exists, just bringt it to front
+                form.BringToFront();
+            }
+        }
+
+        
 
         #endregion
 
@@ -127,6 +154,12 @@ namespace Presentation
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             if (TxtSearch.Text != "Search by Title") LoadData().DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+        }
+
+
+        private void dgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            OpenForm<FrmProjectPage>();
         }
 
         private void BtnAddProject_Click(object sender, EventArgs e)

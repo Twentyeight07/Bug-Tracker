@@ -62,3 +62,5 @@ E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.cspr
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.FrmProjects.resources
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.FrmMainMenu.resources
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.MdlAddProject.resources
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.FrmProjectPage.resources
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.MdlAddBug.resources

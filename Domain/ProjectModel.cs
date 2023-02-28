@@ -13,16 +13,27 @@ namespace Domain
     {
         ProjectDao projectDao = new ProjectDao();
 
-        //Attributes
+        //Global Attributes
         private int _creator_code;
         private string _company_name;
+        private Array _members_code;
         private string _title;
         private string _description;
+
+        //Projects Attributes
         private DateTime _start_date;
         private DateTime _end_date;
-        private Array _members_code;
+
+        //Bugs Attributes
+        private int _project_code;
+        private DateTime _created_at;
+        private DateTime _modified_at;
+        private int _modified_by;
+        private string _deadline;
+        private string _severe;
 
 
+        //Constructor for Projects
         public ProjectModel(int creator_code, string company_name, string title, string description, DateTime start_date, DateTime end_date, Array members_code)
         {
             _creator_code = creator_code;
@@ -36,6 +47,21 @@ namespace Domain
 
         public ProjectModel() 
         {
+        }
+
+        //Constructor for Bugs
+        public ProjectModel(int project_code,string title, string description, int creator_code,Array members_code, DateTime created_at, DateTime modified_at, int modified_by, string deadline, string severe)
+        {
+            _project_code = project_code;
+            _title = title;
+            _description = description;
+            _creator_code = creator_code;
+            _members_code = members_code;
+            _created_at = created_at;
+            _modified_at = modified_at;
+            _modified_by = modified_by;
+            _deadline = deadline;
+            _severe = severe;
         }
 
         public static DataTable ListBugs()
@@ -66,9 +92,25 @@ namespace Domain
             return Data.Load_members(companyName);
         }
 
+        public static DataTable LoadProjects()
+        {
+            string companyName = UserLoginCache.CompanyName;
+            ProjectDao Data = new ProjectDao();
+
+            return Data.Load_projects(companyName);
+        }
+
         public bool CreateProject()
         {
             return projectDao.Create_Project(_creator_code,_company_name,_title,_description,_start_date,_end_date,_members_code);
+          
+        }
+
+        public bool CreateBug()
+        {
+           
+            return projectDao.Create_Bug(_project_code,_title,_description,_creator_code,_members_code,_created_at,_modified_at,_modified_by,_deadline,_severe);
+           
           
         }
     }

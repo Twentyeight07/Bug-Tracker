@@ -98,6 +98,34 @@ namespace Data.PostgreSQL
             }
         }
 
+        public DataTable Load_projects(string companyName)
+        {
+            NpgsqlDataReader res;
+            DataTable dt = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    try
+                    {
+                        cmd.Connection = connection;
+                        cmd.CommandText = "SELECT code, title FROM projects WHERE company_name = @company_name";
+                        cmd.Parameters.AddWithValue("@company_name", companyName);
+                        res = cmd.ExecuteReader();
+                        dt.Load(res);
+                        return dt;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+                }
+            }
+        }
+
         public bool Create_Project(int creator_code,string company_name,string title,string description, DateTime start_date, DateTime end_date, Array members_code)
         {
             using (var connection = GetConnection())
@@ -127,6 +155,45 @@ namespace Data.PostgreSQL
                     }
                     else return false;
 
+                }
+            }
+        }
+
+        public bool Create_Bug(int project_code, string title, string description, int creator_code, Array members_code, DateTime created_at, DateTime modified_at, int modified_by, string deadline, string severe)
+        {
+            
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"SELECT * FROM create_new_bug(
+	                :_project_code,
+	                :_title,
+	                :_description,
+	                :_created_by,
+	                :_users_assigned,
+	                :_created_at,
+	                :_modified_at,
+	                :_modified_by,
+	                :_deadline,
+	                :_severe)";
+                    cmd.Parameters.AddWithValue("_project_code", project_code);
+                    cmd.Parameters.AddWithValue("_title", title);
+                    cmd.Parameters.AddWithValue("_description", description);
+                    cmd.Parameters.AddWithValue("_created_by", creator_code);
+                    cmd.Parameters.AddWithValue("_users_assigned", members_code);
+                    cmd.Parameters.AddWithValue("_created_at", created_at);
+                    cmd.Parameters.AddWithValue("_modified_at", modified_at);
+                    cmd.Parameters.AddWithValue("_modified_by", modified_by);
+                    cmd.Parameters.AddWithValue("_deadline", deadline);
+                    cmd.Parameters.AddWithValue("_severe", severe);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
                 }
             }
         }

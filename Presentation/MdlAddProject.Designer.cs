@@ -33,7 +33,6 @@
             this.lblNewProject = new System.Windows.Forms.Label();
             this.lblProjectTitle = new System.Windows.Forms.Label();
             this.txtProjectTitle = new System.Windows.Forms.TextBox();
-            this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +43,8 @@
             this.modalEffect_timer = new System.Windows.Forms.Timer(this.components);
             this.BtnCancelProject = new System.Windows.Forms.Button();
             this.BtnSaveProject = new System.Windows.Forms.Button();
+            this.StartDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNewProject
@@ -81,23 +82,6 @@
             this.txtProjectTitle.Name = "txtProjectTitle";
             this.txtProjectTitle.Size = new System.Drawing.Size(363, 27);
             this.txtProjectTitle.TabIndex = 23;
-            // 
-            // StartDate
-            // 
-            this.StartDate.CalendarFont = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.StartDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
-            this.StartDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.StartDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.StartDate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StartDate.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.StartDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StartDate.Location = new System.Drawing.Point(45, 154);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(141, 32);
-            this.StartDate.TabIndex = 27;
-            this.StartDate.Value = new System.DateTime(2023, 2, 24, 0, 0, 0, 0);
             // 
             // lblStartDate
             // 
@@ -170,7 +154,7 @@
             this.chkMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.chkMembers.FormattingEnabled = true;
             this.chkMembers.IntegralHeight = false;
-            this.chkMembers.Location = new System.Drawing.Point(583, 228);
+            this.chkMembers.Location = new System.Drawing.Point(581, 228);
             this.chkMembers.Name = "chkMembers";
             this.chkMembers.Size = new System.Drawing.Size(239, 175);
             this.chkMembers.TabIndex = 33;
@@ -230,12 +214,43 @@
             this.BtnSaveProject.UseVisualStyleBackColor = false;
             this.BtnSaveProject.Click += new System.EventHandler(this.BtnSaveProject_Click);
             // 
+            // StartDate
+            // 
+            this.StartDate.CalendarFont = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.StartDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
+            this.StartDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.StartDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.StartDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StartDate.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.StartDate.Location = new System.Drawing.Point(45, 154);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(141, 32);
+            this.StartDate.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label2.Location = new System.Drawing.Point(615, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(170, 14);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "These fields (*) are mandatory";
+            // 
             // MdlAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(870, 480);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.StartDate);
             this.Controls.Add(this.BtnCancelProject);
             this.Controls.Add(this.BtnSaveProject);
             this.Controls.Add(this.label1);
@@ -245,7 +260,6 @@
             this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.EndDate);
             this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.StartDate);
             this.Controls.Add(this.lblProjectTitle);
             this.Controls.Add(this.txtProjectTitle);
             this.Controls.Add(this.lblNewProject);
@@ -265,7 +279,6 @@
         private System.Windows.Forms.Label lblNewProject;
         private System.Windows.Forms.Label lblProjectTitle;
         private System.Windows.Forms.TextBox txtProjectTitle;
-        private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.DateTimePicker EndDate;
@@ -276,5 +289,7 @@
         private System.Windows.Forms.Timer modalEffect_timer;
         private System.Windows.Forms.Button BtnCancelProject;
         private System.Windows.Forms.Button BtnSaveProject;
+        private System.Windows.Forms.DateTimePicker StartDate;
+        private System.Windows.Forms.Label label2;
     }
 }
