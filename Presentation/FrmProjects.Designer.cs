@@ -134,7 +134,7 @@
             this.dgvPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPrincipal.Size = new System.Drawing.Size(1000, 430);
             this.dgvPrincipal.TabIndex = 6;
-            this.dgvPrincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrincipal_CellClick);
+            this.dgvPrincipal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPrincipal_CellClick);
             // 
             // TxtSearch
             // 

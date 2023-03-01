@@ -45,6 +45,8 @@
             this.BtnSaveProject = new System.Windows.Forms.Button();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.chkEndDate = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNewProject
@@ -90,7 +92,7 @@
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblStartDate.Location = new System.Drawing.Point(41, 132);
+            this.lblStartDate.Location = new System.Drawing.Point(41, 148);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(80, 19);
             this.lblStartDate.TabIndex = 28;
@@ -103,7 +105,7 @@
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblEndDate.Location = new System.Drawing.Point(243, 132);
+            this.lblEndDate.Location = new System.Drawing.Point(243, 148);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(73, 19);
             this.lblEndDate.TabIndex = 30;
@@ -117,10 +119,11 @@
             this.EndDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
             this.EndDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.EndDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EndDate.Enabled = false;
             this.EndDate.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.EndDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.EndDate.Location = new System.Drawing.Point(247, 154);
+            this.EndDate.Location = new System.Drawing.Point(247, 170);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(141, 32);
             this.EndDate.TabIndex = 29;
@@ -132,7 +135,7 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblDescription.Location = new System.Drawing.Point(41, 206);
+            this.lblDescription.Location = new System.Drawing.Point(41, 213);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(89, 19);
             this.lblDescription.TabIndex = 31;
@@ -141,7 +144,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(45, 228);
+            this.txtDescription.Location = new System.Drawing.Point(45, 235);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(485, 175);
@@ -154,7 +157,7 @@
             this.chkMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.chkMembers.FormattingEnabled = true;
             this.chkMembers.IntegralHeight = false;
-            this.chkMembers.Location = new System.Drawing.Point(581, 228);
+            this.chkMembers.Location = new System.Drawing.Point(581, 235);
             this.chkMembers.Name = "chkMembers";
             this.chkMembers.Size = new System.Drawing.Size(239, 175);
             this.chkMembers.TabIndex = 33;
@@ -166,7 +169,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label1.Location = new System.Drawing.Point(579, 206);
+            this.label1.Location = new System.Drawing.Point(579, 213);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 19);
             this.label1.TabIndex = 34;
@@ -225,7 +228,7 @@
             this.StartDate.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.StartDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StartDate.Location = new System.Drawing.Point(45, 154);
+            this.StartDate.Location = new System.Drawing.Point(45, 170);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(141, 32);
             this.StartDate.TabIndex = 37;
@@ -243,12 +246,37 @@
             this.label2.TabIndex = 56;
             this.label2.Text = "These fields (*) are mandatory";
             // 
+            // chkEndDate
+            // 
+            this.chkEndDate.AutoSize = true;
+            this.chkEndDate.Location = new System.Drawing.Point(322, 152);
+            this.chkEndDate.Name = "chkEndDate";
+            this.chkEndDate.Size = new System.Drawing.Size(15, 14);
+            this.chkEndDate.TabIndex = 57;
+            this.chkEndDate.UseVisualStyleBackColor = true;
+            this.chkEndDate.CheckedChanged += new System.EventHandler(this.chkEndDate_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label3.Location = new System.Drawing.Point(42, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(170, 14);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "(No special caracters allowed)";
+            // 
             // MdlAddProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(870, 480);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.chkEndDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.StartDate);
             this.Controls.Add(this.BtnCancelProject);
@@ -291,5 +319,7 @@
         private System.Windows.Forms.Button BtnSaveProject;
         private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox chkEndDate;
+        private System.Windows.Forms.Label label3;
     }
 }

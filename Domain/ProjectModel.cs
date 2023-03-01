@@ -74,6 +74,17 @@ namespace Domain
             return Data.List_bugs(admin, memberCode, companyName);
         }
 
+        public static DataTable ListProjectBugs()
+        {
+            bool admin = UserLoginCache.Admin;
+            string memberCode = "%" + UserLoginCache.IdUser + "%";
+            string companyName = UserLoginCache.CompanyName;
+            int projectCode = ProjectCache.Project_code;
+            ProjectDao Data = new ProjectDao();
+
+            return Data.List_project_bugs(admin, memberCode, companyName, projectCode);
+        }
+
         public static DataTable ListProjects()
         {
             string companyName = UserLoginCache.CompanyName;

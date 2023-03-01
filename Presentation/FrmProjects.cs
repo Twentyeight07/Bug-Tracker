@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -67,7 +68,7 @@ namespace Presentation
         {
             try
             {
-                dgvPrincipal.DataSource = LoadData();
+                dgvPrincipal.DataSource = data;
                 this.FormatProjectsList();
             }
             catch (Exception ex)
@@ -76,10 +77,10 @@ namespace Presentation
             }
         }
 
-        private DataTable LoadData()
+        private void LoadData()
         {
             DataTable dataSource = ProjectModel.ListProjects();
-            return dataSource;
+            data = dataSource;
         }
 
         //Method to open Forms into the panel
@@ -109,18 +110,18 @@ namespace Presentation
             }
         }
 
-        
 
         #endregion
 
         #region "Variables"
+        DataTable data;
         public static int parentX,parentY;
         #endregion
 
         private void FrmProjects_Load(object sender, EventArgs e)
         {
+            LoadData();   
             List_Projects();
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,13 +154,20 @@ namespace Presentation
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (TxtSearch.Text != "Search by Title") LoadData().DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+            if (TxtSearch.Text != "Search by Title") data.DefaultView.RowFilter = $"Title LIKE '%{Regex.Replace(TxtSearch.Text.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "")}%'";
         }
 
 
-        private void dgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            OpenForm<FrmProjectPage>();
+            if(e.RowIndex >= 0)
+            {
+                int selectedRow = e.RowIndex;
+                ProjectCache.Project_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
+                ProjectCache.Project_title = dgvPrincipal[3, selectedRow].Value.ToString();
+                OpenForm<FrmProjectPage>();
+                
+            }
         }
 
         private void BtnAddProject_Click(object sender, EventArgs e)

@@ -9,5 +9,6 @@ namespace Entities.Cache
     public static class ProjectCache
     {
         public static int Project_code { get; set; }
+        public static string Project_title { get; set; }
     }
 }

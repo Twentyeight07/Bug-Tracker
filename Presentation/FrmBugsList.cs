@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Entities.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -72,7 +74,7 @@ namespace Presentation
         {
             try
             {
-                dgvPrincipal.DataSource = LoadData();
+                dgvPrincipal.DataSource = data;
                 this.FormatBugsList();
             }
             catch (Exception ex)
@@ -82,15 +84,15 @@ namespace Presentation
         }
 
 
-        private DataTable LoadData()
+        private void LoadData()
         {
             DataTable dataSource = ProjectModel.ListBugs();
-            return dataSource;
+            data = dataSource;
         }
         #endregion
 
         #region "Variables"
-        DataTable dataSource = ProjectModel.ListBugs();
+        DataTable data;
         public static int parentX,parentY;
         #endregion
 
@@ -100,8 +102,8 @@ namespace Presentation
 
         private void FrmBugsList_Load(object sender, EventArgs e)
         {
+            LoadData();
             List_Bugs();
-            
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -137,7 +139,10 @@ namespace Presentation
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if(TxtSearch.Text != "Search by Title") LoadData().DefaultView.RowFilter = $"Title LIKE '%{TxtSearch.Text.Trim()}%'";
+            if (TxtSearch.Text != "Search by Title")
+            {
+                    data.DefaultView.RowFilter = $"Title LIKE '%{Regex.Replace(TxtSearch.Text.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ,]+", "")}%'";
+            }
         }
 
         private void TxtSearch_Enter(object sender, EventArgs e)

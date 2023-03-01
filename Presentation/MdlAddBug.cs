@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,7 +26,7 @@ namespace Presentation
         {
             foreach (DataRow dr in crewSource.Rows)
             {
-                chkMembers.Items.Add(Convert.ToString(dr[0]) + "     (" + Convert.ToString(dr[1]) + ")");
+                chkMembers.Items.Add(Convert.ToString(dr[0]) + "   (" + Convert.ToString(dr[1]) + ")");
             }
         }
 
@@ -33,7 +34,7 @@ namespace Presentation
         {
             foreach (DataRow dr in projectSource.Rows)
             {
-                cmbProject.Items.Add(Convert.ToString(dr[0]) + "     (" + Convert.ToString(dr[1]) + ")");
+                cmbProject.Items.Add(Convert.ToString(dr[0]) + "   (" + Convert.ToString(dr[1]) + ")");
             }
         }
         #endregion
@@ -49,7 +50,7 @@ namespace Presentation
         private void MdlAddBug_Load(object sender, EventArgs e)
         {
             int i = FrmBugsList.parentY + 220;
-            this.Location = new Point(FrmBugsList.parentX + 380, FrmBugsList.parentY + 220);
+            this.Location = new Point(FrmBugsList.parentX + 380, FrmBugsList.parentY + 180);
             this.LoadCrewMembers();
             this.LoadProjects();
         }
@@ -85,44 +86,47 @@ namespace Presentation
 
         private void BtnSaveProject_Click(object sender, EventArgs e)
         {
-            try
+            if(cmbProject.Text != String.Empty && txtBugTitle.Text != String.Empty)
             {
-                foreach (string item in chkMembers.CheckedItems)
+                try
                 {
-                    int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
-                    codes.Add(code);
+                    foreach (string item in chkMembers.CheckedItems)
+                    {
+                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        codes.Add(code);
+                    }
+
+                    if(codes.Count != 0)
+                    {
+                        int[] itemobj = codes.Cast<int>().ToArray();
+                        int projectCode = Convert.ToInt32(cmbProject.Text.Substring(sliceStart, sliceLength).Trim());
+                        DateTime bugDeadline = Deadline.Enabled == true ? Deadline.Value : DateTime.Today;
+                        string normalizeTitle = Regex.Replace(txtBugTitle.Text.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "");
+
+                        var projectModel = new ProjectModel(
+                        project_code: projectCode,
+                        title: normalizeTitle.Trim(),
+                        description: txtDescription.Text,
+                        creator_code: UserLoginCache.IdUser,
+                        members_code: itemobj,
+                        created_at: DateTime.Now,
+                        modified_at: DateTime.Now,
+                        modified_by: UserLoginCache.IdUser,
+                        deadline: bugDeadline,
+                        severe: cmbSevere.Text
+                        );
+                        var res = projectModel.CreateBug();
+                        MessageBox.Show("Bug created successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }else MessageBox.Show("You must select at least one member to be assigned to this bug", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
-
-                int[] itemobj = codes.Cast<int>().ToArray();
-                int projectCode = Convert.ToInt32(cmbProject.Text.Substring(sliceStart, sliceLength).Trim());
-                DateTime bugDeadline;
-
-                if (Deadline.Enabled == true)
+                catch (Exception ex)
                 {
-                    bugDeadline = Deadline.Value;
+                    throw ex;
                 }
-                else bugDeadline = DateTime.Today;
+            }else MessageBox.Show("The (*) fields are mandatory!", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                var projectModel = new ProjectModel(
-                project_code: projectCode,
-                title: txtBugTitle.Text,
-                description: txtDescription.Text,
-                creator_code: UserLoginCache.IdUser,
-                members_code: itemobj,
-                created_at: DateTime.Now,
-                modified_at: DateTime.Now,
-                modified_by: UserLoginCache.IdUser,
-                deadline: bugDeadline,
-                severe: cmbSevere.Text
-                );
-                var res = projectModel.CreateBug();
-                MessageBox.Show("Bug created successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
 

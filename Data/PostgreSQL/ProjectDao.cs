@@ -40,6 +40,37 @@ namespace Data.PostgreSQL
             }
         }
 
+        public DataTable List_project_bugs(bool admin, string memberCode, string companyName, int projectCode)
+        {
+            NpgsqlDataReader res;
+            DataTable dt = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    try
+                    {
+                        cmd.Connection = connection;
+                        cmd.CommandText = @"SELECT * FROM list_project_bugs(:_admin, :_member_code,:_company_name,:_project_code)";
+                        cmd.Parameters.AddWithValue("_admin", admin);
+                        cmd.Parameters.AddWithValue("_member_code", memberCode);
+                        cmd.Parameters.AddWithValue("_company_name", companyName);
+                        cmd.Parameters.AddWithValue("_project_code", projectCode);
+                        res = cmd.ExecuteReader();
+                        dt.Load(res);
+                        return dt;
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw ex;
+                    }
+
+                }
+            }
+        }
+
         public DataTable List_projects(string companyName,bool admin, string memberCode)
         {
             NpgsqlDataReader res;
@@ -134,6 +165,8 @@ namespace Data.PostgreSQL
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
+                    if(DateTime.Compare(DateTime.Today, end_date) != 0)
+                    {
                     cmd.CommandText = @"SELECT * FROM create_new_project(
 	                :_creator_code,
 	                :_company_name,
@@ -142,12 +175,23 @@ namespace Data.PostgreSQL
 	                :_start_date,
 	                :_end_date,
 	                :_members_code)";
+                    }
+                    else
+                    {
+                    cmd.CommandText = @"SELECT * FROM create_new_project(
+	                :_creator_code,
+	                :_company_name,
+	                :_title,
+	                :_description,
+	                :_start_date,
+	                :_members_code)";
+                    }
                     cmd.Parameters.AddWithValue("_creator_code", creator_code);
                     cmd.Parameters.AddWithValue("_company_name", company_name);
                     cmd.Parameters.AddWithValue("_title", title);
                     cmd.Parameters.AddWithValue("_description", description);
                     cmd.Parameters.AddWithValue("_start_date", start_date);
-                    cmd.Parameters.AddWithValue("_end_date", end_date);
+                    if(DateTime.Compare(DateTime.Today, end_date) != 0) cmd.Parameters.AddWithValue("_end_date", end_date);
                     cmd.Parameters.AddWithValue("_members_code", members_code);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
