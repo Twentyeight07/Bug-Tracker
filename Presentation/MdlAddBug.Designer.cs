@@ -208,7 +208,7 @@
             this.chkDeadline.Size = new System.Drawing.Size(15, 14);
             this.chkDeadline.TabIndex = 50;
             this.chkDeadline.UseVisualStyleBackColor = true;
-            this.chkDeadline.CheckedChanged += new System.EventHandler(this.chkDeadline_CheckedChanged);
+            this.chkDeadline.CheckedChanged += new System.EventHandler(this.ChkDeadline_CheckedChanged);
             // 
             // cmbSevere
             // 
@@ -241,7 +241,7 @@
             // 
             this.modalEffect_timer.Enabled = true;
             this.modalEffect_timer.Interval = 1;
-            this.modalEffect_timer.Tick += new System.EventHandler(this.timer1_Tick);
+            this.modalEffect_timer.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // lblProjectName
             // 

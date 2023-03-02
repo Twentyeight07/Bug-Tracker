@@ -86,14 +86,28 @@ namespace Presentation
 
             data = dataSource;
         }
+
+        private void LoadCrewMembers()
+        {
+            foreach (DataRow dr in crewSource.Rows)
+            {
+                chkMembers.Items.Add(Convert.ToString(dr[0]) + "   (" + Convert.ToString(dr[1]) + ")");
+            }
+        }
+
         #endregion
 
         #region "Variables"
+        DataTable crewSource = ProjectModel.LoadMembers();
         DataTable data;
+        int sliceStart = 0;
+        int sliceLength = 5;
+        List<int> codes = new List<int>();
         #endregion
 
         private void FrmProjectPage_Load(object sender, EventArgs e)
         {
+            lblProjectName.Text = ProjectCache.Project_title + " Bugs";
             LoadData();
             List_Bugs();
         }
@@ -127,6 +141,166 @@ namespace Presentation
                 TxtSearch.ForeColor = ColorTranslator.FromHtml("#4A1F21");
                 TxtSearch.Text = "Search by Title";
             }
+        }
+
+        private void ChkDeadline_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkDeadline.Checked)
+            {
+                Deadline.Enabled = true;
+            }
+            else Deadline.Enabled = false;
+        }
+
+        private void BtnAddBug_Click(object sender, EventArgs e)
+        {
+            PnlNewBug.Location = new Point(this.Location.X + 130, this.Location.Y + 80);
+            this.LoadCrewMembers();
+            PnlNewBug.BringToFront();
+            PnlNewBug.Visible = true;
+        }
+
+        private void BtnCancelProject_Click(object sender, EventArgs e)
+        {
+            PnlNewBug.Visible = false;
+            PnlNewBug.SendToBack();
+        }
+
+        private void BtnSaveProject_Click(object sender, EventArgs e)
+        {
+            if (txtBugTitle.Text != String.Empty)
+            {
+                try
+                {
+                    foreach (string item in chkMembers.CheckedItems)
+                    {
+                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        codes.Add(code);
+                    }
+
+                    if (codes.Count != 0)
+                    {
+                        int[] itemobj = codes.Cast<int>().ToArray();
+                        DateTime bugDeadline = Deadline.Enabled == true ? Deadline.Value : DateTime.Today;
+                        string normalizeTitle = Regex.Replace(txtBugTitle.Text.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "");
+
+                        var projectModel = new ProjectModel(
+                        project_code: ProjectCache.Project_code,
+                        title: normalizeTitle.Trim(),
+                        description: txtDescription.Text,
+                        creator_code: UserLoginCache.IdUser,
+                        members_code: itemobj,
+                        created_at: DateTime.Now,
+                        modified_at: DateTime.Now,
+                        modified_by: UserLoginCache.IdUser,
+                        deadline: bugDeadline,
+                        severe: cmbSevere.Text
+                        );
+                        var res = projectModel.CreateBug();
+                        MessageBox.Show("Bug created successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
+                        List_Bugs();
+                        PnlNewBug.Visible= false;
+                        PnlNewBug.SendToBack();
+                    }
+                    else MessageBox.Show("You must select at least one member to be assigned to this bug", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else MessageBox.Show("The (*) fields are mandatory!", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void CmbBugState_DropDown(object sender, EventArgs e)
+        {
+            //We only can select a limited options to be updated on the DB
+            //depending of the actual state of the Bug, there's going to be some states to update
+            if (cmbBugState.Text == "Open")
+            {
+                cmbBugState.Items.Clear();
+                cmbBugState.Items.Add("Ongoin");
+                cmbBugState.Items.Add("To be approved");
+                cmbBugState.Items.Add("Closed");
+            } 
+            else if(cmbBugState.Text == "Ongoin")
+            {
+                cmbBugState.Items.Clear();
+                cmbBugState.Items.Add("Reopen");
+                cmbBugState.Items.Add("To be approved");
+                cmbBugState.Items.Add("Closed");
+            }
+            else if(cmbBugState.Text == "To be approved")
+            {
+                cmbBugState.Items.Clear();
+                cmbBugState.Items.Add("Reopen");
+                cmbBugState.Items.Add("Ongoin");
+                cmbBugState.Items.Add("Closed");
+            }
+            else if (cmbBugState.Text == "Reopen")
+            {
+                cmbBugState.Items.Clear();
+                cmbBugState.Items.Add("Ongoin");
+                cmbBugState.Items.Add("To be approved");
+                cmbBugState.Items.Add("Closed");
+            }
+            else if (cmbBugState.Text == "Closed")
+            {
+                cmbBugState.Items.Clear();
+                cmbBugState.Items.Add("Reopen");
+            }
+
+        }
+
+        private void DgvPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                int selectedRow = e.RowIndex;
+                lblBugTitle.Text = dgvPrincipal[2, selectedRow].Value.ToString();
+                lblProjectForBugPnl.Text = "     " + dgvPrincipal[1,selectedRow].Value.ToString();
+                lblCreatedBy.Text = "By "+dgvPrincipal[4, selectedRow].Value.ToString();
+                cmbBugState.Text = dgvPrincipal[10, selectedRow].Value.ToString();
+                txtBugDescription.Text = dgvPrincipal[3, selectedRow].Value.ToString();
+                txtCreatedBy.Text = dgvPrincipal[4, selectedRow].Value.ToString();
+                txtModifiedBy.Text = dgvPrincipal[7, selectedRow].Value.ToString();
+                txtCreatedAt.Text = dgvPrincipal[5, selectedRow].Value.ToString();
+                txtModifiedAt.Text = dgvPrincipal[6, selectedRow].Value.ToString();
+
+                pnlBugDetails.Location = new Point(this.Location.X + 90, this.Location.Y + 20);
+                pnlBugDetails.BringToFront();
+                pnlBugDetails.Visible = true;
+            }
+        }
+
+        private void BtnCloseBugDetails_Click(object sender, EventArgs e)
+        {
+            pnlBugDetails.Visible= false;
+            pnlBugDetails.SendToBack();
+        }
+
+        private void CmbBugState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //We update the Bug State
+        }
+
+        private void BtnEditBugDescription_Click(object sender, EventArgs e)
+        {
+            BtnEditBugDescription.Visible = false;
+
+            BtnCnlUptDescpBug.Visible = true;
+            BtnUpdateBugDescp.Visible = true;
+        }
+
+        private void BtnCnlUptDescpBug_Click(object sender, EventArgs e)
+        {
+            BtnEditBugDescription.Visible = true;
+
+            BtnCnlUptDescpBug.Visible = false;
+            BtnUpdateBugDescp.Visible = false;
         }
     }
 }

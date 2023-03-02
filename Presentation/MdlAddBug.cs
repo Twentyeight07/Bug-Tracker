@@ -60,7 +60,7 @@ namespace Presentation
             this.Close();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if (Opacity >= 1)
             {
@@ -72,7 +72,7 @@ namespace Presentation
             }
         }
 
-        private void chkDeadline_CheckedChanged(object sender, EventArgs e)
+        private void ChkDeadline_CheckedChanged(object sender, EventArgs e)
         {
             if(chkDeadline.Checked)
             {

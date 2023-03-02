@@ -238,7 +238,7 @@
             // 
             // PnlTittleBar
             // 
-            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.PnlTittleBar.Controls.Add(this.BtnRestore);
             this.PnlTittleBar.Controls.Add(this.BtnMinimize);
             this.PnlTittleBar.Controls.Add(this.BtnMaximize);

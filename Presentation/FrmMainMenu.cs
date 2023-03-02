@@ -50,7 +50,7 @@ namespace Presentation
         }
 
         private void CloseForms(object sender, FormClosedEventArgs e) {
-            if (Application.OpenForms["Form1"] == null)
+            if (Application.OpenForms["FrmDashboard"] == null)
             {
                 BtnDashboard.BackColor = Color.FromArgb(216, 104, 70);
             }
@@ -60,7 +60,7 @@ namespace Presentation
                 BtnBugs.BackColor = Color.FromArgb(216, 104, 70);
             }
 
-            if (Application.OpenForms["Form3"] == null)
+            if (Application.OpenForms["FrmProjects"] == null)
             {
                 BtnProjects.BackColor = Color.FromArgb(216, 104, 70);
             }

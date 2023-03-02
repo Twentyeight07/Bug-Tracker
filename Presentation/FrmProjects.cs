@@ -110,7 +110,13 @@ namespace Presentation
             }
         }
 
-
+        private void UserPrivileges()
+        {
+            if(UserLoginCache.Admin != true)
+            {
+                BtnAddProject.Visible = false;
+            }
+        }
         #endregion
 
         #region "Variables"
@@ -120,6 +126,7 @@ namespace Presentation
 
         private void FrmProjects_Load(object sender, EventArgs e)
         {
+            UserPrivileges();
             LoadData();   
             List_Projects();
         }

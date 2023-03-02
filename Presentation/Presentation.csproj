@@ -439,6 +439,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="antivirus.ico" />
+    <None Include="Resources\arrow-right.png" />
+    <None Include="Resources\left-arrow.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\projects.png" />
     <None Include="Resources\checked.png" />
   </ItemGroup>
   <ItemGroup>
