@@ -121,8 +121,30 @@ namespace Domain
         {
            
             return projectDao.Create_Bug(_project_code,_title,_description,_creator_code,_members_code,_created_at,_modified_at,_modified_by,_deadline,_severe);
-           
-          
+
         }
+
+        public bool UpdateBugState(string state, int bug_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.UpdateBugState(state, bug_code);
+        }
+
+        public bool UpdateBugDescription(string description, int bug_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.UpdateBugDescription(description, bug_code);
+        }
+
+        public bool UpdateBugSevere(string severe, int bug_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.UpdateBugSevere(severe, bug_code);
+        }
+
+
     }
 }

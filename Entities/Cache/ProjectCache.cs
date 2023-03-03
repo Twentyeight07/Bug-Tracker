@@ -10,5 +10,7 @@ namespace Entities.Cache
     {
         public static int Project_code { get; set; }
         public static string Project_title { get; set; }
+        public static int Bug_code { get; set; }
+        public static string Bug_description { get; set; }
     }
 }

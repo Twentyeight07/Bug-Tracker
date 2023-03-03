@@ -258,6 +258,65 @@ namespace Data.PostgreSQL
             }
         }
 
+        public bool UpdateBugState(string state, int bug_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE bugs SET state = @state WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@state", state);
+                    cmd.Parameters.AddWithValue("@code", bug_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+        public bool UpdateBugDescription(string description, int bug_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE bugs SET description = @description WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@description", description);
+                    cmd.Parameters.AddWithValue("@code", bug_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+        public bool UpdateBugSevere(string severe, int bug_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using(var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE bugs SET severe = @severe WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@severe", severe);
+                    cmd.Parameters.AddWithValue("@code", bug_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
 
     }
 }

@@ -95,14 +95,45 @@ namespace Presentation
             }
         }
 
+        private void SaveListBoxState()
+        {
+            foreach (DataRow item in crewSource.Rows)
+            {
+                members.Add(item[0].ToString() + "   "+ item[1]);
+            }
+
+            foreach (var item in lstbxUsersAssigned.Items)
+            {
+                membersAssigned.Add(item.ToString());
+            }
+        }
+
+        private void RestoreListBoxState()
+        {
+            lstbxMembers.Items.Clear();
+            lstbxUsersAssigned.Items.Clear();
+
+            foreach (var item in members)
+            {
+                lstbxMembers.Items.Add(item);
+            }
+
+            foreach(var item in membersAssigned)
+            {
+                lstbxUsersAssigned.Items.Add(item);
+            }
+        }
+
         #endregion
 
         #region "Variables"
         DataTable crewSource = ProjectModel.LoadMembers();
         DataTable data;
-        int sliceStart = 0;
-        int sliceLength = 5;
+        readonly int sliceStart = 0;
+        readonly int sliceLength = 5;
         List<int> codes = new List<int>();
+        List<string> members = new List<string>();
+        List<string> membersAssigned = new List<string>();
         #endregion
 
         private void FrmProjectPage_Load(object sender, EventArgs e)
@@ -260,15 +291,27 @@ namespace Presentation
             if(e.RowIndex >= 0)
             {
                 int selectedRow = e.RowIndex;
+                string createdAt = dgvPrincipal[5, selectedRow].Value.ToString().Substring(0,10); 
+                string modifiedAt = dgvPrincipal[6, selectedRow].Value.ToString().Substring(0,10);
+                SaveListBoxState();
+
+                ProjectCache.Bug_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
                 lblBugTitle.Text = dgvPrincipal[2, selectedRow].Value.ToString();
                 lblProjectForBugPnl.Text = "     " + dgvPrincipal[1,selectedRow].Value.ToString();
                 lblCreatedBy.Text = "By "+dgvPrincipal[4, selectedRow].Value.ToString();
                 cmbBugState.Text = dgvPrincipal[10, selectedRow].Value.ToString();
                 txtBugDescription.Text = dgvPrincipal[3, selectedRow].Value.ToString();
+                ProjectCache.Bug_description = dgvPrincipal[3, selectedRow].Value.ToString();
                 txtCreatedBy.Text = dgvPrincipal[4, selectedRow].Value.ToString();
                 txtModifiedBy.Text = dgvPrincipal[7, selectedRow].Value.ToString();
-                txtCreatedAt.Text = dgvPrincipal[5, selectedRow].Value.ToString();
-                txtModifiedAt.Text = dgvPrincipal[6, selectedRow].Value.ToString();
+                txtCreatedAt.Text = createdAt;
+                txtModifiedAt.Text = modifiedAt;
+                cmbUpdateSevere.Text = dgvPrincipal[9, selectedRow].Value.ToString();
+
+                foreach (DataRow item in crewSource.Rows)
+                {
+                    lstbxMembers.Items.Add(item[0].ToString() + "   " + item[1]);
+                }
 
                 pnlBugDetails.Location = new Point(this.Location.X + 90, this.Location.Y + 20);
                 pnlBugDetails.BringToFront();
@@ -285,6 +328,19 @@ namespace Presentation
         private void CmbBugState_SelectedIndexChanged(object sender, EventArgs e)
         {
             //We update the Bug State
+            try
+            {
+                ProjectModel projectModel = new ProjectModel();
+                var res = projectModel.UpdateBugState(cmbBugState.Text, ProjectCache.Bug_code);
+                LoadData();
+                List_Bugs();
+                MessageBox.Show("State updated succesfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error ocurred updating state. Error:"+ ex.Message);
+
+            }
         }
 
         private void BtnEditBugDescription_Click(object sender, EventArgs e)
@@ -293,6 +349,8 @@ namespace Presentation
 
             BtnCnlUptDescpBug.Visible = true;
             BtnUpdateBugDescp.Visible = true;
+            txtBugDescription.ReadOnly = false;
+            txtBugDescription.Focus();
         }
 
         private void BtnCnlUptDescpBug_Click(object sender, EventArgs e)
@@ -301,6 +359,120 @@ namespace Presentation
 
             BtnCnlUptDescpBug.Visible = false;
             BtnUpdateBugDescp.Visible = false;
+            txtBugDescription.ReadOnly = true;
         }
+
+        private void BtnUpdateBugDescp_Click(object sender, EventArgs e)
+        {
+            if(txtBugDescription.Text != ProjectCache.Bug_description)
+            {
+                try
+                {
+                    ProjectModel projectModel = new ProjectModel();
+                    var res = projectModel.UpdateBugDescription(txtBugDescription.Text, ProjectCache.Bug_code);
+                    txtBugDescription.ReadOnly = true;
+                    BtnEditBugDescription.Visible = true;
+                    BtnCnlUptDescpBug.Visible = false;
+                    BtnUpdateBugDescp.Visible = false;
+                    LoadData();
+                    List_Bugs();
+                    MessageBox.Show("Description updated succesfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error ocurred updating description. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cmbUpdateSevere_DropDown(object sender, EventArgs e)
+        {
+            if (cmbUpdateSevere.Text == "None")
+            {
+                cmbUpdateSevere.Items.Clear();
+                cmbUpdateSevere.Items.Add("Critical");
+                cmbUpdateSevere.Items.Add("Major");
+                cmbUpdateSevere.Items.Add("Minor");
+            }
+            else if (cmbUpdateSevere.Text == "Critical")
+            {
+                cmbUpdateSevere.Items.Clear();
+                cmbUpdateSevere.Items.Add("Major");
+                cmbUpdateSevere.Items.Add("Minor");
+                cmbUpdateSevere.Items.Add("None");
+            }
+            else if (cmbUpdateSevere.Text == "Major")
+            {
+                cmbUpdateSevere.Items.Clear();
+                cmbUpdateSevere.Items.Add("Critical");
+                cmbUpdateSevere.Items.Add("Minor");
+                cmbUpdateSevere.Items.Add("None");
+            }
+            else if (cmbUpdateSevere.Text == "Minor")
+            {
+                cmbUpdateSevere.Items.Clear();
+                cmbUpdateSevere.Items.Add("Critical");
+                cmbUpdateSevere.Items.Add("major");
+                cmbUpdateSevere.Items.Add("None");
+            }
+
+        }
+
+        private void CmbUpdateSevere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Update the Bug severity
+            try
+            {
+                ProjectModel projectModel = new ProjectModel();
+                var res = projectModel.UpdateBugSevere(cmbUpdateSevere.Text, ProjectCache.Bug_code);
+                LoadData();
+                List_Bugs();
+                MessageBox.Show("Severity of the bug updated successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error ocurred when updating Severity of the bug. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnRemoveMember_Click(object sender, EventArgs e)
+        {
+            BtnCnlEditMembers.Visible = true;
+            BtnUpdateMembers.Visible = true;
+
+            if(lstbxUsersAssigned.SelectedIndex >= 0)
+            {
+                lstbxMembers.Items.Add(lstbxUsersAssigned.SelectedItem);
+                lstbxUsersAssigned.Items.Remove(lstbxUsersAssigned.SelectedItem);
+            }
+
+        }
+
+        private void BtnAddMemberToBug_Click(object sender, EventArgs e)
+        {
+            BtnCnlEditMembers.Visible = true;
+            BtnUpdateMembers.Visible = true;
+
+            if(lstbxMembers.SelectedIndex >= 0)
+            {
+                lstbxUsersAssigned.Items.Add(lstbxMembers.SelectedItem);
+                lstbxMembers.Items.Remove(lstbxMembers.SelectedItem);
+            }
+        }
+
+        private void BtnCnlEditMembers_Click(object sender, EventArgs e)
+        {
+            RestoreListBoxState();
+            BtnCnlEditMembers.Visible = false;
+            BtnUpdateMembers.Visible = false;
+        }
+
+        private void BtnUpdateMembers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
