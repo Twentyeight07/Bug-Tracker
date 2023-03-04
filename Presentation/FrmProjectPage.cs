@@ -97,14 +97,17 @@ namespace Presentation
 
         private void SaveListBoxState()
         {
+            members.Clear();
+            membersAssigned.Clear();
+
             foreach (DataRow item in crewSource.Rows)
             {
                 members.Add(item[0].ToString() + "   "+ item[1]);
             }
 
-            foreach (var item in lstbxUsersAssigned.Items)
+            foreach (DataRow item in bugMembers.Rows)
             {
-                membersAssigned.Add(item.ToString());
+                membersAssigned.Add(item[0].ToString() + "   "+ item[1]);
             }
         }
 
@@ -124,10 +127,18 @@ namespace Presentation
             }
         }
 
+        private void LoadBugmembers()
+        {
+            DataTable dataSource = ProjectModel.GetBugMembers();
+
+            bugMembers = dataSource;
+        }
+
         #endregion
 
         #region "Variables"
         DataTable crewSource = ProjectModel.LoadMembers();
+        DataTable bugMembers = ProjectModel.GetBugMembers();
         DataTable data;
         readonly int sliceStart = 0;
         readonly int sliceLength = 5;
@@ -290,10 +301,12 @@ namespace Presentation
         {
             if(e.RowIndex >= 0)
             {
+                lstbxMembers.Items.Clear();
+                lstbxUsersAssigned.Items.Clear();
                 int selectedRow = e.RowIndex;
                 string createdAt = dgvPrincipal[5, selectedRow].Value.ToString().Substring(0,10); 
                 string modifiedAt = dgvPrincipal[6, selectedRow].Value.ToString().Substring(0,10);
-                SaveListBoxState();
+
 
                 ProjectCache.Bug_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
                 lblBugTitle.Text = dgvPrincipal[2, selectedRow].Value.ToString();
@@ -307,11 +320,20 @@ namespace Presentation
                 txtCreatedAt.Text = createdAt;
                 txtModifiedAt.Text = modifiedAt;
                 cmbUpdateSevere.Text = dgvPrincipal[9, selectedRow].Value.ToString();
+                LoadBugmembers();
+
+                foreach (DataRow item in bugMembers.Rows)
+                {
+                    lstbxUsersAssigned.Items.Add(item[0].ToString() + "   " + item[1]);
+                }
 
                 foreach (DataRow item in crewSource.Rows)
                 {
                     lstbxMembers.Items.Add(item[0].ToString() + "   " + item[1]);
+                    
                 }
+
+                SaveListBoxState();
 
                 pnlBugDetails.Location = new Point(this.Location.X + 90, this.Location.Y + 20);
                 pnlBugDetails.BringToFront();
@@ -323,6 +345,12 @@ namespace Presentation
         {
             pnlBugDetails.Visible= false;
             pnlBugDetails.SendToBack();
+
+            cmbBugState.Items.Clear();
+            txtBugDescription.Text = "";
+            lstbxMembers.Items.Clear();
+            lstbxUsersAssigned.Items.Clear();
+            cmbSevere.Items.Clear();
         }
 
         private void CmbBugState_SelectedIndexChanged(object sender, EventArgs e)
@@ -360,6 +388,7 @@ namespace Presentation
             BtnCnlUptDescpBug.Visible = false;
             BtnUpdateBugDescp.Visible = false;
             txtBugDescription.ReadOnly = true;
+            txtBugDescription.Text = ProjectCache.Bug_description;
         }
 
         private void BtnUpdateBugDescp_Click(object sender, EventArgs e)
@@ -438,26 +467,44 @@ namespace Presentation
 
         private void BtnRemoveMember_Click(object sender, EventArgs e)
         {
-            BtnCnlEditMembers.Visible = true;
-            BtnUpdateMembers.Visible = true;
-
             if(lstbxUsersAssigned.SelectedIndex >= 0)
             {
-                lstbxMembers.Items.Add(lstbxUsersAssigned.SelectedItem);
-                lstbxUsersAssigned.Items.Remove(lstbxUsersAssigned.SelectedItem);
+                
+                if(lstbxMembers.Items.Contains(lstbxUsersAssigned.SelectedItem.ToString()))
+                {
+                    lstbxUsersAssigned.Items.Remove(lstbxUsersAssigned.SelectedItem);
+                }
+                else
+                {
+                    lstbxMembers.Items.Add(lstbxUsersAssigned.SelectedItem);
+                    lstbxUsersAssigned.Items.Remove(lstbxUsersAssigned.SelectedItem);
+                }
+                
+
+                BtnCnlEditMembers.Visible = true;
+                BtnUpdateMembers.Visible = true;
             }
 
         }
 
         private void BtnAddMemberToBug_Click(object sender, EventArgs e)
         {
-            BtnCnlEditMembers.Visible = true;
-            BtnUpdateMembers.Visible = true;
-
             if(lstbxMembers.SelectedIndex >= 0)
             {
-                lstbxUsersAssigned.Items.Add(lstbxMembers.SelectedItem);
-                lstbxMembers.Items.Remove(lstbxMembers.SelectedItem);
+                if(lstbxUsersAssigned.Items.Contains(lstbxMembers.SelectedItem.ToString()))
+                {
+                    lstbxMembers.Items.Remove(lstbxMembers.SelectedItem);
+
+                }
+                else
+                {
+                    lstbxUsersAssigned.Items.Add(lstbxMembers.SelectedItem);
+                    lstbxMembers.Items.Remove(lstbxMembers.SelectedItem);
+                }
+
+
+                BtnCnlEditMembers.Visible = true;
+                BtnUpdateMembers.Visible = true;
             }
         }
 

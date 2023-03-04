@@ -258,7 +258,7 @@ namespace Data.PostgreSQL
             }
         }
 
-        public bool UpdateBugState(string state, int bug_code)
+        public bool UpdateBugState(string state, int bug_code, int modified_by)
         {
             using (var connection = GetConnection())
             {
@@ -266,9 +266,11 @@ namespace Data.PostgreSQL
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "UPDATE bugs SET state = @state WHERE code = @code";
+                    cmd.CommandText = "UPDATE bugs SET state = @state, modified_at = @modified_at, modified_by = @modified_by WHERE code = @code";
                     cmd.Parameters.AddWithValue("@state", state);
                     cmd.Parameters.AddWithValue("@code", bug_code);
+                    cmd.Parameters.AddWithValue("@modified_at", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@modified_by", modified_by);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
                         return true;
@@ -278,7 +280,7 @@ namespace Data.PostgreSQL
             }
         }
 
-        public bool UpdateBugDescription(string description, int bug_code)
+        public bool UpdateBugDescription(string description, int bug_code, int modified_by)
         {
             using (var connection = GetConnection())
             {
@@ -286,9 +288,11 @@ namespace Data.PostgreSQL
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "UPDATE bugs SET description = @description WHERE code = @code";
+                    cmd.CommandText = "UPDATE bugs SET description = @description, modified_at = @modified_at, modified_by = @modified_by WHERE code = @code";
                     cmd.Parameters.AddWithValue("@description", description);
                     cmd.Parameters.AddWithValue("@code", bug_code);
+                    cmd.Parameters.AddWithValue("@modified_at", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@modified_by", modified_by);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
                         return true;
@@ -298,7 +302,7 @@ namespace Data.PostgreSQL
             }
         }
 
-        public bool UpdateBugSevere(string severe, int bug_code)
+        public bool UpdateBugSevere(string severe, int bug_code, int modified_by)
         {
             using (var connection = GetConnection())
             {
@@ -306,15 +310,47 @@ namespace Data.PostgreSQL
                 using(var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "UPDATE bugs SET severe = @severe WHERE code = @code";
+                    cmd.CommandText = @"UPDATE bugs SET severe = @severe, modified_at = @modified_at, modified_by = @modified_by WHERE code = @code";
                     cmd.Parameters.AddWithValue("@severe", severe);
                     cmd.Parameters.AddWithValue("@code", bug_code);
+                    cmd.Parameters.AddWithValue("@modified_at", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@modified_by", modified_by);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
                         return true;
                     }
                     else return false;
                 }
+            }
+        }
+
+        public DataTable GetBugMembers(string company_name, int bug_code)
+        {
+            NpgsqlDataReader res;
+            DataTable dt = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                try
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"select * from get_bug_members(:_company_name,:_bug_code)";
+                    cmd.Parameters.AddWithValue("_company_name", company_name);
+                    cmd.Parameters.AddWithValue("_bug_code", bug_code);
+                    res = cmd.ExecuteReader();
+                    dt.Load(res);
+                    return dt;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+                    
+                }
+                
             }
         }
 

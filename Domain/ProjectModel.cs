@@ -127,22 +127,34 @@ namespace Domain
         public bool UpdateBugState(string state, int bug_code)
         {
             ProjectDao Data = new ProjectDao();
+            int modified_by = UserLoginCache.IdUser;
 
-            return Data.UpdateBugState(state, bug_code);
+            return Data.UpdateBugState(state, bug_code, modified_by);
         }
 
         public bool UpdateBugDescription(string description, int bug_code)
         {
             ProjectDao Data = new ProjectDao();
+            int modified_by = UserLoginCache.IdUser;
 
-            return Data.UpdateBugDescription(description, bug_code);
+            return Data.UpdateBugDescription(description, bug_code, modified_by);
         }
 
         public bool UpdateBugSevere(string severe, int bug_code)
         {
             ProjectDao Data = new ProjectDao();
+            int modified_by = UserLoginCache.IdUser;
 
-            return Data.UpdateBugSevere(severe, bug_code);
+            return Data.UpdateBugSevere(severe, bug_code, modified_by);
+        }
+
+        public static DataTable GetBugMembers()
+        {
+            ProjectDao Data = new ProjectDao();
+            string company_name = UserLoginCache.CompanyName;
+            int bug_code = ProjectCache.Bug_code;
+
+            return Data.GetBugMembers(company_name, bug_code);
         }
 
 
