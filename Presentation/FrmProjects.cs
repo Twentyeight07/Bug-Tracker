@@ -102,11 +102,21 @@ namespace Presentation
                 this.Tag = form;
                 form.Show();
                 form.BringToFront();
+
+                form.FormClosed += new FormClosedEventHandler(CloseForms);
             }
             else
             {
                 //if exists, just bringt it to front
                 form.BringToFront();
+            }
+        }
+
+        private void CloseForms(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["FrmProjectPage"] == null)
+            {
+                List_Projects();
             }
         }
 
@@ -131,10 +141,7 @@ namespace Presentation
             List_Projects();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void TxtSearch_Enter(object sender, EventArgs e)
         {
@@ -172,6 +179,7 @@ namespace Presentation
                 int selectedRow = e.RowIndex;
                 ProjectCache.Project_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
                 ProjectCache.Project_title = dgvPrincipal[3, selectedRow].Value.ToString();
+                ProjectCache.Project_state = dgvPrincipal[8, selectedRow].Value.ToString();
                 OpenForm<FrmProjectPage>();
                 
             }

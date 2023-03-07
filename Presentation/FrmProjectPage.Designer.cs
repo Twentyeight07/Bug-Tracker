@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjectPage));
             this.lblProjectName = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
@@ -88,6 +88,16 @@
             this.BugDetails = new System.Windows.Forms.ImageList(this.components);
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblBugTitle = new System.Windows.Forms.Label();
+            this.pnlProjectConfig = new System.Windows.Forms.Panel();
+            this.txtDelPassword = new System.Windows.Forms.TextBox();
+            this.BtnCloseProjectConfig = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnDeleteProject = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbProjectState = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblProjectNameConfg = new System.Windows.Forms.Label();
+            this.BtnConfgProject = new System.Windows.Forms.PictureBox();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrincipal)).BeginInit();
@@ -102,6 +112,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnEditBugDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseBugDetails)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnlProjectConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCloseProjectConfig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnConfgProject)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +126,7 @@
             this.lblProjectName.AutoSize = true;
             this.lblProjectName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProjectName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblProjectName.Location = new System.Drawing.Point(48, 38);
+            this.lblProjectName.Location = new System.Drawing.Point(90, 35);
             this.lblProjectName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lblProjectName.Name = "lblProjectName";
             this.lblProjectName.Size = new System.Drawing.Size(60, 25);
@@ -161,11 +175,11 @@
             this.dgvPrincipal.AllowUserToDeleteRows = false;
             this.dgvPrincipal.AllowUserToResizeColumns = false;
             this.dgvPrincipal.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.dgvPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.dgvPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -173,14 +187,14 @@
             this.dgvPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPrincipal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvPrincipal.EnableHeadersVisualStyles = false;
@@ -451,7 +465,7 @@
             this.pnlBugDetails.Controls.Add(this.lblProjectForBugPnl);
             this.pnlBugDetails.Controls.Add(this.lblCreatedBy);
             this.pnlBugDetails.Controls.Add(this.lblBugTitle);
-            this.pnlBugDetails.Location = new System.Drawing.Point(90, 13);
+            this.pnlBugDetails.Location = new System.Drawing.Point(29, 163);
             this.pnlBugDetails.Name = "pnlBugDetails";
             this.pnlBugDetails.Size = new System.Drawing.Size(950, 560);
             this.pnlBugDetails.TabIndex = 8;
@@ -595,7 +609,7 @@
             this.cmbUpdateSevere.Name = "cmbUpdateSevere";
             this.cmbUpdateSevere.Size = new System.Drawing.Size(128, 23);
             this.cmbUpdateSevere.TabIndex = 77;
-            this.cmbUpdateSevere.DropDown += new System.EventHandler(this.cmbUpdateSevere_DropDown);
+            this.cmbUpdateSevere.DropDown += new System.EventHandler(this.CmbUpdateSevere_DropDown);
             this.cmbUpdateSevere.SelectedIndexChanged += new System.EventHandler(this.CmbUpdateSevere_SelectedIndexChanged);
             // 
             // txtModifiedAt
@@ -921,6 +935,142 @@
             this.lblBugTitle.TabIndex = 16;
             this.lblBugTitle.Text = "BugTitle";
             // 
+            // pnlProjectConfig
+            // 
+            this.pnlProjectConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.pnlProjectConfig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlProjectConfig.Controls.Add(this.txtDelPassword);
+            this.pnlProjectConfig.Controls.Add(this.BtnCloseProjectConfig);
+            this.pnlProjectConfig.Controls.Add(this.pictureBox1);
+            this.pnlProjectConfig.Controls.Add(this.BtnDeleteProject);
+            this.pnlProjectConfig.Controls.Add(this.label13);
+            this.pnlProjectConfig.Controls.Add(this.cmbProjectState);
+            this.pnlProjectConfig.Controls.Add(this.label12);
+            this.pnlProjectConfig.Controls.Add(this.lblProjectNameConfg);
+            this.pnlProjectConfig.Location = new System.Drawing.Point(173, 12);
+            this.pnlProjectConfig.Name = "pnlProjectConfig";
+            this.pnlProjectConfig.Size = new System.Drawing.Size(265, 234);
+            this.pnlProjectConfig.TabIndex = 17;
+            this.pnlProjectConfig.Visible = false;
+            // 
+            // txtDelPassword
+            // 
+            this.txtDelPassword.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDelPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.txtDelPassword.Location = new System.Drawing.Point(70, 157);
+            this.txtDelPassword.Name = "txtDelPassword";
+            this.txtDelPassword.Size = new System.Drawing.Size(139, 24);
+            this.txtDelPassword.TabIndex = 74;
+            this.txtDelPassword.Text = "Password";
+            this.txtDelPassword.Enter += new System.EventHandler(this.TxtDelPassword_Enter);
+            this.txtDelPassword.Leave += new System.EventHandler(this.TxtDelPassword_Leave);
+            // 
+            // BtnCloseProjectConfig
+            // 
+            this.BtnCloseProjectConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCloseProjectConfig.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCloseProjectConfig.Image = global::Presentation.Properties.Resources.cerrar1;
+            this.BtnCloseProjectConfig.Location = new System.Drawing.Point(235, 10);
+            this.BtnCloseProjectConfig.Name = "BtnCloseProjectConfig";
+            this.BtnCloseProjectConfig.Size = new System.Drawing.Size(16, 16);
+            this.BtnCloseProjectConfig.TabIndex = 73;
+            this.BtnCloseProjectConfig.TabStop = false;
+            this.BtnCloseProjectConfig.Click += new System.EventHandler(this.BtnCloseProjectConfig_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentation.Properties.Resources.warning;
+            this.pictureBox1.Location = new System.Drawing.Point(76, 121);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 72;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnDeleteProject
+            // 
+            this.BtnDeleteProject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDeleteProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDeleteProject.FlatAppearance.BorderSize = 0;
+            this.BtnDeleteProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(79)))), ((int)(((byte)(53)))));
+            this.BtnDeleteProject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteProject.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            this.BtnDeleteProject.Location = new System.Drawing.Point(70, 187);
+            this.BtnDeleteProject.Name = "BtnDeleteProject";
+            this.BtnDeleteProject.Size = new System.Drawing.Size(139, 33);
+            this.BtnDeleteProject.TabIndex = 71;
+            this.BtnDeleteProject.Text = "Delete Project";
+            this.BtnDeleteProject.UseVisualStyleBackColor = false;
+            this.BtnDeleteProject.Click += new System.EventHandler(this.BtnDeleteProject_Click);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Location = new System.Drawing.Point(106, 124);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 19);
+            this.label13.TabIndex = 70;
+            this.label13.Text = "Warning";
+            // 
+            // cmbProjectState
+            // 
+            this.cmbProjectState.Font = new System.Drawing.Font("Roboto", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProjectState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.cmbProjectState.FormattingEnabled = true;
+            this.cmbProjectState.Location = new System.Drawing.Point(70, 73);
+            this.cmbProjectState.Name = "cmbProjectState";
+            this.cmbProjectState.Size = new System.Drawing.Size(139, 26);
+            this.cmbProjectState.TabIndex = 69;
+            this.cmbProjectState.DropDown += new System.EventHandler(this.CmbProjectState_DropDown);
+            this.cmbProjectState.SelectedIndexChanged += new System.EventHandler(this.CmbProjectState_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label12.Location = new System.Drawing.Point(72, 46);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 19);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "Project State";
+            // 
+            // lblProjectNameConfg
+            // 
+            this.lblProjectNameConfg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProjectNameConfg.AutoSize = true;
+            this.lblProjectNameConfg.Font = new System.Drawing.Font("Roboto", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjectNameConfg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lblProjectNameConfg.Location = new System.Drawing.Point(10, 10);
+            this.lblProjectNameConfg.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblProjectNameConfg.Name = "lblProjectNameConfg";
+            this.lblProjectNameConfg.Size = new System.Drawing.Size(78, 22);
+            this.lblProjectNameConfg.TabIndex = 17;
+            this.lblProjectNameConfg.Text = "BugTitle";
+            // 
+            // BtnConfgProject
+            // 
+            this.BtnConfgProject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnConfgProject.Image = global::Presentation.Properties.Resources.gear;
+            this.BtnConfgProject.Location = new System.Drawing.Point(53, 36);
+            this.BtnConfgProject.Name = "BtnConfgProject";
+            this.BtnConfgProject.Size = new System.Drawing.Size(24, 24);
+            this.BtnConfgProject.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnConfgProject.TabIndex = 16;
+            this.BtnConfgProject.TabStop = false;
+            this.BtnConfgProject.Click += new System.EventHandler(this.BtnConfgProject_Click);
+            // 
             // BtnClose
             // 
             this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -939,6 +1089,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(1100, 610);
+            this.Controls.Add(this.pnlProjectConfig);
+            this.Controls.Add(this.BtnConfgProject);
             this.Controls.Add(this.pnlBugDetails);
             this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.pnlPrincipal);
@@ -968,6 +1120,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseBugDetails)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlProjectConfig.ResumeLayout(false);
+            this.pnlProjectConfig.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCloseProjectConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnConfgProject)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1033,5 +1190,15 @@
         private System.Windows.Forms.PictureBox BtnAddMemberToBug;
         private System.Windows.Forms.PictureBox BtnRemoveMember;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox BtnConfgProject;
+        private System.Windows.Forms.Panel pnlProjectConfig;
+        private System.Windows.Forms.Label lblProjectNameConfg;
+        private System.Windows.Forms.ComboBox cmbProjectState;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox BtnCloseProjectConfig;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BtnDeleteProject;
+        private System.Windows.Forms.TextBox txtDelPassword;
     }
 }

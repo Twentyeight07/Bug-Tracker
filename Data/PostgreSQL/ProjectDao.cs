@@ -354,5 +354,68 @@ namespace Data.PostgreSQL
             }
         }
 
+
+        public bool UpdateBugMembers(Array members, int bug_code, int modified_by)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"UPDATE bugs SET users_assigned = @users_assigned, modified_at = @modified_at, modified_by = @modified_by WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@users_assigned", members);
+                    cmd.Parameters.AddWithValue("@code", bug_code);
+                    cmd.Parameters.AddWithValue("@modified_at", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@modified_by", modified_by);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+        public bool UpdateProjectState(string state, int project_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "UPDATE projects SET state = @state WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@state", state);
+                    cmd.Parameters.AddWithValue("@code", project_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+        public bool DeleteProject(int project_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "DELETE FROM projects WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@code", project_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+
     }
 }

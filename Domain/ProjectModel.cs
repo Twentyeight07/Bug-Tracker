@@ -157,6 +157,28 @@ namespace Domain
             return Data.GetBugMembers(company_name, bug_code);
         }
 
+        public static bool UpdateBugMembers(Array members)
+        {
+            ProjectDao Data = new ProjectDao();
+            int bug_code = ProjectCache.Bug_code;
+            int modified_by = UserLoginCache.IdUser;
+
+            return Data.UpdateBugMembers(members, bug_code, modified_by);
+        }
+
+        public bool UpdateProjectState(string state, int project_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.UpdateProjectState(state, project_code);
+        }
+
+        public bool DeleteProject(int project_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.DeleteProject(project_code);
+        }
 
     }
 }

@@ -97,17 +97,17 @@ namespace Presentation
 
         private void SaveListBoxState()
         {
-            members.Clear();
-            membersAssigned.Clear();
+            saveMembers.Clear();
+            saveMembersAssigned.Clear();
 
             foreach (DataRow item in crewSource.Rows)
             {
-                members.Add(item[0].ToString() + "   "+ item[1]);
+                saveMembers.Add(item[0].ToString() + "   "+ item[1]);
             }
 
             foreach (DataRow item in bugMembers.Rows)
             {
-                membersAssigned.Add(item[0].ToString() + "   "+ item[1]);
+                saveMembersAssigned.Add(item[0].ToString() + "   "+ item[1]);
             }
         }
 
@@ -116,12 +116,12 @@ namespace Presentation
             lstbxMembers.Items.Clear();
             lstbxUsersAssigned.Items.Clear();
 
-            foreach (var item in members)
+            foreach (var item in saveMembers)
             {
                 lstbxMembers.Items.Add(item);
             }
 
-            foreach(var item in membersAssigned)
+            foreach(var item in saveMembersAssigned)
             {
                 lstbxUsersAssigned.Items.Add(item);
             }
@@ -134,6 +134,28 @@ namespace Presentation
             bugMembers = dataSource;
         }
 
+        private void SetBugInfo(int selectedRow)
+        {
+            string createdAt = dgvPrincipal[5, selectedRow].Value.ToString().Substring(0, 10);
+            string modifiedAt = dgvPrincipal[6, selectedRow].Value.ToString().Substring(0, 10);
+
+
+            ProjectCache.Bug_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
+            lblBugTitle.Text = dgvPrincipal[2, selectedRow].Value.ToString();
+            lblProjectForBugPnl.Text = "     " + dgvPrincipal[1, selectedRow].Value.ToString();
+            lblCreatedBy.Text = "By " + dgvPrincipal[4, selectedRow].Value.ToString();
+            cmbBugState.Text = dgvPrincipal[10, selectedRow].Value.ToString();
+            txtBugDescription.Text = dgvPrincipal[3, selectedRow].Value.ToString();
+            ProjectCache.Bug_description = dgvPrincipal[3, selectedRow].Value.ToString();
+            txtCreatedBy.Text = dgvPrincipal[4, selectedRow].Value.ToString();
+            txtModifiedBy.Text = dgvPrincipal[7, selectedRow].Value.ToString();
+            txtCreatedAt.Text = createdAt;
+            txtModifiedAt.Text = modifiedAt;
+            cmbUpdateSevere.Text = dgvPrincipal[9, selectedRow].Value.ToString();
+            LoadBugmembers();
+        }
+        
+
         #endregion
 
         #region "Variables"
@@ -143,13 +165,16 @@ namespace Presentation
         readonly int sliceStart = 0;
         readonly int sliceLength = 5;
         List<int> codes = new List<int>();
-        List<string> members = new List<string>();
-        List<string> membersAssigned = new List<string>();
+        List<int> newMembers = new List<int>();
+        List<string> saveMembers = new List<string>();
+        List<string> saveMembersAssigned = new List<string>();
         #endregion
 
         private void FrmProjectPage_Load(object sender, EventArgs e)
         {
             lblProjectName.Text = ProjectCache.Project_title + " Bugs";
+            lblProjectNameConfg.Text = ProjectCache.Project_title + " Bugs";
+            cmbProjectState.Text = ProjectCache.Project_state.Trim();
             LoadData();
             List_Bugs();
         }
@@ -304,23 +329,8 @@ namespace Presentation
                 lstbxMembers.Items.Clear();
                 lstbxUsersAssigned.Items.Clear();
                 int selectedRow = e.RowIndex;
-                string createdAt = dgvPrincipal[5, selectedRow].Value.ToString().Substring(0,10); 
-                string modifiedAt = dgvPrincipal[6, selectedRow].Value.ToString().Substring(0,10);
 
-
-                ProjectCache.Bug_code = Convert.ToInt32(dgvPrincipal[0, selectedRow].Value);
-                lblBugTitle.Text = dgvPrincipal[2, selectedRow].Value.ToString();
-                lblProjectForBugPnl.Text = "     " + dgvPrincipal[1,selectedRow].Value.ToString();
-                lblCreatedBy.Text = "By "+dgvPrincipal[4, selectedRow].Value.ToString();
-                cmbBugState.Text = dgvPrincipal[10, selectedRow].Value.ToString();
-                txtBugDescription.Text = dgvPrincipal[3, selectedRow].Value.ToString();
-                ProjectCache.Bug_description = dgvPrincipal[3, selectedRow].Value.ToString();
-                txtCreatedBy.Text = dgvPrincipal[4, selectedRow].Value.ToString();
-                txtModifiedBy.Text = dgvPrincipal[7, selectedRow].Value.ToString();
-                txtCreatedAt.Text = createdAt;
-                txtModifiedAt.Text = modifiedAt;
-                cmbUpdateSevere.Text = dgvPrincipal[9, selectedRow].Value.ToString();
-                LoadBugmembers();
+                SetBugInfo(selectedRow);
 
                 foreach (DataRow item in bugMembers.Rows)
                 {
@@ -350,7 +360,7 @@ namespace Presentation
             txtBugDescription.Text = "";
             lstbxMembers.Items.Clear();
             lstbxUsersAssigned.Items.Clear();
-            cmbSevere.Items.Clear();
+            cmbUpdateSevere.Items.Clear();
         }
 
         private void CmbBugState_SelectedIndexChanged(object sender, EventArgs e)
@@ -366,7 +376,7 @@ namespace Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error ocurred updating state. Error:"+ ex.Message);
+                MessageBox.Show("An error occurred updating state. Error:"+ ex.Message);
 
             }
         }
@@ -410,12 +420,12 @@ namespace Presentation
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error ocurred updating description. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error occurred updating description. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void cmbUpdateSevere_DropDown(object sender, EventArgs e)
+        private void CmbUpdateSevere_DropDown(object sender, EventArgs e)
         {
             if (cmbUpdateSevere.Text == "None")
             {
@@ -461,7 +471,7 @@ namespace Presentation
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error ocurred when updating Severity of the bug. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred when updating Severity of the bug. Error:"+ ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -517,9 +527,149 @@ namespace Presentation
 
         private void BtnUpdateMembers_Click(object sender, EventArgs e)
         {
+            if(lstbxUsersAssigned.Items.Count != 0)
+            {
+                try
+                {
+                    foreach (string item in lstbxUsersAssigned.Items)
+                    {
+                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        newMembers.Add(code);
+                    }
+
+                    if (newMembers.Count != 0)
+                    {
+                        int[] itemobj = newMembers.Cast<int>().ToArray();
+                        var res = ProjectModel.UpdateBugMembers(itemobj);
+                        LoadData();
+                        List_Bugs();
+                        MessageBox.Show("Members of the bug updated successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred when updating Members of the bug. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("You should select at least one member.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
+        private void BtnConfgProject_Click(object sender, EventArgs e)
+        {
+           
+            pnlProjectConfig.BringToFront();
+            pnlProjectConfig.Location = BtnConfgProject.Location;
+            pnlProjectConfig.Visible = true;
+        }
 
+        private void BtnCloseProjectConfig_Click(object sender, EventArgs e)
+        {
+            pnlProjectConfig.Visible = false;
+            pnlProjectConfig.SendToBack();
+
+            txtDelPassword.Text = "";
+        }
+
+
+        private void CmbProjectState_DropDown(object sender, EventArgs e)
+        {
+            //We only can select a limited options to be updated on the DB
+            //depending of the actual state of the Bug, there's going to be some states to update
+            if (cmbProjectState.Text == "Open")
+            {
+                cmbProjectState.Items.Clear();
+                cmbProjectState.Items.Add("Delayed");
+                cmbProjectState.Items.Add("Closed");
+            }
+            else if (cmbProjectState.Text == "Delayed")
+            {
+                cmbProjectState.Items.Clear();
+                cmbProjectState.Items.Add("Open");
+                cmbProjectState.Items.Add("Closed");
+            }
+            else if (cmbProjectState.Text == "Reopen")
+            {
+                cmbProjectState.Items.Clear();
+                cmbProjectState.Items.Add("Delayed");
+                cmbProjectState.Items.Add("Closed");
+            }
+            else if (cmbProjectState.Text == "Closed")
+            {
+                cmbProjectState.Items.Clear();
+                cmbProjectState.Items.Add("Reopen");
+            }
+        }
+
+        private void CmbProjectState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //We update the Bug State
+            try
+            {
+                ProjectModel projectModel = new ProjectModel();
+                var res = projectModel.UpdateProjectState(cmbProjectState.Text, ProjectCache.Project_code);
+                
+                MessageBox.Show("Project state updated succesfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                pnlProjectConfig.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred when updating Project state. Error:" + ex.Message);
+
+            }
+        }
+
+        private void TxtDelPassword_Enter(object sender, EventArgs e)
+        {
+            if(txtDelPassword.Text == "Password")
+            {
+                txtDelPassword.Text = "";
+                txtDelPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void TxtDelPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtDelPassword.Text == "")
+            {
+                txtDelPassword.Text = "Password";
+                txtDelPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void BtnDeleteProject_Click(object sender, EventArgs e)
+        {
+            if(txtDelPassword.Text != "Password" && txtDelPassword.Text != String.Empty)
+            {
+                try
+                {
+                    DialogResult delete = MessageBox.Show("Are you sure you want to delete this project? This action is not reversible!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if(delete == DialogResult.Yes)
+                    {
+                        ProjectModel projectModel = new ProjectModel();
+                        var res = projectModel.DeleteProject(ProjectCache.Project_code);
+
+                        MessageBox.Show("Project deleted successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred when deleting the project. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have to enter your password", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
