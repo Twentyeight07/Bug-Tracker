@@ -154,7 +154,18 @@ namespace Presentation
             cmbUpdateSevere.Text = dgvPrincipal[9, selectedRow].Value.ToString();
             LoadBugmembers();
         }
-        
+
+        private void UserPrivileges()
+        {
+            if (UserLoginCache.Admin == false)
+            {
+                BtnConfgProject.Visible = false;
+                cmbUpdateSevere.Enabled = false;
+                BtnRemoveMember.Enabled = false;
+                BtnAddMemberToBug.Enabled = false;
+                pnlDeleteBug.Visible = false;
+            }
+        }
 
         #endregion
 
@@ -172,6 +183,7 @@ namespace Presentation
 
         private void FrmProjectPage_Load(object sender, EventArgs e)
         {
+            UserPrivileges();
             lblProjectName.Text = ProjectCache.Project_title + " Bugs";
             lblProjectNameConfg.Text = ProjectCache.Project_title + " Bugs";
             cmbProjectState.Text = ProjectCache.Project_state.Trim();
@@ -648,27 +660,98 @@ namespace Presentation
         {
             if(txtDelPassword.Text != "Password" && txtDelPassword.Text != String.Empty)
             {
-                try
+                if(Encrypt.GetSHA256(txtDelPassword.Text) == UserLoginCache.Password)
                 {
-                    DialogResult delete = MessageBox.Show("Are you sure you want to delete this project? This action is not reversible!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if(delete == DialogResult.Yes)
+                    try
                     {
-                        ProjectModel projectModel = new ProjectModel();
-                        var res = projectModel.DeleteProject(ProjectCache.Project_code);
+                        DialogResult delete = MessageBox.Show("Are you sure you want to delete this project and bugs? This action is not reversible!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        MessageBox.Show("Project deleted successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        if (delete == DialogResult.Yes)
+                        {
+                            ProjectModel projectModel = new ProjectModel();
+                            var res = projectModel.DeleteProject(ProjectCache.Project_code);
+
+                            MessageBox.Show("Project deleted successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred when deleting the project. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("An error occurred when deleting the project. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Incorrect Password, try again", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 MessageBox.Show("You have to enter your password", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnDeleteBug_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordDelBug.Text != "Password" && txtPasswordDelBug.Text != String.Empty)
+            {
+                if (Encrypt.GetSHA256(txtPasswordDelBug.Text) == UserLoginCache.Password)
+                {
+                    try
+                    {
+                        DialogResult delete = MessageBox.Show("Are you sure you want to delete this bug? This action is not reversible!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (delete == DialogResult.Yes)
+                        {
+                            ProjectModel projectModel = new ProjectModel();
+                            var res = projectModel.DeleteBug(ProjectCache.Bug_code);
+
+                            MessageBox.Show("Bug deleted successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                            List_Bugs();
+
+                            pnlBugDetails.Visible = false;
+                            pnlBugDetails.SendToBack();
+
+                            cmbBugState.Items.Clear();
+                            txtBugDescription.Text = "";
+                            lstbxMembers.Items.Clear();
+                            lstbxUsersAssigned.Items.Clear();
+                            cmbUpdateSevere.Items.Clear();
+                            txtDelPassword.Text = "Password";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred when deleting the Bug. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password, try again", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have to enter your password", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtPasswordDelBug_Enter(object sender, EventArgs e)
+        {
+            if (txtPasswordDelBug.Text == "Password")
+            {
+                txtPasswordDelBug.Text = "";
+                txtPasswordDelBug.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void TxtPasswordDelBug_Leave(object sender, EventArgs e)
+        {
+            if (txtPasswordDelBug.Text == "")
+            {
+                txtPasswordDelBug.Text = "Password";
+                txtPasswordDelBug.UseSystemPasswordChar = false;
             }
         }
     }

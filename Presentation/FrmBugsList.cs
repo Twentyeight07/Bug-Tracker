@@ -128,6 +128,17 @@ namespace Presentation
             DataTable dataSource = ProjectModel.ListBugs();
             data = dataSource;
         }
+
+        private void UserPrivileges()
+        {
+            if (UserLoginCache.Admin == false)
+            {
+                cmbUpdateSevere.Enabled = false;
+                BtnRemoveMember.Enabled = false;
+                BtnAddMemberToBug.Enabled = false;
+                pnlDeleteBug.Visible= false;
+            }
+        }
         #endregion
 
         #region "Variables"
@@ -142,12 +153,10 @@ namespace Presentation
         List<string> saveMembersAssigned = new List<string>();
         #endregion
 
-        #region "Functionality"
-
-        #endregion
 
         private void FrmBugsList_Load(object sender, EventArgs e)
         {
+            UserPrivileges();
             LoadData();
             List_Bugs();
         }
@@ -490,6 +499,70 @@ namespace Presentation
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred when updating Severity of the bug. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtPasswordDelBug_Enter(object sender, EventArgs e)
+        {
+            if(txtPasswordDelBug.Text == "Password")
+            {
+                txtPasswordDelBug.Text = "";
+                txtPasswordDelBug.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void TxtPasswordDelBug_Leave(object sender, EventArgs e)
+        {
+            if (txtPasswordDelBug.Text == "")
+            {
+                txtPasswordDelBug.Text = "Password";
+                txtPasswordDelBug.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void BtnDeleteBug_Click(object sender, EventArgs e)
+        {
+            if (txtPasswordDelBug.Text != "Password" && txtPasswordDelBug.Text != String.Empty)
+            {
+                if (Encrypt.GetSHA256(txtPasswordDelBug.Text) == UserLoginCache.Password)
+                {
+                    try
+                    {
+                        DialogResult delete = MessageBox.Show("Are you sure you want to delete this bug? This action is not reversible!", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (delete == DialogResult.Yes)
+                        {
+                            ProjectModel projectModel = new ProjectModel();
+                            var res = projectModel.DeleteBug(ProjectCache.Bug_code);
+
+                            MessageBox.Show("Bug deleted successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                            List_Bugs();
+
+                            pnlBugDetails.Visible = false;
+                            pnlBugDetails.SendToBack();
+
+                            cmbBugState.Items.Clear();
+                            txtBugDescription.Text = "";
+                            lstbxMembers.Items.Clear();
+                            lstbxUsersAssigned.Items.Clear();
+                            cmbUpdateSevere.Items.Clear();
+                            txtPasswordDelBug.Text = "Password";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred when deleting the Bug. Error:" + ex.Message, "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Password, try again", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have to enter your password", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

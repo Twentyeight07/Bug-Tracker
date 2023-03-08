@@ -43,7 +43,7 @@ namespace Presentation
         DataTable crewSource = ProjectModel.LoadMembers();
         DataTable projectSource = ProjectModel.LoadProjects();
         int sliceStart = 0;
-        int sliceLength = 5;
+        int sliceLength = 4;
         List<int> codes = new List<int>();
         #endregion
 

@@ -180,5 +180,12 @@ namespace Domain
             return Data.DeleteProject(project_code);
         }
 
+        public bool DeleteBug(int bug_code)
+        {
+            ProjectDao Data = new ProjectDao();
+
+            return Data.DeleteBug(bug_code);
+        }
+
     }
 }

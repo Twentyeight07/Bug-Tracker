@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjectPage));
             this.lblProjectName = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
@@ -82,6 +82,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BtnCloseBugDetails = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlDeleteBug = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtPasswordDelBug = new System.Windows.Forms.TextBox();
+            this.BtnDeleteBug = new System.Windows.Forms.Button();
             this.cmbBugState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblProjectForBugPnl = new System.Windows.Forms.Label();
@@ -112,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnEditBugDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseBugDetails)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnlDeleteBug.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlProjectConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseProjectConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,11 +184,11 @@
             this.dgvPrincipal.AllowUserToDeleteRows = false;
             this.dgvPrincipal.AllowUserToResizeColumns = false;
             this.dgvPrincipal.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.dgvPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.dgvPrincipal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -187,14 +196,14 @@
             this.dgvPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPrincipal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrincipal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvPrincipal.EnableHeadersVisualStyles = false;
@@ -247,7 +256,7 @@
             this.PnlNewBug.Controls.Add(this.lblProjectTitle);
             this.PnlNewBug.Controls.Add(this.txtBugTitle);
             this.PnlNewBug.Controls.Add(this.lblNewProject);
-            this.PnlNewBug.Location = new System.Drawing.Point(1000, 38);
+            this.PnlNewBug.Location = new System.Drawing.Point(1059, 63);
             this.PnlNewBug.Name = "PnlNewBug";
             this.PnlNewBug.Size = new System.Drawing.Size(858, 480);
             this.PnlNewBug.TabIndex = 15;
@@ -465,7 +474,7 @@
             this.pnlBugDetails.Controls.Add(this.lblProjectForBugPnl);
             this.pnlBugDetails.Controls.Add(this.lblCreatedBy);
             this.pnlBugDetails.Controls.Add(this.lblBugTitle);
-            this.pnlBugDetails.Location = new System.Drawing.Point(29, 163);
+            this.pnlBugDetails.Location = new System.Drawing.Point(12, 143);
             this.pnlBugDetails.Name = "pnlBugDetails";
             this.pnlBugDetails.Size = new System.Drawing.Size(950, 560);
             this.pnlBugDetails.TabIndex = 8;
@@ -493,9 +502,9 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(35, 404);
+            this.panel3.Location = new System.Drawing.Point(35, 432);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(880, 191);
+            this.panel3.Size = new System.Drawing.Size(880, 190);
             this.panel3.TabIndex = 68;
             // 
             // label11
@@ -750,9 +759,9 @@
             this.panel1.Controls.Add(this.BtnEditBugDescription);
             this.panel1.Controls.Add(this.txtBugDescription);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(35, 217);
+            this.panel1.Location = new System.Drawing.Point(35, 245);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 159);
+            this.panel1.Size = new System.Drawing.Size(880, 160);
             this.panel1.TabIndex = 68;
             // 
             // BtnUpdateBugDescp
@@ -849,12 +858,108 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.panel2.Controls.Add(this.pnlDeleteBug);
             this.panel2.Controls.Add(this.cmbBugState);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(35, 88);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 100);
+            this.panel2.Size = new System.Drawing.Size(880, 130);
             this.panel2.TabIndex = 18;
+            // 
+            // pnlDeleteBug
+            // 
+            this.pnlDeleteBug.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDeleteBug.Controls.Add(this.label16);
+            this.pnlDeleteBug.Controls.Add(this.label15);
+            this.pnlDeleteBug.Controls.Add(this.label17);
+            this.pnlDeleteBug.Controls.Add(this.pictureBox2);
+            this.pnlDeleteBug.Controls.Add(this.txtPasswordDelBug);
+            this.pnlDeleteBug.Controls.Add(this.BtnDeleteBug);
+            this.pnlDeleteBug.Location = new System.Drawing.Point(574, 5);
+            this.pnlDeleteBug.Name = "pnlDeleteBug";
+            this.pnlDeleteBug.Size = new System.Drawing.Size(293, 116);
+            this.pnlDeleteBug.TabIndex = 82;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label16.Location = new System.Drawing.Point(10, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(99, 30);
+            this.label16.TabIndex = 81;
+            this.label16.Text = "(*) This action\r\nis not reversible!";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label15.Location = new System.Drawing.Point(43, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 19);
+            this.label15.TabIndex = 75;
+            this.label15.Text = "Warning";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label17.Location = new System.Drawing.Point(140, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(96, 19);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "Delete Bug *";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Presentation.Properties.Resources.warning;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 76;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtPasswordDelBug
+            // 
+            this.txtPasswordDelBug.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordDelBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.txtPasswordDelBug.Location = new System.Drawing.Point(144, 39);
+            this.txtPasswordDelBug.Name = "txtPasswordDelBug";
+            this.txtPasswordDelBug.Size = new System.Drawing.Size(139, 24);
+            this.txtPasswordDelBug.TabIndex = 79;
+            this.txtPasswordDelBug.Text = "Password";
+            this.txtPasswordDelBug.Enter += new System.EventHandler(this.TxtPasswordDelBug_Enter);
+            this.txtPasswordDelBug.Leave += new System.EventHandler(this.TxtPasswordDelBug_Leave);
+            // 
+            // BtnDeleteBug
+            // 
+            this.BtnDeleteBug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDeleteBug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteBug.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDeleteBug.FlatAppearance.BorderSize = 0;
+            this.BtnDeleteBug.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(79)))), ((int)(((byte)(53)))));
+            this.BtnDeleteBug.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteBug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteBug.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            this.BtnDeleteBug.Location = new System.Drawing.Point(144, 74);
+            this.BtnDeleteBug.Name = "BtnDeleteBug";
+            this.BtnDeleteBug.Size = new System.Drawing.Size(139, 33);
+            this.BtnDeleteBug.TabIndex = 78;
+            this.BtnDeleteBug.Text = "Delete Bug";
+            this.BtnDeleteBug.UseVisualStyleBackColor = false;
+            this.BtnDeleteBug.Click += new System.EventHandler(this.BtnDeleteBug_Click);
             // 
             // cmbBugState
             // 
@@ -1089,13 +1194,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(1100, 610);
+            this.Controls.Add(this.PnlNewBug);
+            this.Controls.Add(this.pnlBugDetails);
             this.Controls.Add(this.pnlProjectConfig);
             this.Controls.Add(this.BtnConfgProject);
-            this.Controls.Add(this.pnlBugDetails);
             this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.BtnClose);
-            this.Controls.Add(this.PnlNewBug);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1074, 6);
             this.Name = "FrmProjectPage";
@@ -1120,6 +1225,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseBugDetails)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlDeleteBug.ResumeLayout(false);
+            this.pnlDeleteBug.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlProjectConfig.ResumeLayout(false);
             this.pnlProjectConfig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCloseProjectConfig)).EndInit();
@@ -1200,5 +1308,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnDeleteProject;
         private System.Windows.Forms.TextBox txtDelPassword;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtPasswordDelBug;
+        private System.Windows.Forms.Button BtnDeleteBug;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel pnlDeleteBug;
     }
 }

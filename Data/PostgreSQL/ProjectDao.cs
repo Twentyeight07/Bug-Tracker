@@ -405,8 +405,27 @@ namespace Data.PostgreSQL
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = connection;
-                    cmd.CommandText = "DELETE FROM projects WHERE code = @code";
-                    cmd.Parameters.AddWithValue("@code", project_code);
+                    cmd.CommandText = @"SELECT * FROM delete_project(:_project_code)";
+                    cmd.Parameters.AddWithValue("_project_code", project_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
+        public bool DeleteBug(int bug_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = "DELETE FROM bugs WHERE code = @code";
+                    cmd.Parameters.AddWithValue("@code", bug_code);
                     if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
                     {
                         return true;
