@@ -146,8 +146,6 @@ namespace Presentation
         DataTable crewSource = ProjectModel.LoadMembers();
         DataTable bugMembers = ProjectModel.GetBugMembers();
         public static int parentX,parentY;
-        readonly int sliceStart = 0;
-        readonly int sliceLength = 5;
         List<int> newMembers = new List<int>();
         List<string> saveMembers = new List<string>();
         List<string> saveMembersAssigned = new List<string>();
@@ -413,7 +411,7 @@ namespace Presentation
                 {
                     foreach (string item in lstbxUsersAssigned.Items)
                     {
-                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        int code = Convert.ToInt32(item.Substring(0, item.IndexOf(" ")).Trim());
                         newMembers.Add(code);
                     }
 

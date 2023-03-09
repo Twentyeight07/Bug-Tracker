@@ -42,8 +42,6 @@ namespace Presentation
         #region "Variables"
         DataTable crewSource = ProjectModel.LoadMembers();
         DataTable projectSource = ProjectModel.LoadProjects();
-        int sliceStart = 0;
-        int sliceLength = 4;
         List<int> codes = new List<int>();
         #endregion
 
@@ -92,14 +90,14 @@ namespace Presentation
                 {
                     foreach (string item in chkMembers.CheckedItems)
                     {
-                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        int code = Convert.ToInt32(item.Substring(0, item.IndexOf(" ")).Trim());
                         codes.Add(code);
                     }
 
                     if(codes.Count != 0)
                     {
                         int[] itemobj = codes.Cast<int>().ToArray();
-                        int projectCode = Convert.ToInt32(cmbProject.Text.Substring(sliceStart, sliceLength).Trim());
+                        int projectCode = Convert.ToInt32(cmbProject.Text.Substring(0, cmbProject.Text.IndexOf(" ")).Trim());
                         DateTime bugDeadline = Deadline.Enabled == true ? Deadline.Value : DateTime.Today;
                         string normalizeTitle = Regex.Replace(txtBugTitle.Text.Normalize(NormalizationForm.FormD), @"[^a-zA-z0-9 ]+", "");
 
@@ -129,6 +127,6 @@ namespace Presentation
 
         }
 
-
+        
     }
 }

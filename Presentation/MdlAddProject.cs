@@ -32,8 +32,6 @@ namespace Presentation
 
         #region "Variables"
         DataTable dataSource = ProjectModel.LoadMembers();
-        int sliceStart = 0;
-        int sliceLength = 5;
         List<int> codes = new List<int>();
         #endregion
 
@@ -78,7 +76,7 @@ namespace Presentation
                 {
                     foreach (string item in chkMembers.CheckedItems)
                     {
-                        int code = Convert.ToInt32(item.Substring(sliceStart, sliceLength).Trim());
+                        int code = Convert.ToInt32(item.Substring(0, item.IndexOf(" ")).Trim());
                         codes.Add(code);
                     }
 
