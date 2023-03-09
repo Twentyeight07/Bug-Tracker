@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,25 @@ namespace Presentation
         public FrmDashboard()
         {
             InitializeComponent();
+
+            model = new DashboardModel();
+            LoadBugState();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        #region "Methods"
+        private void LoadBugState()
         {
-            this.Close();
+
+        }
+        #endregion
+
+        #region "Variables"
+        private DashboardModel model;
+        #endregion
+
+        private void FrmDashboard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

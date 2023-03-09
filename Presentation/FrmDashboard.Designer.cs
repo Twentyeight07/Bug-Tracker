@@ -28,77 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.chtStateOfBugs = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtWeekSummary = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.chtStateOfBugs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtWeekSummary)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // chtStateOfBugs
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "FORMULARIO 1";
+            this.chtStateOfBugs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.chtStateOfBugs.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            chartArea1.Name = "ChartArea1";
+            this.chtStateOfBugs.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            legend1.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chtStateOfBugs.Legends.Add(legend1);
+            this.chtStateOfBugs.Location = new System.Drawing.Point(607, 27);
+            this.chtStateOfBugs.Name = "chtStateOfBugs";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtStateOfBugs.Series.Add(series1);
+            this.chtStateOfBugs.Size = new System.Drawing.Size(465, 278);
+            this.chtStateOfBugs.TabIndex = 0;
+            title1.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            title1.Name = "Title1";
+            title1.Text = "State of Bugs";
+            this.chtStateOfBugs.Titles.Add(title1);
             // 
-            // textBox1
+            // chtWeekSummary
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 2;
+            this.chtWeekSummary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            chartArea2.Name = "ChartArea1";
+            this.chtWeekSummary.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            legend2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            legend2.HeaderSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            legend2.IsTextAutoFit = false;
+            legend2.ItemColumnSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            legend2.Name = "Legend1";
+            legend2.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            legend2.TitleSeparatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.chtWeekSummary.Legends.Add(legend2);
+            this.chtWeekSummary.Location = new System.Drawing.Point(41, 27);
+            this.chtWeekSummary.Name = "chtWeekSummary";
+            series2.ChartArea = "ChartArea1";
+            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtWeekSummary.Series.Add(series2);
+            this.chtWeekSummary.Size = new System.Drawing.Size(528, 278);
+            this.chtWeekSummary.TabIndex = 1;
+            title2.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            title2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            title2.Name = "Title1";
+            title2.Text = "Week Summary";
+            this.chtWeekSummary.Titles.Add(title2);
             // 
-            // textBox2
+            // panel1
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
-            this.textBox2.TabIndex = 3;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.panel1.Location = new System.Drawing.Point(41, 337);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1031, 241);
+            this.panel1.TabIndex = 2;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(43, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(279, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Form1
+            // FrmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 301);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
+            this.ClientSize = new System.Drawing.Size(1100, 610);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.chtWeekSummary);
+            this.Controls.Add(this.chtStateOfBugs);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmDashboard";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmDashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.chtStateOfBugs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtWeekSummary)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtStateOfBugs;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtWeekSummary;
+        private System.Windows.Forms.Panel panel1;
     }
 }
