@@ -13,19 +13,32 @@ namespace Presentation
 {
     public partial class FrmDashboard : Form
     {
+        //Constructor
         public FrmDashboard()
         {
             InitializeComponent();
 
             model = new DashboardModel();
-            LoadBugState();
+            LoadData();
         }
 
         #region "Methods"
-        private void LoadBugState()
+        private void LoadData()
         {
+            model.LoadData();
+
+            chtStateOfBugs.DataSource = model.TotalBugState;
+            chtStateOfBugs.Series[0].XValueMember = "Key";
+            chtStateOfBugs.Series[0].YValueMembers = "Value";
+            chtStateOfBugs.DataBind();
+
+            chtWeekSummary.DataSource = model.WeekSummary;
+            chtWeekSummary.Series[0].XValueMember = "Key";
+            chtWeekSummary.Series[0].YValueMembers="Value";
+            chtWeekSummary.DataBind();
 
         }
+        
         #endregion
 
         #region "Variables"
@@ -34,7 +47,8 @@ namespace Presentation
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-
+            
+            
         }
     }
 }

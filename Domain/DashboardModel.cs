@@ -1,4 +1,5 @@
-﻿using Data.PostgreSQL;
+﻿using Data.DashboarModel;
+using Data.PostgreSQL;
 using Entities.Cache;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,29 @@ namespace Domain
 {
     public class DashboardModel
     {
-        DashboardDao dashboardDao = new DashboardDao();
-        
+        DashboardDao dashModel = new DashboardDao();
+        //Attributes
+        public string CompanyName { get; private set; }
+        public List<KeyValuePair<string, int>> TotalBugState { get; private set; }
+        public List<KeyValuePair<string, int>> WeekSummary { get; private set; }
 
-        private void LoadBugState()
+        public void LoadData()
         {
+            dashModel.LoadData();
+            TotalBugState = new List<KeyValuePair<string, int>>();
+            WeekSummary = new List<KeyValuePair<string, int>>();
 
+            foreach(KeyValuePair<string, int> item in dashModel.TotalBugState)
+            {
+                TotalBugState.Add(new KeyValuePair<string, int>(item.Key, item.Value));
+            }
+
+            foreach (KeyValuePair<string, int> item in dashModel.WeekSummary)
+            {
+                WeekSummary.Add(new KeyValuePair<string, int>(item.Key, item.Value));
+            }
+            
         }
+
     }
 }

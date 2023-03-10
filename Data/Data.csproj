@@ -91,10 +91,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboarModel\DashboardDao.cs" />
     <Compile Include="MailServices\MasterMailService.cs" />
     <Compile Include="MailServices\SystemSupportMail.cs" />
     <Compile Include="PostgreSQL\Connection.cs" />
-    <Compile Include="PostgreSQL\DashboardDao.cs" />
     <Compile Include="PostgreSQL\ProjectDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostgreSQL\UserDao.cs" />
