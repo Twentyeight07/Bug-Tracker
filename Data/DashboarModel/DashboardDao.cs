@@ -15,6 +15,7 @@ namespace Data.DashboarModel
         public string CompanyName { get; private set; }
         public List<KeyValuePair<string, int>> TotalBugState { get; private set; }
         public List<KeyValuePair<string, int>> WeekSummary { get; private set; }
+        public DataTable ExpiredBugs { get; private set; }
 
         //Private Methods
         private void GetTotalBugState()
@@ -86,6 +87,42 @@ namespace Data.DashboarModel
                 }
             }
         }
+        private void GetExpiredBugs()
+        {
+            ExpiredBugs = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    try
+                    {
+                        NpgsqlDataReader res;
+                        cmd.Connection = connection;
+                        cmd.CommandText = @"SELECT b.code, 
+                                            p.title,
+                                            b.title,
+                                            b.description,
+                                            b.modified_at,
+                                            b.deadline,
+                                            b.severe,
+                                            b.state
+                                            FROM projects as p
+                                            inner join bugs b on b.project_code = p.code
+                                            where p.company_name = @company_name and b.deadline <= NOW() and b.state !=                         'Closed'";
+                        cmd.Parameters.AddWithValue("@company_name", this.CompanyName);
+                        res = cmd.ExecuteReader();
+                        ExpiredBugs.Load(res);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+
+                }
+            }
+        }
 
         //Public Methods
         public void LoadData()
@@ -94,6 +131,7 @@ namespace Data.DashboarModel
 
             GetTotalBugState();
             GetWeekSummary();
+            GetExpiredBugs();
         }
 
     }

@@ -112,7 +112,7 @@
             this.pnlProfile.Controls.Add(this.lblName);
             this.pnlProfile.Location = new System.Drawing.Point(50, 61);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(1000, 295);
+            this.pnlProfile.Size = new System.Drawing.Size(983, 295);
             this.pnlProfile.TabIndex = 0;
             // 
             // linkEditPass
@@ -121,7 +121,7 @@
             this.linkEditPass.AutoSize = true;
             this.linkEditPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.linkEditPass.Location = new System.Drawing.Point(734, 74);
+            this.linkEditPass.Location = new System.Drawing.Point(717, 74);
             this.linkEditPass.Name = "linkEditPass";
             this.linkEditPass.Size = new System.Drawing.Size(26, 13);
             this.linkEditPass.TabIndex = 19;
@@ -148,7 +148,7 @@
             this.lblCurrentPass.AutoSize = true;
             this.lblCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblCurrentPass.Location = new System.Drawing.Point(616, 204);
+            this.lblCurrentPass.Location = new System.Drawing.Point(599, 204);
             this.lblCurrentPass.Name = "lblCurrentPass";
             this.lblCurrentPass.Size = new System.Drawing.Size(145, 19);
             this.lblCurrentPass.TabIndex = 18;
@@ -161,7 +161,7 @@
             this.txtCurrentPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtCurrentPass.Location = new System.Drawing.Point(620, 226);
+            this.txtCurrentPass.Location = new System.Drawing.Point(603, 226);
             this.txtCurrentPass.Name = "txtCurrentPass";
             this.txtCurrentPass.Size = new System.Drawing.Size(357, 27);
             this.txtCurrentPass.TabIndex = 6;
@@ -173,7 +173,7 @@
             this.lblEditRepeatPass.AutoSize = true;
             this.lblEditRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblEditRepeatPass.Location = new System.Drawing.Point(616, 137);
+            this.lblEditRepeatPass.Location = new System.Drawing.Point(599, 137);
             this.lblEditRepeatPass.Name = "lblEditRepeatPass";
             this.lblEditRepeatPass.Size = new System.Drawing.Size(167, 19);
             this.lblEditRepeatPass.TabIndex = 16;
@@ -186,7 +186,7 @@
             this.lblEditPass.AutoSize = true;
             this.lblEditPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblEditPass.Location = new System.Drawing.Point(616, 72);
+            this.lblEditPass.Location = new System.Drawing.Point(599, 72);
             this.lblEditPass.Name = "lblEditPass";
             this.lblEditPass.Size = new System.Drawing.Size(114, 19);
             this.lblEditPass.TabIndex = 15;
@@ -200,7 +200,7 @@
             this.txtRepeatPass.Enabled = false;
             this.txtRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtRepeatPass.Location = new System.Drawing.Point(620, 159);
+            this.txtRepeatPass.Location = new System.Drawing.Point(603, 159);
             this.txtRepeatPass.Name = "txtRepeatPass";
             this.txtRepeatPass.Size = new System.Drawing.Size(357, 27);
             this.txtRepeatPass.TabIndex = 5;
@@ -213,7 +213,7 @@
             this.txtNewPass.Enabled = false;
             this.txtNewPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtNewPass.Location = new System.Drawing.Point(620, 94);
+            this.txtNewPass.Location = new System.Drawing.Point(603, 94);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(357, 27);
             this.txtNewPass.TabIndex = 4;
@@ -291,7 +291,7 @@
             this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEdit.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnEdit.Location = new System.Drawing.Point(884, 16);
+            this.BtnEdit.Location = new System.Drawing.Point(867, 16);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(93, 40);
             this.BtnEdit.TabIndex = 4;
@@ -348,7 +348,7 @@
             this.pnlCompanyName.Controls.Add(this.txtCompanyName);
             this.pnlCompanyName.Location = new System.Drawing.Point(50, 412);
             this.pnlCompanyName.Name = "pnlCompanyName";
-            this.pnlCompanyName.Size = new System.Drawing.Size(1000, 167);
+            this.pnlCompanyName.Size = new System.Drawing.Size(983, 167);
             this.pnlCompanyName.TabIndex = 8;
             // 
             // lblPassCompany
@@ -406,7 +406,7 @@
             this.BtnEditCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditCompany.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnEditCompany.Location = new System.Drawing.Point(885, 15);
+            this.BtnEditCompany.Location = new System.Drawing.Point(868, 15);
             this.BtnEditCompany.Name = "BtnEditCompany";
             this.BtnEditCompany.Size = new System.Drawing.Size(93, 40);
             this.BtnEditCompany.TabIndex = 19;
@@ -493,7 +493,7 @@
             this.pnlAddMember.Controls.Add(this.BtnShowPass);
             this.pnlAddMember.Location = new System.Drawing.Point(50, 639);
             this.pnlAddMember.Name = "pnlAddMember";
-            this.pnlAddMember.Size = new System.Drawing.Size(1000, 313);
+            this.pnlAddMember.Size = new System.Drawing.Size(983, 313);
             this.pnlAddMember.TabIndex = 10;
             // 
             // pnlResMember
@@ -651,7 +651,7 @@
             this.BtnAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddMember.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnAddMember.Location = new System.Drawing.Point(876, 16);
+            this.BtnAddMember.Location = new System.Drawing.Point(859, 16);
             this.BtnAddMember.Name = "BtnAddMember";
             this.BtnAddMember.Size = new System.Drawing.Size(106, 40);
             this.BtnAddMember.TabIndex = 31;
@@ -850,7 +850,7 @@
             this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.Image = global::Presentation.Properties.Resources.cerrar1;
-            this.BtnClose.Location = new System.Drawing.Point(1055, 12);
+            this.BtnClose.Location = new System.Drawing.Point(1060, 6);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(16, 16);
             this.BtnClose.TabIndex = 7;

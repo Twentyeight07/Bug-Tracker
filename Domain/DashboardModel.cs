@@ -17,12 +17,14 @@ namespace Domain
         public string CompanyName { get; private set; }
         public List<KeyValuePair<string, int>> TotalBugState { get; private set; }
         public List<KeyValuePair<string, int>> WeekSummary { get; private set; }
+        public DataTable ExpiredBugs { get; private set; }
 
         public void LoadData()
         {
             dashModel.LoadData();
             TotalBugState = new List<KeyValuePair<string, int>>();
             WeekSummary = new List<KeyValuePair<string, int>>();
+            ExpiredBugs = new DataTable();
 
             foreach(KeyValuePair<string, int> item in dashModel.TotalBugState)
             {
@@ -33,6 +35,8 @@ namespace Domain
             {
                 WeekSummary.Add(new KeyValuePair<string, int>(item.Key, item.Value));
             }
+
+            ExpiredBugs = dashModel.ExpiredBugs;
             
         }
 
