@@ -114,7 +114,8 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.txtDescription.Location = new System.Drawing.Point(49, 231);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -213,6 +214,7 @@
             // cmbSevere
             // 
             this.cmbSevere.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSevere.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.cmbSevere.FormattingEnabled = true;
             this.cmbSevere.Items.AddRange(new object[] {
             "None",

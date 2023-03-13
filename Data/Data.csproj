@@ -98,6 +98,7 @@
     <Compile Include="PostgreSQL\ProjectDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PostgreSQL\UserDao.cs" />
+    <Compile Include="PostgreSQL\ReportsDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">

@@ -56,7 +56,7 @@ namespace Data
             }
         }
 
-       public bool Login(string email, string pass)
+        public bool Login(string email, string pass)
         {
             using (var connection = GetConnection())
             {

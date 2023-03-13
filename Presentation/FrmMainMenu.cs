@@ -64,6 +64,11 @@ namespace Presentation
             {
                 BtnProjects.BackColor = Color.FromArgb(216, 104, 70);
             }
+
+            if (Application.OpenForms["FrmReports"] == null)
+            {
+                BtnReports.BackColor = Color.FromArgb(216, 104, 70);
+            }
         }
 
         private void LoadUserData()
@@ -197,6 +202,12 @@ namespace Presentation
         {
             OpenForm<FrmProjects>();
             BtnProjects.BackColor = Color.FromArgb(165, 79, 53);
+        }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmReports>();
+            BtnReports.BackColor = Color.FromArgb(165, 79, 53);
         }
 
         private void BtnLogOut_Click(object sender, EventArgs e)

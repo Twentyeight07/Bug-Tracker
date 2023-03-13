@@ -197,6 +197,7 @@
             this.BtnReports.TabIndex = 2;
             this.BtnReports.Text = "Reports";
             this.BtnReports.UseVisualStyleBackColor = false;
+            this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // BtnBugs
             // 
@@ -238,7 +239,7 @@
             // 
             // PnlTittleBar
             // 
-            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
             this.PnlTittleBar.Controls.Add(this.BtnRestore);
             this.PnlTittleBar.Controls.Add(this.BtnMinimize);
             this.PnlTittleBar.Controls.Add(this.BtnMaximize);
