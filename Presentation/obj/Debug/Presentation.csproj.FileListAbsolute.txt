@@ -65,3 +65,7 @@ E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.MdlA
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.FrmProjectPage.resources
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.MdlAddBug.resources
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\obj\Debug\Presentation.FrmReports.resources
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll

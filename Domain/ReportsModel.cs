@@ -11,7 +11,7 @@ namespace Domain
     public class ReportsModel
     {
         //Attributes
-        public List<KeyValuePair<string, int>> TotalBugsCreatedBy { get; private set; }
+        public List<ListBugsReports> TotalBugsCreatedBy { get; private set; }
         
 
         //Methods
@@ -20,11 +20,16 @@ namespace Domain
             var reportsDao = new ReportsDao();
             var res = reportsDao.GetBugsReport(projectCode);
 
-            TotalBugsCreatedBy = new List<KeyValuePair<string, int>>();
+            TotalBugsCreatedBy = new List<ListBugsReports>();
 
             foreach (DataRow rows in res.Rows)
             {
-                TotalBugsCreatedBy.Add(new KeyValuePair<string, int>(rows[0].ToString(), Convert.ToInt32(rows[1])));
+                var reportsModel = new ListBugsReports()
+                {
+                    Name = rows[0].ToString(),
+                    Count = Convert.ToInt32(rows[1])
+                };
+                TotalBugsCreatedBy.Add(reportsModel);
             }
         }
     }

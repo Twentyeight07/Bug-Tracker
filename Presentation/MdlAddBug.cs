@@ -30,7 +30,7 @@ namespace Presentation
             }
         }
 
-        private void LoadProjects()
+        private void Load_Projects()
         {
             foreach (DataRow dr in projectSource.Rows)
             {
@@ -50,7 +50,7 @@ namespace Presentation
             int i = FrmBugsList.parentY + 220;
             this.Location = new Point(FrmBugsList.parentX + 380, FrmBugsList.parentY + 180);
             this.LoadCrewMembers();
-            this.LoadProjects();
+            this.Load_Projects();
         }
 
         private void BtnCancelProject_Click(object sender, EventArgs e)
