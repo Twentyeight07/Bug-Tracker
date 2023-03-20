@@ -39,3 +39,46 @@ E:\source\repos\Bug Tracker\Bug Tracker\DbTests\obj\Debug\DbTests.pdb
 E:\source\repos\Bug Tracker\Bug Tracker\DbTests\bin\Debug\DbTests.dll.config
 E:\source\repos\Bug Tracker\Bug Tracker\DbTests\bin\Debug\Entities.dll
 E:\source\repos\Bug Tracker\Bug Tracker\DbTests\bin\Debug\Entities.pdb
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\x86\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\x64\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\DbTests.dll.config
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\DbTests.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\DbTests.pdb
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Data.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Npgsql.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Entities.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.ValueTuple.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Memory.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Text.Json.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Numerics.Vectors.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Buffers.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Text.Encodings.Web.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Data.pdb
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Data.dll.config
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Npgsql.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Entities.pdb
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.ValueTuple.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Memory.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Text.Json.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Numerics.Vectors.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Buffers.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\System.Text.Encodings.Web.xml
+E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.csproj.AssemblyReference.cache
+E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.csproj.CoreCompileInputs.cache
+E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.csproj.CopyComplete
+E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.pdb

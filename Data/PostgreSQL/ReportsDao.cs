@@ -11,11 +11,13 @@ namespace Data
 {
     public class ReportsDao : Connection
     {
+        //Attributes
+        public List<KeyValuePair<string,int>> ProjectBugsCreated { get; private set; }
         
-        public DataTable GetBugsReport(int projectCode)
+        public void GetBugsReport(int projectCode)
         {
             NpgsqlDataReader res;
-            DataTable dt = new DataTable();
+            ProjectBugsCreated = new List<KeyValuePair<string, int>>();
             using (var connection  = GetConnection())
             {
                 connection.Open();
@@ -28,14 +30,16 @@ namespace Data
                                         from projects as p
                                         inner join bugs b on b.project_code = p.code
                                         inner join users u on u.code = b.created_by
-                                        where p.code = @project_code and p.company_name = @company_name and                 u.code = b.created_by
+                                        where p.code = @project_code and p.company_name = @company_name and u.code = b.created_by
                                         group by u.name";
                         cmd.Parameters.AddWithValue("@company_name", UserLoginCache.CompanyName);
                         cmd.Parameters.AddWithValue("@project_code", projectCode);
 
                         res = cmd.ExecuteReader();
-                        dt.Load(res);
-                        return dt;
+                        while (res.Read())
+                        {
+                            ProjectBugsCreated.Add(new KeyValuePair<string, int>(res[0].ToString(), Convert.ToInt32(res[1])));
+                        }
                     }
                     catch (Exception ex)
                     {

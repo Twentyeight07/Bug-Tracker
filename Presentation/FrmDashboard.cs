@@ -19,7 +19,7 @@ namespace Presentation
             InitializeComponent();
 
             model = new DashboardModel();
-            LoadData();
+            Load_Data();
         }
 
         #region "Methods"
@@ -62,7 +62,7 @@ namespace Presentation
             /********************************************/
 
         }
-        private void LoadData()
+        private void Load_Data()
         {
             model.LoadData();
 

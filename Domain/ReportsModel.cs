@@ -10,22 +10,24 @@ using System.Threading.Tasks;
 namespace Domain
 {
     public class ReportsModel
-    {
+    { 
         //Attributes
-        public List<ListBugsReports> TotalBugsCreatedBy { get; private set; }
-        public DataSet BugsReport { get; private set; }
+        public List<KeyValuePair<string,int>> TotalBugsCreatedBy { get; private set; }
         
 
         //Methods
         public void CreateBugReport(int projectCode)
         {
             var reportsDao = new ReportsDao();
-            var res = reportsDao.GetBugsReport(projectCode);
+            reportsDao.GetBugsReport(projectCode);
 
-            TotalBugsCreatedBy = new List<ListBugsReports>();
-            BugsReport = new DataSet();
+            TotalBugsCreatedBy = new List<KeyValuePair<string, int>>();
 
-            BugsReport = res;
+            foreach(KeyValuePair<string,int> item in reportsDao.ProjectBugsCreated)
+            {
+                TotalBugsCreatedBy.Add(new KeyValuePair<string, int>(item.Key, item.Value));
+            }
+            
         }
     }
 }

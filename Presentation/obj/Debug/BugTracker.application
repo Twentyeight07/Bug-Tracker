@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="BugTracker.exe.manifest" size="41623">
+    <dependentAssembly dependencyType="install" codebase="BugTracker.exe.manifest" size="47598">
       <assemblyIdentity name="BugTracker.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gPDOE3O6+ZMkyvQUZ5GTmXpiNRV5BcNDxNecXA5MaNY=</dsig:DigestValue>
+        <dsig:DigestValue>FwXgH62levg5YPeNeip7Cv4bF9XK7UyfY8dc1LQtWH4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

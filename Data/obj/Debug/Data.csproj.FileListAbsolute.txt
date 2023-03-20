@@ -78,3 +78,16 @@ E:\source\repos\BugTracker\BugTracker\Data\obj\Debug\Data.csproj.CoreCompileInpu
 E:\source\repos\BugTracker\BugTracker\Data\obj\Debug\Data.csproj.CopyComplete
 E:\source\repos\BugTracker\BugTracker\Data\obj\Debug\Data.dll
 E:\source\repos\BugTracker\BugTracker\Data\obj\Debug\Data.pdb
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\x86\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\x64\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+E:\source\repos\BugTracker\BugTracker\Data\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

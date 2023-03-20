@@ -70,10 +70,6 @@ E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x6
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\Reports\ProjectReport.rdlc
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Reports\ProjectReport.rdlc
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.exe.config
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.exe.manifest
@@ -142,3 +138,5 @@ E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.applicat
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.exe
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.pdb
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x86\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x64\SqlServerSpatial160.dll
