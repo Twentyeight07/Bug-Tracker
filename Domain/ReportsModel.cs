@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Domain
 {
     public class ReportsModel
     {
         //Attributes
         public List<ListBugsReports> TotalBugsCreatedBy { get; private set; }
+        public DataSet BugsReport { get; private set; }
         
 
         //Methods
@@ -21,16 +23,9 @@ namespace Domain
             var res = reportsDao.GetBugsReport(projectCode);
 
             TotalBugsCreatedBy = new List<ListBugsReports>();
+            BugsReport = new DataSet();
 
-            foreach (DataRow rows in res.Rows)
-            {
-                var reportsModel = new ListBugsReports()
-                {
-                    Name = rows[0].ToString(),
-                    Count = Convert.ToInt32(rows[1])
-                };
-                TotalBugsCreatedBy.Add(reportsModel);
-            }
+            BugsReport = res;
         }
     }
 }

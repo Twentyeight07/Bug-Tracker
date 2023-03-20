@@ -379,8 +379,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\BugsReport.rdlc" />
-    <EmbeddedResource Include="Reports\ProjectReport.rdlc" />
+    <EmbeddedResource Include="Reports\ProjectReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Presentation_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\Domain.ListBugsReports.datasource" />

@@ -28,7 +28,7 @@ namespace Data
                                         from projects as p
                                         inner join bugs b on b.project_code = p.code
                                         inner join users u on u.code = b.created_by
-                                        where p.code = @project_code and p.company_name = @company_name and u.code = b.created_by
+                                        where p.code = @project_code and p.company_name = @company_name and                 u.code = b.created_by
                                         group by u.name";
                         cmd.Parameters.AddWithValue("@company_name", UserLoginCache.CompanyName);
                         cmd.Parameters.AddWithValue("@project_code", projectCode);

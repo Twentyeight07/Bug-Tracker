@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,12 +30,30 @@ namespace Presentation
 
         private void GetProjectReport(int projectCode)
         {
-            ReportsModel reportModel = new ReportsModel();
+            try
+            {
+                ReportsModel reportModel = new ReportsModel();
+                reportModel.CreateBugReport(projectCode);
+                //Binding
+                var binding = new BindingSource();
+                binding.DataSource = reportModel;
+                //
+                this.reportViewer1.Reset();
+                this.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                this.reportViewer1.LocalReport.ReportPath = "E:\\source\\repos\\BugTracker\\BugTracker\\Presentation\\Reports\\ProjectReport.rdlc";
+                //
+                this.reportViewer1.LocalReport.DataSources.Clear();
+                this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReportsModel", binding));
+                this.reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ListBugs", reportModel.TotalBugsCreatedBy));
 
-            reportModel.CreateBugReport(projectCode);
-            this.reportsModelBindingSource.DataSource = reportModel;
-            this.listBugsReportsBindingSource1.DataSource = reportModel;
-            this.reportViewer1.RefreshReport();
+                this.reportViewer1.LocalReport.Refresh();
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
         #endregion
@@ -46,6 +65,7 @@ namespace Presentation
         private void FrmReports_Load(object sender, EventArgs e)
         {
             this.Load_Projects();
+            GetProjectReport(2);
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -55,7 +75,7 @@ namespace Presentation
 
         private void CmbProject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int projectCode = Convert.ToInt32(cmbProject.Text.Substring(0, cmbProject.Text.IndexOf(" ")).Trim());
+            var projectCode = Convert.ToInt32(cmbProject.Text.Substring(0, cmbProject.Text.IndexOf(" ")).Trim());
             GetProjectReport(projectCode);
         }
     }

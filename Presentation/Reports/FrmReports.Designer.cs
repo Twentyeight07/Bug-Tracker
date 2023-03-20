@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.lblProjectName = new System.Windows.Forms.Label();
             this.cmbProject = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportsModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBugsReportsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBugsReportsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnClose
@@ -79,26 +72,12 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "ReportsModel";
-            reportDataSource1.Value = this.reportsModelBindingSource;
-            reportDataSource2.Name = "ListBugsReport";
-            reportDataSource2.Value = this.listBugsReportsBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentation.Reports.BugsReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(50, 107);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentation.Reports.ProjectReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(50, 115);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1000, 449);
+            this.reportViewer1.Size = new System.Drawing.Size(989, 352);
             this.reportViewer1.TabIndex = 57;
-            // 
-            // reportsModelBindingSource
-            // 
-            this.reportsModelBindingSource.DataSource = typeof(Domain.ReportsModel);
-            // 
-            // listBugsReportsBindingSource1
-            // 
-            this.listBugsReportsBindingSource1.DataSource = typeof(Domain.ListBugsReports);
             // 
             // FrmReports
             // 
@@ -115,8 +94,6 @@
             this.Text = "FrmReports";
             this.Load += new System.EventHandler(this.FrmReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBugsReportsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +105,5 @@
         private System.Windows.Forms.Label lblProjectName;
         private System.Windows.Forms.ComboBox cmbProject;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource reportsModelBindingSource;
-        private System.Windows.Forms.BindingSource listBugsReportsBindingSource1;
     }
 }
