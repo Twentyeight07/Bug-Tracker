@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -36,10 +38,25 @@ namespace Presentation
             {
                 model.CreateBugReport(projectCode);
 
-                paychart.DataSource = model.TotalBugsCreatedBy;
-                paychart.Series[0].XValueMember = "Key";
-                paychart.Series[0].YValueMembers = "Value";
-                paychart.DataBind();
+                chtBugsReportedBy.DataSource = model.TotalBugsCreatedBy;
+                chtBugsReportedBy.Series[0].XValueMember = "Key";
+                chtBugsReportedBy.Series[0].YValueMembers = "Value";
+                chtBugsReportedBy.DataBind();
+
+                chtBugsAssignedTo.DataSource = model.TotalBugsAssignedTo;
+                chtBugsAssignedTo.Series[0].XValueMember = "Key";
+                chtBugsAssignedTo.Series[0].YValueMembers = "Value";
+                chtBugsAssignedTo.DataBind();
+
+                chtTotalBugsInProjects.DataSource = model.TotalBugsByState;
+                chtTotalBugsInProjects.Series[0].XValueMember = "Key";
+                chtTotalBugsInProjects.Series[0].YValueMembers = "Value";
+                chtTotalBugsInProjects.DataBind();
+
+                chtBugsSeverity.DataSource = model.TotalBugsBySeverity;
+                chtBugsSeverity.Series[0].XValueMember = "Key";
+                chtBugsSeverity.Series[0].YValueMembers = "Value";
+                chtBugsSeverity.DataBind();
             }
             catch (Exception ex)
             {
@@ -75,11 +92,14 @@ namespace Presentation
         private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             bmp = new Bitmap(panel1.Size.Width, panel1.Size.Height);
-            panel1.DrawToBitmap(bmp, new Rectangle(0, 0, panel1.Size.Width + 30, panel1.Size.Height));
+            panel1.DrawToBitmap(bmp, new Rectangle(0, 0, panel1.Size.Width, panel1.Size.Height + 50));
+            e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            e.Graphics.CompositingMode = CompositingMode.SourceCopy;
+            e.Graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
             e.Graphics.DrawImage(bmp, 0, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnPrint_Click(object sender, EventArgs e)
         {
             pageSetupDialog1.ShowDialog();
             printPreviewDialog1.ShowDialog();
