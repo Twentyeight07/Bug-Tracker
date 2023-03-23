@@ -99,7 +99,7 @@ namespace Data
                     try
                     {
                         cmd.Connection = connection;
-                        cmd.CommandText = @"SELECT * FROM signin(:_company_name,:_admin,:_name,:_last_name,:_email,:_password)";
+                        cmd.CommandText = @"SELECT * FROM signin_new_member(:_company_name,:_admin,:_name,:_last_name,:_email,:_password)";
                         cmd.Parameters.AddWithValue("_company_name", company_name);
                         cmd.Parameters.AddWithValue("_admin", admin);
                         cmd.Parameters.AddWithValue("_name", name);

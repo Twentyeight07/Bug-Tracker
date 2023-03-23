@@ -79,6 +79,7 @@ namespace Presentation
             TxtLastNameMember.Enabled = state;
             TxtEmailMember.Enabled = state;
             TxtPasswordMember.Enabled = state;
+            cmbAdmin.Enabled = state;
 
             BtnShowPass.Enabled = state;
             BtnHiddePass.Enabled = state;
@@ -250,6 +251,7 @@ namespace Presentation
         private void BtnAddMember_Click(object sender, EventArgs e)
         {
             AddMemberState(true);
+            cmbAdmin.SelectedIndex = 0;
             TxtPasswordMember.UseSystemPasswordChar = true;
             pnlAddMember.Focus();
         }
@@ -284,7 +286,7 @@ namespace Presentation
                 UserModel user = new UserModel();
                 var validSignin = user.SigninUser(
                     UserLoginCache.CompanyName,
-                    false,
+                    cmbAdmin.Text == "True" ? true : false,
                     TxtNameMember.Text.Trim(),
                     TxtLastNameMember.Text == "Last Name" ? "" : TxtLastNameMember.Text.Trim(),
                     TxtEmailMember.Text.Trim(),

@@ -31,28 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMenu));
             this.PnlContainer = new System.Windows.Forms.Panel();
             this.PnlForms = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlMenu = new System.Windows.Forms.Panel();
-            this.BtnProjects = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnSettings = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.PnlTittleBar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnDocs = new System.Windows.Forms.PictureBox();
+            this.BtnProjects = new System.Windows.Forms.Button();
+            this.BtnSettings = new System.Windows.Forms.PictureBox();
             this.BtnLogOut = new System.Windows.Forms.Button();
             this.BtnReports = new System.Windows.Forms.Button();
             this.BtnBugs = new System.Windows.Forms.Button();
             this.BtnDashboard = new System.Windows.Forms.Button();
-            this.PnlTittleBar = new System.Windows.Forms.Panel();
             this.BtnRestore = new System.Windows.Forms.PictureBox();
             this.BtnMinimize = new System.Windows.Forms.PictureBox();
             this.BtnMaximize = new System.Windows.Forms.PictureBox();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.PnlContainer.SuspendLayout();
             this.PnlForms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlMenu.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).BeginInit();
             this.PnlTittleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnDocs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximize)).BeginInit();
@@ -81,19 +83,10 @@
             this.PnlForms.Size = new System.Drawing.Size(1100, 610);
             this.PnlForms.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(414, 199);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // PnlMenu
             // 
             this.PnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
+            this.PnlMenu.Controls.Add(this.BtnDocs);
             this.PnlMenu.Controls.Add(this.BtnProjects);
             this.PnlMenu.Controls.Add(this.panel1);
             this.PnlMenu.Controls.Add(this.BtnLogOut);
@@ -105,6 +98,65 @@
             this.PnlMenu.Name = "PnlMenu";
             this.PnlMenu.Size = new System.Drawing.Size(250, 610);
             this.PnlMenu.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.panel1.Controls.Add(this.BtnSettings);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 100);
+            this.panel1.TabIndex = 4;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            this.lblName.Location = new System.Drawing.Point(12, 13);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(41, 15);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name";
+            // 
+            // PnlTittleBar
+            // 
+            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.PnlTittleBar.Controls.Add(this.BtnRestore);
+            this.PnlTittleBar.Controls.Add(this.BtnMinimize);
+            this.PnlTittleBar.Controls.Add(this.BtnMaximize);
+            this.PnlTittleBar.Controls.Add(this.BtnClose);
+            this.PnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlTittleBar.Location = new System.Drawing.Point(0, 0);
+            this.PnlTittleBar.Name = "PnlTittleBar";
+            this.PnlTittleBar.Size = new System.Drawing.Size(1350, 40);
+            this.PnlTittleBar.TabIndex = 0;
+            this.PnlTittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlTittleBar_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(414, 199);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnDocs
+            // 
+            this.BtnDocs.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.BtnDocs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDocs.Image = global::Presentation.Properties.Resources.about;
+            this.BtnDocs.Location = new System.Drawing.Point(3, 529);
+            this.BtnDocs.Name = "BtnDocs";
+            this.BtnDocs.Size = new System.Drawing.Size(33, 26);
+            this.BtnDocs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BtnDocs.TabIndex = 2;
+            this.BtnDocs.TabStop = false;
             // 
             // BtnProjects
             // 
@@ -125,18 +177,6 @@
             this.BtnProjects.UseVisualStyleBackColor = false;
             this.BtnProjects.Click += new System.EventHandler(this.BtnProjects_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.panel1.Controls.Add(this.BtnSettings);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 100);
-            this.panel1.TabIndex = 4;
-            // 
             // BtnSettings
             // 
             this.BtnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -148,17 +188,6 @@
             this.BtnSettings.TabIndex = 1;
             this.BtnSettings.TabStop = false;
             this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.lblName.Location = new System.Drawing.Point(12, 13);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(41, 15);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Name";
             // 
             // BtnLogOut
             // 
@@ -237,20 +266,6 @@
             this.BtnDashboard.UseVisualStyleBackColor = false;
             this.BtnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
-            // PnlTittleBar
-            // 
-            this.PnlTittleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
-            this.PnlTittleBar.Controls.Add(this.BtnRestore);
-            this.PnlTittleBar.Controls.Add(this.BtnMinimize);
-            this.PnlTittleBar.Controls.Add(this.BtnMaximize);
-            this.PnlTittleBar.Controls.Add(this.BtnClose);
-            this.PnlTittleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlTittleBar.Location = new System.Drawing.Point(0, 0);
-            this.PnlTittleBar.Name = "PnlTittleBar";
-            this.PnlTittleBar.Size = new System.Drawing.Size(1350, 40);
-            this.PnlTittleBar.TabIndex = 0;
-            this.PnlTittleBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlTittleBar_MouseMove);
-            // 
             // BtnRestore
             // 
             this.BtnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -316,12 +331,13 @@
             this.PnlContainer.ResumeLayout(false);
             this.PnlForms.ResumeLayout(false);
             this.PnlForms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).EndInit();
             this.PnlTittleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnDocs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximize)).EndInit();
@@ -349,6 +365,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button BtnProjects;
         private System.Windows.Forms.PictureBox BtnSettings;
+        private System.Windows.Forms.PictureBox BtnDocs;
     }
 }
 
