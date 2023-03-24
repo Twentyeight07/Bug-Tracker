@@ -41,6 +41,7 @@ namespace Presentation
 
         private void LoginAction()
         {
+            //This method is very simple, we call the DB and ask if the email or user and password exists
             if (TxtUser.Text != "Email")
             {
                 if (TxtPass.Text != "Password")
@@ -50,6 +51,7 @@ namespace Presentation
                         var validLogin = user.LoginUser(TxtUser.Text.Trim(), Encrypt.GetSHA256(TxtPass.Text.Trim()));
                         if (validLogin == true)
                         {
+                            //Iff all correct, we let pass the user
                             FrmMainMenu mainMenu = new FrmMainMenu();
                             mainMenu.Show();
                             mainMenu.FormClosed += Logout;
@@ -57,6 +59,7 @@ namespace Presentation
                         }
                         else
                         {
+                            //If don't, we show an error message
                             MsgError("Email or Password incorrect. \n     Please try again.");
                             TxtPass.Text = "Password";
                             TxtPass.UseSystemPasswordChar = false;

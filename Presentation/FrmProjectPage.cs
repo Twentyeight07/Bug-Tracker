@@ -301,33 +301,48 @@ namespace Presentation
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Ongoin");
                 cmbBugState.Items.Add("To be approved");
+                if(UserLoginCache.Admin == true)
+                {
                 cmbBugState.Items.Add("Closed");
+                }
             } 
             else if(cmbBugState.Text == "Ongoin")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Reopen");
-                cmbBugState.Items.Add("To be approved");
-                cmbBugState.Items.Add("Closed");
+                cmbBugState.Items.Add("To be approved"); 
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if(cmbBugState.Text == "To be approved")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Reopen");
                 cmbBugState.Items.Add("Ongoin");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "Reopen")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Ongoin");
                 cmbBugState.Items.Add("To be approved");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "Closed")
             {
                 cmbBugState.Items.Clear();
-                cmbBugState.Items.Add("Reopen");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Reopen");
+                }
             }
 
         }

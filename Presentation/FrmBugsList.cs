@@ -142,6 +142,7 @@ namespace Presentation
         #endregion
 
         #region "Variables"
+        //We create DataTable variables because we want filter the information offline without call again to DB
         DataTable data;
         DataTable crewSource = ProjectModel.LoadMembers();
         DataTable bugMembers = ProjectModel.GetBugMembers();
@@ -166,7 +167,7 @@ namespace Presentation
 
         private void BtnAddBug_Click(object sender, EventArgs e)
         {
-            
+            //We create a new "form" that only if goin to work like a dark background
             Form modalBackground = new Form();
             using (MdlAddBug modal = new MdlAddBug())
             {
@@ -174,8 +175,10 @@ namespace Presentation
                 modalBackground.FormBorderStyle = FormBorderStyle.None;
                 modalBackground.Opacity = .50d;
                 modalBackground.BackColor = Color.Black;
-                modalBackground.Size = new Size(FrmMainMenu.msw, FrmMainMenu.msh);
-                modalBackground.Location = new Point(FrmMainMenu.mlx, FrmMainMenu.mly);
+                //We take the position and size of the Main Menu Frm because we need to cover all the Main Menu to give that
+                //Feeling of modal but actually the modal is a form 
+                modalBackground.Size = new Size(FrmMainMenu.Msw, FrmMainMenu.Msh);
+                modalBackground.Location = new Point(FrmMainMenu.Mlx, FrmMainMenu.Mly);
                 modalBackground.ShowInTaskbar = false;
                 modalBackground.Show();
                 modal.Owner = modalBackground;
@@ -183,8 +186,10 @@ namespace Presentation
                 parentX = this.Location.X;
                 parentY = this.Location.Y;
 
+                //Now we show the form with the controls to create a new Bug
                 modal.ShowDialog();
                 modalBackground.Dispose();
+                //We load all the needed data too
                 LoadData();
                 List_Bugs();
             }
@@ -294,33 +299,48 @@ namespace Presentation
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Ongoin");
                 cmbBugState.Items.Add("To be approved");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "Ongoin")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Reopen");
                 cmbBugState.Items.Add("To be approved");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "To be approved")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Reopen");
                 cmbBugState.Items.Add("Ongoin");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "Reopen")
             {
                 cmbBugState.Items.Clear();
                 cmbBugState.Items.Add("Ongoin");
                 cmbBugState.Items.Add("To be approved");
-                cmbBugState.Items.Add("Closed");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Closed");
+                }
             }
             else if (cmbBugState.Text == "Closed")
             {
                 cmbBugState.Items.Clear();
-                cmbBugState.Items.Add("Reopen");
+                if (UserLoginCache.Admin == true)
+                {
+                    cmbBugState.Items.Add("Reopen");
+                }
             }
         }
 

@@ -127,6 +127,7 @@ namespace Data.DashboarModel
         //Public Methods
         public void LoadData()
         {
+            //This method just call all the methods that set the attributes above, because we need to use them on the DashboardModel. I don't found other way to do it, maybe is not the better but it doesn't compromise security or performance.
             this.CompanyName = UserLoginCache.CompanyName;
 
             GetTotalBugState();

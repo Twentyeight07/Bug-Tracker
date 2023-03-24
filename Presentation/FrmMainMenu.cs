@@ -28,6 +28,7 @@ namespace Presentation
             //This search into the collection if the form we want to open exists or not
             form = PnlForms.Controls.OfType<MyForm>().FirstOrDefault();
 
+            //If the form is not in the controls collection (doesn't exist) we create a new one and add to the panel controls
             if (form == null)
             {
                 form = new MyForm
@@ -50,6 +51,7 @@ namespace Presentation
         }
 
         private void CloseForms(object sender, FormClosedEventArgs e) {
+            //When close the form the btn returns to his original color
             if (Application.OpenForms["FrmDashboard"] == null)
             {
                 BtnDashboard.BackColor = Color.FromArgb(216, 104, 70);
@@ -91,8 +93,10 @@ namespace Presentation
         int sw, sh;
         /************************/
         //This variables is for export the location and size of the Main Menu for modal Background 
-        public static int mlx, mly;
-        public static int msw, msh;
+        public static int Mlx { get; private set; }
+        public static int Mly { get; private set; }
+        public static int Msw { get; private set; }
+        public static int Msh { get; private set; }
 
         #endregion
 
@@ -156,10 +160,10 @@ namespace Presentation
         {
             LoadUserData();
             UserPrivileges();
-            mlx = this.Location.X;
-            mly = this.Location.Y;
-            msw = this.Size.Width;
-            msh = this.Size.Height;
+            Mlx = this.Location.X;
+            Mly = this.Location.Y;
+            Msw = this.Size.Width;
+            Msh = this.Size.Height;
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -177,8 +181,8 @@ namespace Presentation
             //This event is to make the form draggeable
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-            mlx= this.Location.X;
-            mly= this.Location.Y;
+            Mlx = this.Location.X;
+            Mly = this.Location.Y;
         }
 
         private void BtnMinimize_Click(object sender, EventArgs e)
@@ -188,24 +192,28 @@ namespace Presentation
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
+            //When push the btn whe call the function "OpenForm" and pass the form name
             OpenForm<FrmDashboard>();
             BtnDashboard.BackColor= Color.FromArgb(165, 79, 53);
         }
 
         private void BtnBugs_Click(object sender, EventArgs e)
         {
+            //When push the btn whe call the function "OpenForm" and pass the form name
             OpenForm<FrmBugsList>();
             BtnBugs.BackColor = Color.FromArgb(165, 79, 53);
         }
 
         private void BtnProjects_Click(object sender, EventArgs e)
         {
+            //When push the btn whe call the function "OpenForm" and pass the form name
             OpenForm<FrmProjects>();
             BtnProjects.BackColor = Color.FromArgb(165, 79, 53);
         }
 
         private void BtnReports_Click(object sender, EventArgs e)
         {
+            //When push the btn whe call the function "OpenForm" and pass the form name
             OpenForm<FrmReports>();
             BtnReports.BackColor = Color.FromArgb(165, 79, 53);
         }
@@ -242,10 +250,10 @@ namespace Presentation
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
 
             //If we change the window Size and Maximize or something I'm going to update the exported variables
-            mlx = this.Location.X;
-            mly = this.Location.Y;
-            msw = this.Size.Width;
-            msh = this.Size.Height;
+            Mlx = this.Location.X;
+            Mly = this.Location.Y;
+            Msw = this.Size.Width;
+            Msh = this.Size.Height;
 
         }
 
@@ -258,10 +266,10 @@ namespace Presentation
             this.Location = new Point(lx, ly);
 
             //If we change the window Size and Maximize or something I'm going to update the exported variables
-            mlx = this.Location.X;
-            mly = this.Location.Y;
-            msw = this.Size.Width;
-            msh = this.Size.Height;
+            Mlx = this.Location.X;
+            Mly = this.Location.Y;
+            Msw = this.Size.Width;
+            Msh = this.Size.Height;
         }
 
 

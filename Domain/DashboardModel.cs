@@ -19,6 +19,7 @@ namespace Domain
         public List<KeyValuePair<string, int>> WeekSummary { get; private set; }
         public DataTable ExpiredBugs { get; private set; }
 
+        //With this method we call the main method in DashboardDao to set the attributes to be used in the Presentation layer
         public void LoadData()
         {
             dashModel.LoadData();
