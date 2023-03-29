@@ -164,6 +164,7 @@ namespace Data
             LoadBugsCreated(projectCode);
             LoadBugsAssigned(projectCode);
             LoadTotalBugs(projectCode);
+            LoadSeverityOfBugs(projectCode);
         }
 
 

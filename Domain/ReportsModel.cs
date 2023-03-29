@@ -43,7 +43,7 @@ namespace Domain
                 TotalBugsByState.Add(new KeyValuePair<string, int>(item.Key, item.Value));
             }
 
-            foreach (KeyValuePair<string, int> item in reportsDao.ProjectBugsByState)
+            foreach (KeyValuePair<string, int> item in reportsDao.ProjectBugsSeverity)
             {
                 TotalBugsBySeverity.Add(new KeyValuePair<string, int>(item.Key, item.Value));
             }
