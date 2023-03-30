@@ -114,7 +114,6 @@ namespace Data
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error registering the user. Error: " + ex.Message);
                         return false;
                     }
 

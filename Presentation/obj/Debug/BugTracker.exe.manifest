@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="11252176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="11356112">
       <assemblyIdentity name="BugTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S/6TJ7QYueTjs9jF96FHCfJCNI20sbj6r8G7aS8jlcw=</dsig:DigestValue>
+        <dsig:DigestValue>vnTRZulpk5dPP5qlyvrTa6sjQwhqdF+GTPA0OwPpaEE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H9aQkE12p7GijyG5RRRLmwYloDLqn1p+DU+TZXrqa2w=</dsig:DigestValue>
+        <dsig:DigestValue>jDE2dSlTm/sLnQ79EWSxpuHEDFODJK93Y2RNF+oN8rY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

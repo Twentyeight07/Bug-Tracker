@@ -83,6 +83,26 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddMember {
+            get {
+                object obj = ResourceManager.GetObject("AddMember", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddMemberWithData {
+            get {
+                object obj = ResourceManager.GetObject("AddMemberWithData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap analysis___Light {
             get {
                 object obj = ResourceManager.GetObject("analysis - Light", resourceCulture);
@@ -176,6 +196,16 @@ namespace Presentation.Properties {
         internal static System.Drawing.Bitmap colapso {
             get {
                 object obj = ResourceManager.GetObject("colapso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CreateNewProject {
+            get {
+                object obj = ResourceManager.GetObject("CreateNewProject", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +313,16 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NewProjectModel {
+            get {
+                object obj = ResourceManager.GetObject("NewProjectModel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap projects {
             get {
                 object obj = ResourceManager.GetObject("projects", resourceCulture);
@@ -296,6 +336,16 @@ namespace Presentation.Properties {
         internal static System.Drawing.Bitmap projects___Light {
             get {
                 object obj = ResourceManager.GetObject("projects - Light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProjectsRemarked {
+            get {
+                object obj = ResourceManager.GetObject("ProjectsRemarked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

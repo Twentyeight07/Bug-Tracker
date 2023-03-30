@@ -23,5 +23,20 @@ namespace Presentation
         {
             lblProgramVersion.Text = "Bug Tracker v" + ProgramCache.ProgramVersion;
         }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LnkIntroduction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlIntroduction.Focus();
+        }
+
+        private void LnkAddNewMember_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlAddNewMember.Focus();
+        }
     }
 }

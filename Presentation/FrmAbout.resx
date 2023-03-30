@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label32.Text" xml:space="preserve">
+    <value>To create a Project you need to provide:
+
+- A title
+- Start Date (Default actual date)
+- End Date (Not required)
+- Description (Not required but recommended)
+- Members of the Project
+
+That's all, now press "Save" and you've created your first project</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Bug Trackr is a program that allows you to take control of your projects.
+You can track progress,
+adding bugs that can appear during the development for his correct control and resolution. 
+Or just assign tasks to members of the team for development.
+</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Once you registered your account with the company name, no one can create an account 
+with the same company name to get admin access. If you need another admin in your team 
+you have to create manually his account. 
+
+Important: you cannot change the admin role later, if you want to delete that privilage you need to 
+delete that user and create it again</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>To create a new member you need to enter in your profile section and navigate to the bottom. there you're going 
+to find the section to add a new member to your team, enter the name, email (user to login), a temporal password 
+and an admin role or not. that's all!</value>
+  </data>
 </root>
