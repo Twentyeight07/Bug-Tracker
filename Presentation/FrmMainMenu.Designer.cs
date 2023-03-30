@@ -157,6 +157,7 @@
             this.BtnDocs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnDocs.TabIndex = 2;
             this.BtnDocs.TabStop = false;
+            this.BtnDocs.Click += new System.EventHandler(this.BtnDocs_Click);
             // 
             // BtnProjects
             // 
@@ -326,7 +327,7 @@
             this.MinimumSize = new System.Drawing.Size(650, 400);
             this.Name = "FrmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bug Tracker v1.0";
+            this.Text = "Bug Trackr";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.PnlContainer.ResumeLayout(false);
             this.PnlForms.ResumeLayout(false);

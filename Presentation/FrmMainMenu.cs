@@ -18,6 +18,7 @@ namespace Presentation
         public FrmMainMenu()
         {
             InitializeComponent();
+            ProgramCache.ProgramVersion = "1.0";
         }
 
         #region "Methods"
@@ -231,6 +232,12 @@ namespace Presentation
         private void BtnSettings_Click(object sender, EventArgs e)
         {
             OpenForm<FrmEditProfile>();
+        }
+
+        private void BtnDocs_Click(object sender, EventArgs e)
+        {
+            //When push the btn whe call the function "OpenForm" and pass the form name
+            OpenForm<FrmAbout>();
         }
 
         private void BtnMaximize_Click(object sender, EventArgs e)

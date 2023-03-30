@@ -140,3 +140,4 @@ E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.exe
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.pdb
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x86\SqlServerSpatial160.dll
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x64\SqlServerSpatial160.dll
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.FrmAbout.resources

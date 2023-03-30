@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="11249104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BugTracker.exe" size="11252176">
       <assemblyIdentity name="BugTracker" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>W9nxnEC1pPEOyG40drMvyIEhKUjVZ9xnqsg9wAETJTw=</dsig:DigestValue>
+        <dsig:DigestValue>S/6TJ7QYueTjs9jF96FHCfJCNI20sbj6r8G7aS8jlcw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
