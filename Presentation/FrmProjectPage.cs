@@ -232,6 +232,7 @@ namespace Presentation
         private void BtnAddBug_Click(object sender, EventArgs e)
         {
             PnlNewBug.Location = new Point(this.Location.X + 130, this.Location.Y + 80);
+            chkMembers.Items.Clear();
             this.LoadCrewMembers();
             PnlNewBug.BringToFront();
             PnlNewBug.Visible = true;

@@ -482,6 +482,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="antivirus.ico" />
+    <None Include="Resources\DeleteMember1.png" />
     <None Include="Resources\NewProjectModel.png" />
     <None Include="Resources\CreateNewProject.png" />
     <None Include="Resources\ProjectsRemarked.png" />

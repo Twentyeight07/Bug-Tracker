@@ -126,14 +126,7 @@
 - Description (Not required but recommended)
 - Members of the Project
 
-That's all, now press "Save" and you've created your first project</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Bug Trackr is a program that allows you to take control of your projects.
-You can track progress,
-adding bugs that can appear during the development for his correct control and resolution. 
-Or just assign tasks to members of the team for development.
-</value>
+Now press "Save" and you've created your first project</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>Once you registered your account with the company name, no one can create an account 
@@ -147,5 +140,12 @@ delete that user and create it again</value>
     <value>To create a new member you need to enter in your profile section and navigate to the bottom. there you're going 
 to find the section to add a new member to your team, enter the name, email (user to login), a temporal password 
 and an admin role or not. that's all!</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Bug Trackr is a program that allows you to take control of your projects.
+You can track progress,
+adding bugs that can appear during the development for his correct control and resolution. 
+Or just assign tasks to members of the team for development.
+</value>
   </data>
 </root>

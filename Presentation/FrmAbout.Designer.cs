@@ -30,13 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCreateNewProject = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.pnlAddNewMember = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lnkCreateProject = new System.Windows.Forms.LinkLabel();
             this.lnkAddNewMember = new System.Windows.Forms.LinkLabel();
             this.lnkIntroduction = new System.Windows.Forms.LinkLabel();
             this.label25 = new System.Windows.Forms.Label();
@@ -62,40 +72,43 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblProgramVersion = new System.Windows.Forms.Label();
-            this.lnkCreateProject = new System.Windows.Forms.LinkLabel();
-            this.pnlCreateNewProject = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.lnkAddBug = new System.Windows.Forms.LinkLabel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlCreateNewProject.SuspendLayout();
             this.pnlAddNewMember.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlIntroduction.SuspendLayout();
-            this.pnlCreateNewProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.AutoScrollMargin = new System.Drawing.Size(0, 100);
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pnlCreateNewProject);
             this.panel1.Controls.Add(this.pnlAddNewMember);
             this.panel1.Controls.Add(this.panel3);
@@ -107,11 +120,126 @@
             this.panel1.Size = new System.Drawing.Size(1000, 503);
             this.panel1.TabIndex = 0;
             // 
+            // pnlCreateNewProject
+            // 
+            this.pnlCreateNewProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCreateNewProject.Controls.Add(this.label32);
+            this.pnlCreateNewProject.Controls.Add(this.label31);
+            this.pnlCreateNewProject.Controls.Add(this.label30);
+            this.pnlCreateNewProject.Controls.Add(this.pictureBox6);
+            this.pnlCreateNewProject.Controls.Add(this.pictureBox5);
+            this.pnlCreateNewProject.Controls.Add(this.pictureBox4);
+            this.pnlCreateNewProject.Controls.Add(this.label29);
+            this.pnlCreateNewProject.Controls.Add(this.label28);
+            this.pnlCreateNewProject.Controls.Add(this.label27);
+            this.pnlCreateNewProject.Location = new System.Drawing.Point(50, 3378);
+            this.pnlCreateNewProject.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.pnlCreateNewProject.Name = "pnlCreateNewProject";
+            this.pnlCreateNewProject.Size = new System.Drawing.Size(900, 1675);
+            this.pnlCreateNewProject.TabIndex = 32;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label32.Location = new System.Drawing.Point(31, 1480);
+            this.label32.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(386, 171);
+            this.label32.TabIndex = 40;
+            this.label32.Text = resources.GetString("label32.Text");
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label31.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label31.Location = new System.Drawing.Point(125, 1009);
+            this.label31.Margin = new System.Windows.Forms.Padding(3, 0, 3, 15);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(638, 19);
+            this.label31.TabIndex = 39;
+            this.label31.Text = "Now you\'re going to see a modal window, there you need to enter the details of th" +
+    "e project";
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label30.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label30.Location = new System.Drawing.Point(62, 523);
+            this.label30.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(764, 19);
+            this.label30.TabIndex = 38;
+            this.label30.Text = "This is what you\'re going to see when you enter in the \"Projects\" section. Now pr" +
+    "ess the \"Add Project\" Button";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label29.Location = new System.Drawing.Point(322, 205);
+            this.label29.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(214, 57);
+            this.label29.TabIndex = 34;
+            this.label29.Text = "First of all you have to enter \r\nto the \"Project\" section in the \r\nMain Menu";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label28.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label28.Location = new System.Drawing.Point(80, 50);
+            this.label28.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(746, 19);
+            this.label28.TabIndex = 33;
+            this.label28.Text = "Let\'s see how you can create a project and start carry out control of the develop" +
+    "ment of your applications";
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label27.Location = new System.Drawing.Point(350, 5);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 5, 3, 20);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(206, 25);
+            this.label27.TabIndex = 30;
+            this.label27.Text = "Create a new Project";
+            // 
             // pnlAddNewMember
             // 
             this.pnlAddNewMember.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAddNewMember.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAddNewMember.Controls.Add(this.label35);
+            this.pnlAddNewMember.Controls.Add(this.pictureBox7);
+            this.pnlAddNewMember.Controls.Add(this.label34);
+            this.pnlAddNewMember.Controls.Add(this.label33);
             this.pnlAddNewMember.Controls.Add(this.label26);
             this.pnlAddNewMember.Controls.Add(this.label24);
             this.pnlAddNewMember.Controls.Add(this.pictureBox3);
@@ -119,11 +247,41 @@
             this.pnlAddNewMember.Controls.Add(this.label22);
             this.pnlAddNewMember.Controls.Add(this.pictureBox2);
             this.pnlAddNewMember.Controls.Add(this.label20);
-            this.pnlAddNewMember.Location = new System.Drawing.Point(50, 1697);
+            this.pnlAddNewMember.Location = new System.Drawing.Point(50, 1667);
             this.pnlAddNewMember.Margin = new System.Windows.Forms.Padding(3, 3, 3, 35);
             this.pnlAddNewMember.Name = "pnlAddNewMember";
-            this.pnlAddNewMember.Size = new System.Drawing.Size(900, 1119);
+            this.pnlAddNewMember.Size = new System.Drawing.Size(900, 1673);
             this.pnlAddNewMember.TabIndex = 31;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label34.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label34.Location = new System.Drawing.Point(48, 1197);
+            this.label34.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(606, 38);
+            this.label34.TabIndex = 37;
+            this.label34.Text = "This is so easy. You just have to navigate bellow the \"Add member\" section, and t" +
+    "here\r\nyou will find the section to delete a member.";
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label33.Location = new System.Drawing.Point(280, 1125);
+            this.label33.Margin = new System.Windows.Forms.Padding(3, 5, 3, 20);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(341, 25);
+            this.label33.TabIndex = 36;
+            this.label33.Text = "Deleting a member from your team";
             // 
             // label26
             // 
@@ -203,14 +361,32 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lnkAddBug);
             this.panel3.Controls.Add(this.lnkCreateProject);
             this.panel3.Controls.Add(this.lnkAddNewMember);
             this.panel3.Controls.Add(this.lnkIntroduction);
             this.panel3.Controls.Add(this.label25);
-            this.panel3.Location = new System.Drawing.Point(168, 176);
+            this.panel3.Location = new System.Drawing.Point(168, 160);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(665, 380);
             this.panel3.TabIndex = 30;
+            // 
+            // lnkCreateProject
+            // 
+            this.lnkCreateProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkCreateProject.AutoSize = true;
+            this.lnkCreateProject.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkCreateProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkCreateProject.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkCreateProject.Location = new System.Drawing.Point(19, 117);
+            this.lnkCreateProject.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkCreateProject.Name = "lnkCreateProject";
+            this.lnkCreateProject.Size = new System.Drawing.Size(146, 15);
+            this.lnkCreateProject.TabIndex = 34;
+            this.lnkCreateProject.TabStop = true;
+            this.lnkCreateProject.Text = "• Create your first Project";
+            this.lnkCreateProject.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             // 
             // lnkAddNewMember
             // 
@@ -223,10 +399,10 @@
             this.lnkAddNewMember.Location = new System.Drawing.Point(19, 92);
             this.lnkAddNewMember.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkAddNewMember.Name = "lnkAddNewMember";
-            this.lnkAddNewMember.Size = new System.Drawing.Size(137, 15);
+            this.lnkAddNewMember.Size = new System.Drawing.Size(182, 15);
             this.lnkAddNewMember.TabIndex = 33;
             this.lnkAddNewMember.TabStop = true;
-            this.lnkAddNewMember.Text = "• Adding new members";
+            this.lnkAddNewMember.Text = "• Adding and deleting members";
             this.lnkAddNewMember.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkAddNewMember.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkAddNewMember_LinkClicked);
             // 
@@ -284,7 +460,7 @@
             this.pnlIntroduction.Controls.Add(this.pictureBox1);
             this.pnlIntroduction.Controls.Add(this.label6);
             this.pnlIntroduction.Controls.Add(this.label5);
-            this.pnlIntroduction.Location = new System.Drawing.Point(50, 630);
+            this.pnlIntroduction.Location = new System.Drawing.Point(50, 600);
             this.pnlIntroduction.Margin = new System.Windows.Forms.Padding(3, 3, 3, 35);
             this.pnlIntroduction.Name = "pnlIntroduction";
             this.pnlIntroduction.Size = new System.Drawing.Size(900, 1029);
@@ -549,7 +725,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label3.Location = new System.Drawing.Point(166, 60);
+            this.label3.Location = new System.Drawing.Point(166, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(649, 76);
             this.label3.TabIndex = 4;
@@ -597,86 +773,6 @@
             this.lblProgramVersion.Size = new System.Drawing.Size(80, 14);
             this.lblProgramVersion.TabIndex = 3;
             this.lblProgramVersion.Text = "Bug Tracker v";
-            // 
-            // lnkCreateProject
-            // 
-            this.lnkCreateProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lnkCreateProject.AutoSize = true;
-            this.lnkCreateProject.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkCreateProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkCreateProject.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkCreateProject.Location = new System.Drawing.Point(19, 117);
-            this.lnkCreateProject.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lnkCreateProject.Name = "lnkCreateProject";
-            this.lnkCreateProject.Size = new System.Drawing.Size(146, 15);
-            this.lnkCreateProject.TabIndex = 34;
-            this.lnkCreateProject.TabStop = true;
-            this.lnkCreateProject.Text = "• Create your first Project";
-            this.lnkCreateProject.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            // 
-            // pnlCreateNewProject
-            // 
-            this.pnlCreateNewProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCreateNewProject.Controls.Add(this.label32);
-            this.pnlCreateNewProject.Controls.Add(this.label31);
-            this.pnlCreateNewProject.Controls.Add(this.label30);
-            this.pnlCreateNewProject.Controls.Add(this.pictureBox6);
-            this.pnlCreateNewProject.Controls.Add(this.pictureBox5);
-            this.pnlCreateNewProject.Controls.Add(this.pictureBox4);
-            this.pnlCreateNewProject.Controls.Add(this.label29);
-            this.pnlCreateNewProject.Controls.Add(this.label28);
-            this.pnlCreateNewProject.Controls.Add(this.label27);
-            this.pnlCreateNewProject.Location = new System.Drawing.Point(50, 2854);
-            this.pnlCreateNewProject.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.pnlCreateNewProject.Name = "pnlCreateNewProject";
-            this.pnlCreateNewProject.Size = new System.Drawing.Size(900, 1675);
-            this.pnlCreateNewProject.TabIndex = 32;
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label27.Location = new System.Drawing.Point(350, 5);
-            this.label27.Margin = new System.Windows.Forms.Padding(3, 5, 3, 20);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(206, 25);
-            this.label27.TabIndex = 30;
-            this.label27.Text = "Create a new Project";
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label28.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label28.Location = new System.Drawing.Point(80, 50);
-            this.label28.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(746, 19);
-            this.label28.TabIndex = 33;
-            this.label28.Text = "Let\'s see how you can create a project and start carry out control of the develop" +
-    "ment of your applications";
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label29.Location = new System.Drawing.Point(322, 205);
-            this.label29.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(214, 57);
-            this.label29.TabIndex = 34;
-            this.label29.Text = "First of all you have to enter \r\nto the \"Project\" section in the \r\nMain Menu";
             // 
             // BtnClose
             // 
@@ -727,6 +823,18 @@
             this.pictureBox4.TabIndex = 35;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = global::Presentation.Properties.Resources.DeleteMember1;
+            this.pictureBox7.Location = new System.Drawing.Point(35, 1258);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(835, 295);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 38;
+            this.pictureBox7.TabStop = false;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -763,53 +871,58 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // label30
+            // label35
             // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label30.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label30.Location = new System.Drawing.Point(62, 523);
-            this.label30.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(764, 19);
-            this.label30.TabIndex = 38;
-            this.label30.Text = "This is what you\'re going to see when you enter in the \"Projects\" section. Now pr" +
-    "ess the \"Add Project\" Button";
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label35.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label35.Location = new System.Drawing.Point(29, 1572);
+            this.label35.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(454, 57);
+            this.label35.TabIndex = 39;
+            this.label35.Text = "Now just select the member you want to delete from your team.\r\n\r\nWarning: this ac" +
+    "tion is not reversible!";
             // 
-            // label31
+            // lnkAddBug
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lnkAddBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label31.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label31.Location = new System.Drawing.Point(125, 1009);
-            this.label31.Margin = new System.Windows.Forms.Padding(3, 0, 3, 15);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(638, 19);
-            this.label31.TabIndex = 39;
-            this.label31.Text = "Now you\'re going to see a modal window, there you need to enter the details of th" +
-    "e project";
+            this.lnkAddBug.AutoSize = true;
+            this.lnkAddBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkAddBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkAddBug.Location = new System.Drawing.Point(19, 142);
+            this.lnkAddBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkAddBug.Name = "lnkAddBug";
+            this.lnkAddBug.Size = new System.Drawing.Size(210, 15);
+            this.lnkAddBug.TabIndex = 35;
+            this.lnkAddBug.TabStop = true;
+            this.lnkAddBug.Text = "• Add a new bug/task to your project";
+            this.lnkAddBug.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             // 
-            // label32
+            // panel2
             // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label32.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label32.Location = new System.Drawing.Point(31, 1480);
-            this.label32.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(455, 171);
-            this.label32.TabIndex = 40;
-            this.label32.Text = resources.GetString("label32.Text");
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel2.Controls.Add(this.label37);
+            this.panel2.Location = new System.Drawing.Point(50, 5081);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(900, 600);
+            this.panel2.TabIndex = 33;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label37.Location = new System.Drawing.Point(281, 25);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(371, 25);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Adding a new bug/task to your project";
             // 
             // FrmAbout
             // 
@@ -828,21 +941,24 @@
             this.Load += new System.EventHandler(this.FrmAbout_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlCreateNewProject.ResumeLayout(false);
+            this.pnlCreateNewProject.PerformLayout();
             this.pnlAddNewMember.ResumeLayout(false);
             this.pnlAddNewMember.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnlIntroduction.ResumeLayout(false);
             this.pnlIntroduction.PerformLayout();
-            this.pnlCreateNewProject.ResumeLayout(false);
-            this.pnlCreateNewProject.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -898,5 +1014,12 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.LinkLabel lnkAddBug;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label37;
     }
 }
