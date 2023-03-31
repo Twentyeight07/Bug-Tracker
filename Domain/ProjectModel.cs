@@ -187,5 +187,6 @@ namespace Domain
             return Data.DeleteBug(bug_code);
         }
 
+
     }
 }

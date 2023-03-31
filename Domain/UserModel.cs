@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data;
+using Data.PostgreSQL;
 using Entities.Cache;
 
 namespace Domain
@@ -110,6 +111,13 @@ namespace Domain
             {
                 return "Sorry, you don't have an account with that email";
             }
+        }
+
+        public bool DeleteUser(int user_code)
+        {
+            UserDao Data = new UserDao();
+
+            return Data.DeleteUser(user_code);
         }
     }
 }

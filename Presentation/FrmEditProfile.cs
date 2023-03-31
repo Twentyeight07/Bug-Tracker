@@ -30,6 +30,16 @@ namespace Presentation
             txtCompanyName.Text = UserLoginCache.CompanyName;
         }
 
+        private void LoadCrewMembers()
+        {
+            var members = ProjectModel.LoadMembers();
+
+            foreach (DataRow dr in members.Rows)
+            {
+                lstMembers.Items.Add(Convert.ToString(dr[0]) + "   (" + Convert.ToString(dr[1]) + ")");
+            }
+        }
+
         private void TxtState(bool state)
         {
             txtEmail.Visible= state;
@@ -108,10 +118,16 @@ namespace Presentation
 
         #endregion
 
+        #region "Variables"
+        DataTable crewSource;
+
+        #endregion
+
         private void FrmEditProfile_Load(object sender, EventArgs e)
         {
             LoadUserData();
             UserPrivileges();
+            LoadCrewMembers();
         }
 
      
@@ -301,6 +317,8 @@ namespace Presentation
                     BtnShowPass.Visible = true;
                     BtnHiddePass.Visible = false;
                     ResetAddMemberTxt();
+                    lstMembers.Items.Clear();
+                    LoadCrewMembers();
                 }
                 else
                 {
@@ -325,6 +343,30 @@ namespace Presentation
         {
             pnlResMember.Visible = false;
             pnlResMember.Location = new Point(842, 238);
+        }
+
+        private void BtnDeleteMember_Click(object sender, EventArgs e)
+        {
+
+            string memberSelected = lstMembers.SelectedItem.ToString();
+            int userCode = Convert.ToInt32(memberSelected.Substring(0, memberSelected.IndexOf(" ")).Trim());
+            DialogResult delete = MessageBox.Show("Are you sure you want to delete this user account? This action is not reversible!", "System Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if(delete == DialogResult.Yes)
+            {
+                var user = new UserModel();
+                var res = user.DeleteUser(userCode);
+                if(res == true)
+                {
+                    MessageBox.Show("Account deleted successfully!", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lstMembers.Items.Clear();
+                    LoadCrewMembers();
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting the user account, try again later", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

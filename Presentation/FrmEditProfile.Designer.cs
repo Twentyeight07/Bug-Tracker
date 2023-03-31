@@ -55,6 +55,8 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyProfile = new System.Windows.Forms.Label();
             this.pnlAddMember = new System.Windows.Forms.Panel();
+            this.cmbAdmin = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlResMember = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.lblSuccessMessage = new System.Windows.Forms.Label();
@@ -81,8 +83,12 @@
             this.BtnShowPass = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbAdmin = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMembers = new System.Windows.Forms.Label();
+            this.BtnDeleteMember = new System.Windows.Forms.Button();
+            this.lstMembers = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlProfile.SuspendLayout();
             this.pnlCompanyName.SuspendLayout();
             this.pnlAddMember.SuspendLayout();
@@ -90,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnHiddePass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnShowPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlProfile
@@ -114,7 +121,7 @@
             this.pnlProfile.Controls.Add(this.lblName);
             this.pnlProfile.Location = new System.Drawing.Point(50, 61);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(966, 295);
+            this.pnlProfile.Size = new System.Drawing.Size(950, 295);
             this.pnlProfile.TabIndex = 0;
             // 
             // linkEditPass
@@ -123,7 +130,7 @@
             this.linkEditPass.AutoSize = true;
             this.linkEditPass.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.linkEditPass.Location = new System.Drawing.Point(700, 74);
+            this.linkEditPass.Location = new System.Drawing.Point(684, 74);
             this.linkEditPass.Name = "linkEditPass";
             this.linkEditPass.Size = new System.Drawing.Size(26, 13);
             this.linkEditPass.TabIndex = 19;
@@ -150,7 +157,7 @@
             this.lblCurrentPass.AutoSize = true;
             this.lblCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblCurrentPass.Location = new System.Drawing.Point(582, 204);
+            this.lblCurrentPass.Location = new System.Drawing.Point(566, 204);
             this.lblCurrentPass.Name = "lblCurrentPass";
             this.lblCurrentPass.Size = new System.Drawing.Size(145, 19);
             this.lblCurrentPass.TabIndex = 18;
@@ -163,7 +170,7 @@
             this.txtCurrentPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
             this.txtCurrentPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrentPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtCurrentPass.Location = new System.Drawing.Point(586, 226);
+            this.txtCurrentPass.Location = new System.Drawing.Point(570, 226);
             this.txtCurrentPass.Name = "txtCurrentPass";
             this.txtCurrentPass.Size = new System.Drawing.Size(357, 27);
             this.txtCurrentPass.TabIndex = 6;
@@ -175,7 +182,7 @@
             this.lblEditRepeatPass.AutoSize = true;
             this.lblEditRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblEditRepeatPass.Location = new System.Drawing.Point(582, 137);
+            this.lblEditRepeatPass.Location = new System.Drawing.Point(566, 137);
             this.lblEditRepeatPass.Name = "lblEditRepeatPass";
             this.lblEditRepeatPass.Size = new System.Drawing.Size(167, 19);
             this.lblEditRepeatPass.TabIndex = 16;
@@ -188,7 +195,7 @@
             this.lblEditPass.AutoSize = true;
             this.lblEditPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEditPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lblEditPass.Location = new System.Drawing.Point(582, 72);
+            this.lblEditPass.Location = new System.Drawing.Point(566, 72);
             this.lblEditPass.Name = "lblEditPass";
             this.lblEditPass.Size = new System.Drawing.Size(114, 19);
             this.lblEditPass.TabIndex = 15;
@@ -202,7 +209,7 @@
             this.txtRepeatPass.Enabled = false;
             this.txtRepeatPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRepeatPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtRepeatPass.Location = new System.Drawing.Point(586, 159);
+            this.txtRepeatPass.Location = new System.Drawing.Point(570, 159);
             this.txtRepeatPass.Name = "txtRepeatPass";
             this.txtRepeatPass.Size = new System.Drawing.Size(357, 27);
             this.txtRepeatPass.TabIndex = 5;
@@ -215,7 +222,7 @@
             this.txtNewPass.Enabled = false;
             this.txtNewPass.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.txtNewPass.Location = new System.Drawing.Point(586, 94);
+            this.txtNewPass.Location = new System.Drawing.Point(570, 94);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(357, 27);
             this.txtNewPass.TabIndex = 4;
@@ -293,7 +300,7 @@
             this.BtnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEdit.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnEdit.Location = new System.Drawing.Point(850, 16);
+            this.BtnEdit.Location = new System.Drawing.Point(834, 16);
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Size = new System.Drawing.Size(93, 40);
             this.BtnEdit.TabIndex = 4;
@@ -350,7 +357,7 @@
             this.pnlCompanyName.Controls.Add(this.txtCompanyName);
             this.pnlCompanyName.Location = new System.Drawing.Point(50, 412);
             this.pnlCompanyName.Name = "pnlCompanyName";
-            this.pnlCompanyName.Size = new System.Drawing.Size(966, 167);
+            this.pnlCompanyName.Size = new System.Drawing.Size(950, 167);
             this.pnlCompanyName.TabIndex = 8;
             // 
             // lblPassCompany
@@ -408,7 +415,7 @@
             this.BtnEditCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditCompany.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditCompany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnEditCompany.Location = new System.Drawing.Point(851, 15);
+            this.BtnEditCompany.Location = new System.Drawing.Point(835, 15);
             this.BtnEditCompany.Name = "BtnEditCompany";
             this.BtnEditCompany.Size = new System.Drawing.Size(93, 40);
             this.BtnEditCompany.TabIndex = 19;
@@ -497,8 +504,34 @@
             this.pnlAddMember.Controls.Add(this.BtnShowPass);
             this.pnlAddMember.Location = new System.Drawing.Point(50, 639);
             this.pnlAddMember.Name = "pnlAddMember";
-            this.pnlAddMember.Size = new System.Drawing.Size(966, 313);
+            this.pnlAddMember.Size = new System.Drawing.Size(950, 315);
             this.pnlAddMember.TabIndex = 10;
+            // 
+            // cmbAdmin
+            // 
+            this.cmbAdmin.Enabled = false;
+            this.cmbAdmin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAdmin.FormattingEnabled = true;
+            this.cmbAdmin.Items.AddRange(new object[] {
+            "False",
+            "True"});
+            this.cmbAdmin.Location = new System.Drawing.Point(721, 145);
+            this.cmbAdmin.Name = "cmbAdmin";
+            this.cmbAdmin.Size = new System.Drawing.Size(121, 27);
+            this.cmbAdmin.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label9.Location = new System.Drawing.Point(717, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 19);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "Admin";
             // 
             // pnlResMember
             // 
@@ -655,7 +688,7 @@
             this.BtnAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAddMember.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAddMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
-            this.BtnAddMember.Location = new System.Drawing.Point(842, 16);
+            this.BtnAddMember.Location = new System.Drawing.Point(826, 16);
             this.BtnAddMember.Name = "BtnAddMember";
             this.BtnAddMember.Size = new System.Drawing.Size(106, 40);
             this.BtnAddMember.TabIndex = 31;
@@ -854,38 +887,95 @@
             this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.Image = global::Presentation.Properties.Resources.cerrar1;
-            this.BtnClose.Location = new System.Drawing.Point(1043, 6);
+            this.BtnClose.Location = new System.Drawing.Point(1055, 6);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(16, 16);
             this.BtnClose.TabIndex = 7;
             this.BtnClose.TabStop = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // label9
+            // label10
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label9.Location = new System.Drawing.Point(717, 123);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 19);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Admin";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label10.Location = new System.Drawing.Point(45, 982);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(205, 25);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Delete team member";
             // 
-            // cmbAdmin
+            // panel1
             // 
-            this.cmbAdmin.Enabled = false;
-            this.cmbAdmin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAdmin.FormattingEnabled = true;
-            this.cmbAdmin.Items.AddRange(new object[] {
-            "False",
-            "True"});
-            this.cmbAdmin.Location = new System.Drawing.Point(721, 145);
-            this.cmbAdmin.Name = "cmbAdmin";
-            this.cmbAdmin.Size = new System.Drawing.Size(121, 27);
-            this.cmbAdmin.TabIndex = 37;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lstMembers);
+            this.panel1.Controls.Add(this.BtnDeleteMember);
+            this.panel1.Controls.Add(this.lblMembers);
+            this.panel1.Location = new System.Drawing.Point(50, 1010);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(950, 300);
+            this.panel1.TabIndex = 13;
+            // 
+            // lblMembers
+            // 
+            this.lblMembers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMembers.AutoSize = true;
+            this.lblMembers.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lblMembers.Location = new System.Drawing.Point(29, 37);
+            this.lblMembers.Name = "lblMembers";
+            this.lblMembers.Size = new System.Drawing.Size(59, 19);
+            this.lblMembers.TabIndex = 49;
+            this.lblMembers.Text = "Users *";
+            // 
+            // BtnDeleteMember
+            // 
+            this.BtnDeleteMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnDeleteMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteMember.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnDeleteMember.FlatAppearance.BorderSize = 0;
+            this.BtnDeleteMember.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(79)))), ((int)(((byte)(53)))));
+            this.BtnDeleteMember.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(104)))), ((int)(((byte)(70)))));
+            this.BtnDeleteMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeleteMember.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeleteMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(250)))), ((int)(((byte)(244)))));
+            this.BtnDeleteMember.Location = new System.Drawing.Point(304, 142);
+            this.BtnDeleteMember.Name = "BtnDeleteMember";
+            this.BtnDeleteMember.Size = new System.Drawing.Size(93, 40);
+            this.BtnDeleteMember.TabIndex = 50;
+            this.BtnDeleteMember.Text = "Delete";
+            this.BtnDeleteMember.UseVisualStyleBackColor = false;
+            this.BtnDeleteMember.Click += new System.EventHandler(this.BtnDeleteMember_Click);
+            // 
+            // lstMembers
+            // 
+            this.lstMembers.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lstMembers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lstMembers.FormattingEnabled = true;
+            this.lstMembers.ItemHeight = 18;
+            this.lstMembers.Location = new System.Drawing.Point(29, 61);
+            this.lstMembers.Name = "lstMembers";
+            this.lstMembers.Size = new System.Drawing.Size(240, 202);
+            this.lstMembers.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label11.Location = new System.Drawing.Point(32, 266);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(234, 15);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "WARNING: this action is NOT reversible!";
             // 
             // FrmEditProfile
             // 
@@ -895,6 +985,8 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 50);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(1100, 469);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlAddMember);
             this.Controls.Add(this.lblCompanyProfile);
@@ -917,6 +1009,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnHiddePass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnShowPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -979,5 +1073,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbAdmin;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblMembers;
+        private System.Windows.Forms.Button BtnDeleteMember;
+        private System.Windows.Forms.ListBox lstMembers;
+        private System.Windows.Forms.Label label11;
     }
 }

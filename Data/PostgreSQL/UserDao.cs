@@ -149,6 +149,25 @@ namespace Data
                 }
             }
         }
-        
+
+        public bool DeleteUser(int user_code)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = connection;
+                    cmd.CommandText = @"SELECT * FROM delete_user(:_code)";
+                    cmd.Parameters.AddWithValue("_code", user_code);
+                    if (Convert.ToInt32(cmd.ExecuteScalar()) == 1)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+        }
+
     }
 }
