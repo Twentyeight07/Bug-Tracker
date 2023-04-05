@@ -117,6 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label42.Text" xml:space="preserve">
+    <value>When you click on a bug, this is what you get. 
+All de details of your bug/task, from here you can modify the state of the bug/task,
+if you are admin, you can delete it, change the description or the severe of the bug/task.
+As well change who is assigned to the bug/task</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Bug Trackr is a program that allows you to take control of your projects.
+You can track progress,
+adding bugs that can appear during the development for his correct control and resolution. 
+Or just assign tasks to members of the team for development.
+</value>
+  </data>
   <data name="label32.Text" xml:space="preserve">
     <value>To create a Project you need to provide:
 
@@ -140,12 +153,5 @@ delete that user and create it again</value>
     <value>To create a new member you need to enter in your profile section and navigate to the bottom. there you're going 
 to find the section to add a new member to your team, enter the name, email (user to login), a temporal password 
 and an admin role or not. that's all!</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Bug Trackr is a program that allows you to take control of your projects.
-You can track progress,
-adding bugs that can appear during the development for his correct control and resolution. 
-Or just assign tasks to members of the team for development.
-</value>
   </data>
 </root>

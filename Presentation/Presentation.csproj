@@ -482,6 +482,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="antivirus.ico" />
+    <None Include="Resources\BugDetails.png" />
+    <None Include="Resources\AddBug1.png" />
+    <None Include="Resources\AddBug.png" />
+    <None Include="Resources\AddNewBug.png" />
     <None Include="Resources\DeleteMember1.png" />
     <None Include="Resources\NewProjectModel.png" />
     <None Include="Resources\CreateNewProject.png" />

@@ -83,6 +83,26 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddBug {
+            get {
+                object obj = ResourceManager.GetObject("AddBug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddBug1 {
+            get {
+                object obj = ResourceManager.GetObject("AddBug1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddMember {
             get {
                 object obj = ResourceManager.GetObject("AddMember", resourceCulture);
@@ -96,6 +116,16 @@ namespace Presentation.Properties {
         internal static System.Drawing.Bitmap AddMemberWithData {
             get {
                 object obj = ResourceManager.GetObject("AddMemberWithData", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AddNewBug {
+            get {
+                object obj = ResourceManager.GetObject("AddNewBug", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace Presentation.Properties {
         internal static System.Drawing.Bitmap bug___Light {
             get {
                 object obj = ResourceManager.GetObject("bug - Light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BugDetails {
+            get {
+                object obj = ResourceManager.GetObject("BugDetails", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

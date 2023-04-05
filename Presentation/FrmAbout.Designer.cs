@@ -30,22 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlManageBug = new System.Windows.Forms.Panel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.pnlAddBug = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.pnlCreateNewProject = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.pnlAddNewMember = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lnkManageBug = new System.Windows.Forms.LinkLabel();
+            this.lnkAddBug = new System.Windows.Forms.LinkLabel();
             this.lnkCreateProject = new System.Windows.Forms.LinkLabel();
             this.lnkAddNewMember = new System.Windows.Forms.LinkLabel();
             this.lnkIntroduction = new System.Windows.Forms.LinkLabel();
@@ -65,6 +86,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,31 +95,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblProgramVersion = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lnkAddBug = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label37 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlManageBug.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.pnlAddBug.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnlCreateNewProject.SuspendLayout();
-            this.pnlAddNewMember.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlIntroduction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlAddNewMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.pnlIntroduction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,7 +123,8 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoScrollMargin = new System.Drawing.Size(0, 100);
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pnlManageBug);
+            this.panel1.Controls.Add(this.pnlAddBug);
             this.panel1.Controls.Add(this.pnlCreateNewProject);
             this.panel1.Controls.Add(this.pnlAddNewMember);
             this.panel1.Controls.Add(this.panel3);
@@ -120,8 +136,152 @@
             this.panel1.Size = new System.Drawing.Size(1000, 503);
             this.panel1.TabIndex = 0;
             // 
+            // pnlManageBug
+            // 
+            this.pnlManageBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlManageBug.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlManageBug.Controls.Add(this.label42);
+            this.pnlManageBug.Controls.Add(this.pictureBox10);
+            this.pnlManageBug.Controls.Add(this.label41);
+            this.pnlManageBug.Controls.Add(this.label40);
+            this.pnlManageBug.Location = new System.Drawing.Point(50, 6296);
+            this.pnlManageBug.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.pnlManageBug.Name = "pnlManageBug";
+            this.pnlManageBug.Size = new System.Drawing.Size(900, 760);
+            this.pnlManageBug.TabIndex = 34;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label42.Location = new System.Drawing.Point(141, 641);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(623, 76);
+            this.label42.TabIndex = 9;
+            this.label42.Text = resources.GetString("label42.Text");
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::Presentation.Properties.Resources.BugDetails;
+            this.pictureBox10.Location = new System.Drawing.Point(85, 114);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(734, 509);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 8;
+            this.pictureBox10.TabStop = false;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label41.Location = new System.Drawing.Point(245, 63);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(392, 19);
+            this.label41.TabIndex = 7;
+            this.label41.Text = "Now, let\'s see how you can manage your bugs or tasks";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label40.Location = new System.Drawing.Point(345, 17);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(211, 25);
+            this.label40.TabIndex = 2;
+            this.label40.Text = "Managing a bug/task";
+            // 
+            // pnlAddBug
+            // 
+            this.pnlAddBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAddBug.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAddBug.Controls.Add(this.label39);
+            this.pnlAddBug.Controls.Add(this.label38);
+            this.pnlAddBug.Controls.Add(this.label36);
+            this.pnlAddBug.Controls.Add(this.pictureBox9);
+            this.pnlAddBug.Controls.Add(this.pictureBox8);
+            this.pnlAddBug.Controls.Add(this.label37);
+            this.pnlAddBug.Location = new System.Drawing.Point(50, 5068);
+            this.pnlAddBug.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.pnlAddBug.Name = "pnlAddBug";
+            this.pnlAddBug.Size = new System.Drawing.Size(900, 1200);
+            this.pnlAddBug.TabIndex = 33;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label39.Location = new System.Drawing.Point(133, 624);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(630, 19);
+            this.label39.TabIndex = 6;
+            this.label39.Text = "Now you have to provide details of the bug/task for his resolution, and assign a " +
+    "member";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label38.Location = new System.Drawing.Point(120, 557);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(649, 19);
+            this.label38.TabIndex = 5;
+            this.label38.Text = "This is what you are going to see when enter in the project you want to add a new" +
+    " bug/task";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Roboto", 12F);
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label36.Location = new System.Drawing.Point(31, 86);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(537, 38);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Now, you have a project already created.\r\nSo, you have to click in the project yo" +
+    "u want to enter and press in \"Add Bug\"";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::Presentation.Properties.Resources.AddBug;
+            this.pictureBox9.Location = new System.Drawing.Point(35, 650);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(815, 495);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 4;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Presentation.Properties.Resources.AddNewBug;
+            this.pictureBox8.Location = new System.Drawing.Point(35, 146);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(815, 408);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label37.Location = new System.Drawing.Point(281, 25);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(371, 25);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Adding a new bug/task to your project";
+            // 
             // pnlCreateNewProject
             // 
+            this.pnlCreateNewProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCreateNewProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCreateNewProject.Controls.Add(this.label32);
             this.pnlCreateNewProject.Controls.Add(this.label31);
@@ -132,7 +292,7 @@
             this.pnlCreateNewProject.Controls.Add(this.label29);
             this.pnlCreateNewProject.Controls.Add(this.label28);
             this.pnlCreateNewProject.Controls.Add(this.label27);
-            this.pnlCreateNewProject.Location = new System.Drawing.Point(50, 3378);
+            this.pnlCreateNewProject.Location = new System.Drawing.Point(50, 3365);
             this.pnlCreateNewProject.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.pnlCreateNewProject.Name = "pnlCreateNewProject";
             this.pnlCreateNewProject.Size = new System.Drawing.Size(900, 1675);
@@ -185,6 +345,43 @@
             this.label30.TabIndex = 38;
             this.label30.Text = "This is what you\'re going to see when you enter in the \"Projects\" section. Now pr" +
     "ess the \"Add Project\" Button";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = global::Presentation.Properties.Resources.NewProjectModel;
+            this.pictureBox6.Location = new System.Drawing.Point(35, 1042);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(818, 419);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 37;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = global::Presentation.Properties.Resources.CreateNewProject;
+            this.pictureBox5.Location = new System.Drawing.Point(35, 555);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(818, 419);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 36;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::Presentation.Properties.Resources.ProjectsRemarked;
+            this.pictureBox4.Location = new System.Drawing.Point(33, 82);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(283, 394);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 35;
+            this.pictureBox4.TabStop = false;
             // 
             // label29
             // 
@@ -247,11 +444,39 @@
             this.pnlAddNewMember.Controls.Add(this.label22);
             this.pnlAddNewMember.Controls.Add(this.pictureBox2);
             this.pnlAddNewMember.Controls.Add(this.label20);
-            this.pnlAddNewMember.Location = new System.Drawing.Point(50, 1667);
+            this.pnlAddNewMember.Location = new System.Drawing.Point(50, 1654);
             this.pnlAddNewMember.Margin = new System.Windows.Forms.Padding(3, 3, 3, 35);
             this.pnlAddNewMember.Name = "pnlAddNewMember";
             this.pnlAddNewMember.Size = new System.Drawing.Size(900, 1673);
             this.pnlAddNewMember.TabIndex = 31;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label35.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label35.Location = new System.Drawing.Point(29, 1572);
+            this.label35.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(454, 57);
+            this.label35.TabIndex = 39;
+            this.label35.Text = "Now just select the member you want to delete from your team.\r\n\r\nWarning: this ac" +
+    "tion is not reversible!";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = global::Presentation.Properties.Resources.DeleteMember1;
+            this.pictureBox7.Location = new System.Drawing.Point(35, 1258);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(835, 295);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 38;
+            this.pictureBox7.TabStop = false;
             // 
             // label34
             // 
@@ -312,6 +537,18 @@
             this.label24.Text = "This is what its looks like when you complete the data of the new member";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = global::Presentation.Properties.Resources.AddMemberWithData;
+            this.pictureBox3.Location = new System.Drawing.Point(33, 779);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(835, 295);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -342,6 +579,18 @@
     "ur team. And assign or not an admin role";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::Presentation.Properties.Resources.AddMember;
+            this.pictureBox2.Location = new System.Drawing.Point(33, 214);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(835, 388);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -361,15 +610,52 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lnkManageBug);
             this.panel3.Controls.Add(this.lnkAddBug);
             this.panel3.Controls.Add(this.lnkCreateProject);
             this.panel3.Controls.Add(this.lnkAddNewMember);
             this.panel3.Controls.Add(this.lnkIntroduction);
             this.panel3.Controls.Add(this.label25);
-            this.panel3.Location = new System.Drawing.Point(168, 160);
+            this.panel3.Location = new System.Drawing.Point(168, 168);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(665, 380);
             this.panel3.TabIndex = 30;
+            // 
+            // lnkManageBug
+            // 
+            this.lnkManageBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkManageBug.AutoSize = true;
+            this.lnkManageBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkManageBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkManageBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkManageBug.Location = new System.Drawing.Point(19, 167);
+            this.lnkManageBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkManageBug.Name = "lnkManageBug";
+            this.lnkManageBug.Size = new System.Drawing.Size(180, 15);
+            this.lnkManageBug.TabIndex = 36;
+            this.lnkManageBug.TabStop = true;
+            this.lnkManageBug.Text = "• Manage and modify bug/task";
+            this.lnkManageBug.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkManageBug.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkManageBug_LinkClicked);
+            // 
+            // lnkAddBug
+            // 
+            this.lnkAddBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkAddBug.AutoSize = true;
+            this.lnkAddBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkAddBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkAddBug.Location = new System.Drawing.Point(19, 142);
+            this.lnkAddBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.lnkAddBug.Name = "lnkAddBug";
+            this.lnkAddBug.Size = new System.Drawing.Size(210, 15);
+            this.lnkAddBug.TabIndex = 35;
+            this.lnkAddBug.TabStop = true;
+            this.lnkAddBug.Text = "• Add a new bug/task to your project";
+            this.lnkAddBug.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkAddBug.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkAddBug_LinkClicked);
             // 
             // lnkCreateProject
             // 
@@ -387,6 +673,7 @@
             this.lnkCreateProject.TabStop = true;
             this.lnkCreateProject.Text = "• Create your first Project";
             this.lnkCreateProject.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.lnkCreateProject.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkCreateProject_LinkClicked);
             // 
             // lnkAddNewMember
             // 
@@ -460,7 +747,7 @@
             this.pnlIntroduction.Controls.Add(this.pictureBox1);
             this.pnlIntroduction.Controls.Add(this.label6);
             this.pnlIntroduction.Controls.Add(this.label5);
-            this.pnlIntroduction.Location = new System.Drawing.Point(50, 600);
+            this.pnlIntroduction.Location = new System.Drawing.Point(50, 587);
             this.pnlIntroduction.Margin = new System.Windows.Forms.Padding(3, 3, 3, 35);
             this.pnlIntroduction.Name = "pnlIntroduction";
             this.pnlIntroduction.Size = new System.Drawing.Size(900, 1029);
@@ -673,6 +960,18 @@
             this.label7.Text = "Here you can see the Main Menu with numbers in the important points\r\n";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Presentation.Properties.Resources.MainMenuMark;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 128);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(835, 388);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -711,7 +1010,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label4.Location = new System.Drawing.Point(391, 20);
+            this.label4.Location = new System.Drawing.Point(400, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 25);
             this.label4.TabIndex = 5;
@@ -725,7 +1024,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label3.Location = new System.Drawing.Point(166, 45);
+            this.label3.Location = new System.Drawing.Point(176, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(649, 76);
             this.label3.TabIndex = 4;
@@ -786,144 +1085,6 @@
             this.BtnClose.TabStop = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = global::Presentation.Properties.Resources.NewProjectModel;
-            this.pictureBox6.Location = new System.Drawing.Point(35, 1042);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(818, 419);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 37;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::Presentation.Properties.Resources.CreateNewProject;
-            this.pictureBox5.Location = new System.Drawing.Point(35, 555);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(818, 419);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 36;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::Presentation.Properties.Resources.ProjectsRemarked;
-            this.pictureBox4.Location = new System.Drawing.Point(33, 82);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(283, 394);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 35;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = global::Presentation.Properties.Resources.DeleteMember1;
-            this.pictureBox7.Location = new System.Drawing.Point(35, 1258);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(835, 295);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 38;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::Presentation.Properties.Resources.AddMemberWithData;
-            this.pictureBox3.Location = new System.Drawing.Point(33, 779);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(835, 295);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::Presentation.Properties.Resources.AddMember;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 214);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(835, 388);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Presentation.Properties.Resources.MainMenuMark;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 128);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(835, 388);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label35.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label35.Location = new System.Drawing.Point(29, 1572);
-            this.label35.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(454, 57);
-            this.label35.TabIndex = 39;
-            this.label35.Text = "Now just select the member you want to delete from your team.\r\n\r\nWarning: this ac" +
-    "tion is not reversible!";
-            // 
-            // lnkAddBug
-            // 
-            this.lnkAddBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lnkAddBug.AutoSize = true;
-            this.lnkAddBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAddBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkAddBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkAddBug.Location = new System.Drawing.Point(19, 142);
-            this.lnkAddBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.lnkAddBug.Name = "lnkAddBug";
-            this.lnkAddBug.Size = new System.Drawing.Size(210, 15);
-            this.lnkAddBug.TabIndex = 35;
-            this.lnkAddBug.TabStop = true;
-            this.lnkAddBug.Text = "• Add a new bug/task to your project";
-            this.lnkAddBug.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label37);
-            this.panel2.Location = new System.Drawing.Point(50, 5081);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(900, 600);
-            this.panel2.TabIndex = 33;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label37.Location = new System.Drawing.Point(281, 25);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(371, 25);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "Adding a new bug/task to your project";
-            // 
             // FrmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -941,24 +1102,29 @@
             this.Load += new System.EventHandler(this.FrmAbout_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlManageBug.ResumeLayout(false);
+            this.pnlManageBug.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.pnlAddBug.ResumeLayout(false);
+            this.pnlAddBug.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.pnlCreateNewProject.ResumeLayout(false);
             this.pnlCreateNewProject.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnlAddNewMember.ResumeLayout(false);
             this.pnlAddNewMember.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnlIntroduction.ResumeLayout(false);
             this.pnlIntroduction.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1019,7 +1185,18 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.LinkLabel lnkAddBug;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlAddBug;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Panel pnlManageBug;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.LinkLabel lnkManageBug;
     }
 }

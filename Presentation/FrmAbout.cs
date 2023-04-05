@@ -38,5 +38,20 @@ namespace Presentation
         {
             pnlAddNewMember.Focus();
         }
+
+        private void LnkCreateProject_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlCreateNewProject.Focus();
+        }
+
+        private void LnkAddBug_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlAddBug.Focus();
+        }
+
+        private void LnkManageBug_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlManageBug.Focus();
+        }
     }
 }
