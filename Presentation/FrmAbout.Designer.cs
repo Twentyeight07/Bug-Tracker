@@ -148,7 +148,7 @@
             this.pnlManageBug.Location = new System.Drawing.Point(50, 6296);
             this.pnlManageBug.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.pnlManageBug.Name = "pnlManageBug";
-            this.pnlManageBug.Size = new System.Drawing.Size(900, 760);
+            this.pnlManageBug.Size = new System.Drawing.Size(900, 655);
             this.pnlManageBug.TabIndex = 34;
             // 
             // label42
@@ -156,7 +156,7 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Roboto", 12F);
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label42.Location = new System.Drawing.Point(179, 641);
+            this.label42.Location = new System.Drawing.Point(179, 545);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(548, 76);
             this.label42.TabIndex = 9;
@@ -165,9 +165,9 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::Presentation.Properties.Resources.BugDetails;
-            this.pictureBox10.Location = new System.Drawing.Point(85, 114);
+            this.pictureBox10.Location = new System.Drawing.Point(85, 95);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(734, 509);
+            this.pictureBox10.Size = new System.Drawing.Size(734, 436);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 8;
             this.pictureBox10.TabStop = false;
@@ -283,13 +283,13 @@
             this.pnlCreateNewProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlCreateNewProject.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCreateNewProject.Controls.Add(this.label29);
             this.pnlCreateNewProject.Controls.Add(this.label32);
             this.pnlCreateNewProject.Controls.Add(this.label31);
             this.pnlCreateNewProject.Controls.Add(this.label30);
             this.pnlCreateNewProject.Controls.Add(this.pictureBox6);
             this.pnlCreateNewProject.Controls.Add(this.pictureBox5);
             this.pnlCreateNewProject.Controls.Add(this.pictureBox4);
-            this.pnlCreateNewProject.Controls.Add(this.label29);
             this.pnlCreateNewProject.Controls.Add(this.label28);
             this.pnlCreateNewProject.Controls.Add(this.label27);
             this.pnlCreateNewProject.Location = new System.Drawing.Point(50, 3365);
@@ -373,8 +373,6 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::Presentation.Properties.Resources.ProjectsRemarked;
             this.pictureBox4.Location = new System.Drawing.Point(33, 82);
             this.pictureBox4.Name = "pictureBox4";
@@ -385,13 +383,11 @@
             // 
             // label29
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label29.Location = new System.Drawing.Point(322, 205);
+            this.label29.Location = new System.Drawing.Point(344, 205);
             this.label29.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(214, 57);
