@@ -156,9 +156,9 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Roboto", 12F);
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label42.Location = new System.Drawing.Point(141, 641);
+            this.label42.Location = new System.Drawing.Point(179, 641);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(623, 76);
+            this.label42.Size = new System.Drawing.Size(548, 76);
             this.label42.TabIndex = 9;
             this.label42.Text = resources.GetString("label42.Text");
             // 
