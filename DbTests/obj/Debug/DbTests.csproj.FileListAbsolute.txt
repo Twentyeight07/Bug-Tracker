@@ -82,3 +82,9 @@ E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.csproj.CoreCompi
 E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.csproj.CopyComplete
 E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.dll
 E:\source\repos\BugTracker\BugTracker\DbTests\obj\Debug\DbTests.pdb
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.TestPlatform.AdapterUtilities.resources.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+E:\source\repos\BugTracker\BugTracker\DbTests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
