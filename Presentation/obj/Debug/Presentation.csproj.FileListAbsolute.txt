@@ -71,11 +71,6 @@ E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x8
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 E:\source\repos\Bug Tracker\Bug Tracker\Presentation\bin\Debug\Reports\ProjectReport.rdlc
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Reports\ProjectReport.rdlc
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.exe.config
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.exe.manifest
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.application
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.exe
-E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\BugTracker.pdb
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Domain.dll.config
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Microsoft.Win32.Registry.xml
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
@@ -133,11 +128,18 @@ E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.Proper
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.Fody.CopyLocal.cache
-E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.exe.manifest
-E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.application
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.CopyComplete
-E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.exe
-E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\BugTracker.pdb
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x86\SqlServerSpatial160.dll
 E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\x64\SqlServerSpatial160.dll
 E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.FrmAbout.resources
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Presentation.csproj.Fody.RuntimeCopyLocal.cache
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Bug Trackr.exe.config
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Bug Trackr.exe.manifest
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Bug Trackr.application
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Bug Trackr.exe
+E:\source\repos\BugTracker\BugTracker\Presentation\bin\Debug\Bug Trackr.pdb
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Bug Trackr.exe.manifest
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Bug Trackr.application
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Bug Trackr.exe
+E:\source\repos\BugTracker\BugTracker\Presentation\obj\Debug\Bug Trackr.pdb

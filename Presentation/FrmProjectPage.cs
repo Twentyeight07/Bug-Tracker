@@ -242,6 +242,8 @@ namespace Presentation
         {
             PnlNewBug.Visible = false;
             PnlNewBug.SendToBack();
+            txtBugTitle.Text = "";
+            txtDescription.Text = "";
         }
 
         private void BtnSaveProject_Click(object sender, EventArgs e)
@@ -280,6 +282,8 @@ namespace Presentation
                         List_Bugs();
                         PnlNewBug.Visible= false;
                         PnlNewBug.SendToBack();
+                        txtBugTitle.Text = "";
+                        txtDescription.Text = "";
                     }
                     else MessageBox.Show("You must select at least one member to be assigned to this bug", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

@@ -1053,7 +1053,7 @@
             this.pnlProjectConfig.Controls.Add(this.cmbProjectState);
             this.pnlProjectConfig.Controls.Add(this.label12);
             this.pnlProjectConfig.Controls.Add(this.lblProjectNameConfg);
-            this.pnlProjectConfig.Location = new System.Drawing.Point(173, 12);
+            this.pnlProjectConfig.Location = new System.Drawing.Point(95, 12);
             this.pnlProjectConfig.Name = "pnlProjectConfig";
             this.pnlProjectConfig.Size = new System.Drawing.Size(265, 234);
             this.pnlProjectConfig.TabIndex = 17;
@@ -1195,9 +1195,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(227)))), ((int)(((byte)(205)))));
             this.ClientSize = new System.Drawing.Size(1100, 610);
+            this.Controls.Add(this.pnlProjectConfig);
             this.Controls.Add(this.PnlNewBug);
             this.Controls.Add(this.pnlBugDetails);
-            this.Controls.Add(this.pnlProjectConfig);
             this.Controls.Add(this.BtnConfgProject);
             this.Controls.Add(this.lblProjectName);
             this.Controls.Add(this.pnlPrincipal);

@@ -116,6 +116,7 @@ namespace Presentation
         {
             if (Application.OpenForms["FrmProjectPage"] == null)
             {
+                LoadData();
                 List_Projects();
             }
         }

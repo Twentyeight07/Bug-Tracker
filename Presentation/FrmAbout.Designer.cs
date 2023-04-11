@@ -43,13 +43,13 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
             this.pnlCreateNewProject = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.pnlAddNewMember = new System.Windows.Forms.Panel();
@@ -298,6 +298,19 @@
             this.pnlCreateNewProject.Size = new System.Drawing.Size(900, 1675);
             this.pnlCreateNewProject.TabIndex = 32;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
+            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.label29.Location = new System.Drawing.Point(344, 205);
+            this.label29.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(214, 57);
+            this.label29.TabIndex = 34;
+            this.label29.Text = "First of all you have to enter \r\nto the \"Project\" section in the \r\nMain Menu";
+            // 
             // label32
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -380,19 +393,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 35;
             this.pictureBox4.TabStop = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label29.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label29.Location = new System.Drawing.Point(344, 205);
-            this.label29.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(214, 57);
-            this.label29.TabIndex = 34;
-            this.label29.Text = "First of all you have to enter \r\nto the \"Project\" section in the \r\nMain Menu";
             // 
             // label28
             // 
@@ -614,7 +614,7 @@
             this.panel3.Controls.Add(this.label25);
             this.panel3.Location = new System.Drawing.Point(168, 168);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(665, 380);
+            this.panel3.Size = new System.Drawing.Size(665, 257);
             this.panel3.TabIndex = 30;
             // 
             // lnkManageBug
@@ -622,13 +622,13 @@
             this.lnkManageBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkManageBug.AutoSize = true;
-            this.lnkManageBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkManageBug.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkManageBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkManageBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkManageBug.Location = new System.Drawing.Point(19, 167);
+            this.lnkManageBug.Location = new System.Drawing.Point(19, 183);
             this.lnkManageBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkManageBug.Name = "lnkManageBug";
-            this.lnkManageBug.Size = new System.Drawing.Size(180, 15);
+            this.lnkManageBug.Size = new System.Drawing.Size(229, 19);
             this.lnkManageBug.TabIndex = 36;
             this.lnkManageBug.TabStop = true;
             this.lnkManageBug.Text = "• Manage and modify bug/task";
@@ -640,13 +640,13 @@
             this.lnkAddBug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkAddBug.AutoSize = true;
-            this.lnkAddBug.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddBug.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkAddBug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkAddBug.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkAddBug.Location = new System.Drawing.Point(19, 142);
+            this.lnkAddBug.Location = new System.Drawing.Point(19, 154);
             this.lnkAddBug.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkAddBug.Name = "lnkAddBug";
-            this.lnkAddBug.Size = new System.Drawing.Size(210, 15);
+            this.lnkAddBug.Size = new System.Drawing.Size(265, 19);
             this.lnkAddBug.TabIndex = 35;
             this.lnkAddBug.TabStop = true;
             this.lnkAddBug.Text = "• Add a new bug/task to your project";
@@ -658,13 +658,13 @@
             this.lnkCreateProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkCreateProject.AutoSize = true;
-            this.lnkCreateProject.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkCreateProject.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCreateProject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkCreateProject.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkCreateProject.Location = new System.Drawing.Point(19, 117);
+            this.lnkCreateProject.Location = new System.Drawing.Point(19, 125);
             this.lnkCreateProject.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkCreateProject.Name = "lnkCreateProject";
-            this.lnkCreateProject.Size = new System.Drawing.Size(146, 15);
+            this.lnkCreateProject.Size = new System.Drawing.Size(182, 19);
             this.lnkCreateProject.TabIndex = 34;
             this.lnkCreateProject.TabStop = true;
             this.lnkCreateProject.Text = "• Create your first Project";
@@ -676,13 +676,13 @@
             this.lnkAddNewMember.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkAddNewMember.AutoSize = true;
-            this.lnkAddNewMember.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkAddNewMember.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkAddNewMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkAddNewMember.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.lnkAddNewMember.Location = new System.Drawing.Point(19, 92);
+            this.lnkAddNewMember.Location = new System.Drawing.Point(19, 96);
             this.lnkAddNewMember.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkAddNewMember.Name = "lnkAddNewMember";
-            this.lnkAddNewMember.Size = new System.Drawing.Size(182, 15);
+            this.lnkAddNewMember.Size = new System.Drawing.Size(229, 19);
             this.lnkAddNewMember.TabIndex = 33;
             this.lnkAddNewMember.TabStop = true;
             this.lnkAddNewMember.Text = "• Adding and deleting members";
@@ -694,13 +694,13 @@
             this.lnkIntroduction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkIntroduction.AutoSize = true;
-            this.lnkIntroduction.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkIntroduction.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkIntroduction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkIntroduction.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.lnkIntroduction.Location = new System.Drawing.Point(19, 67);
             this.lnkIntroduction.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lnkIntroduction.Name = "lnkIntroduction";
-            this.lnkIntroduction.Size = new System.Drawing.Size(82, 15);
+            this.lnkIntroduction.Size = new System.Drawing.Size(103, 19);
             this.lnkIntroduction.TabIndex = 32;
             this.lnkIntroduction.TabStop = true;
             this.lnkIntroduction.Text = "• Introduction";
@@ -712,11 +712,11 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label25.Location = new System.Drawing.Point(14, 16);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(64, 25);
+            this.label25.Size = new System.Drawing.Size(72, 29);
             this.label25.TabIndex = 31;
             this.label25.Text = "Index";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -97,6 +97,7 @@ namespace Presentation
                         );
                         var res = projectModel.CreateProject();
                         MessageBox.Show("Project created successfully", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         this.Close();
                     }else MessageBox.Show("You should select at least one member to be part of the project", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
