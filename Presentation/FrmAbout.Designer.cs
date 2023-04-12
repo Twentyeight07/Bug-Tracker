@@ -158,7 +158,7 @@
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label42.Location = new System.Drawing.Point(179, 545);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(548, 76);
+            this.label42.Size = new System.Drawing.Size(552, 76);
             this.label42.TabIndex = 9;
             this.label42.Text = resources.GetString("label42.Text");
             // 
@@ -177,18 +177,18 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Roboto", 12F);
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label41.Location = new System.Drawing.Point(245, 63);
+            this.label41.Location = new System.Drawing.Point(278, 63);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(392, 19);
+            this.label41.Size = new System.Drawing.Size(348, 19);
             this.label41.TabIndex = 7;
-            this.label41.Text = "Now, let\'s see how you can manage your bugs or tasks";
+            this.label41.Text = "Let\'s see how you can manage your bugs/tasks.";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label40.Location = new System.Drawing.Point(345, 17);
+            this.label40.Location = new System.Drawing.Point(347, 17);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(211, 25);
             this.label40.TabIndex = 2;
@@ -216,12 +216,12 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Roboto", 12F);
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label39.Location = new System.Drawing.Point(133, 624);
+            this.label39.Location = new System.Drawing.Point(73, 624);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(630, 19);
+            this.label39.Size = new System.Drawing.Size(738, 19);
             this.label39.TabIndex = 6;
-            this.label39.Text = "Now you have to provide details of the bug/task for his resolution, and assign a " +
-    "member";
+            this.label39.Text = "Now you have to provide details of the bug/task for his resolution, and assign at" +
+    " least one member to it.";
             // 
             // label38
             // 
@@ -242,10 +242,10 @@
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label36.Location = new System.Drawing.Point(31, 86);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(537, 38);
+            this.label36.Size = new System.Drawing.Size(408, 38);
             this.label36.TabIndex = 2;
-            this.label36.Text = "Now, you have a project already created.\r\nSo, you have to click in the project yo" +
-    "u want to enter and press in \"Add Bug\"";
+            this.label36.Text = "Now, you have a project already created.\r\nSo, you have to click on it to enter an" +
+    "d press in \"Add Bug\"";
             // 
             // pictureBox9
             // 
@@ -338,10 +338,10 @@
             this.label31.Location = new System.Drawing.Point(125, 1009);
             this.label31.Margin = new System.Windows.Forms.Padding(3, 0, 3, 15);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(638, 19);
+            this.label31.Size = new System.Drawing.Size(642, 19);
             this.label31.TabIndex = 39;
             this.label31.Text = "Now you\'re going to see a modal window, there you need to enter the details of th" +
-    "e project";
+    "e project.";
             // 
             // label30
             // 
@@ -405,10 +405,10 @@
             this.label28.Location = new System.Drawing.Point(80, 50);
             this.label28.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(746, 19);
+            this.label28.Size = new System.Drawing.Size(750, 19);
             this.label28.TabIndex = 33;
             this.label28.Text = "Let\'s see how you can create a project and start carry out control of the develop" +
-    "ment of your applications";
+    "ment of your applications.";
             // 
             // label27
             // 
@@ -528,9 +528,9 @@
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label24.Location = new System.Drawing.Point(189, 1077);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(505, 18);
+            this.label24.Size = new System.Drawing.Size(508, 18);
             this.label24.TabIndex = 34;
-            this.label24.Text = "This is what its looks like when you complete the data of the new member";
+            this.label24.Text = "This is what its looks like when you complete the data of the new member.";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
@@ -553,7 +553,7 @@
             this.label23.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label23.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label23.Location = new System.Drawing.Point(29, 666);
+            this.label23.Location = new System.Drawing.Point(48, 666);
             this.label23.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(805, 57);
@@ -567,12 +567,12 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label22.Location = new System.Drawing.Point(20, 605);
+            this.label22.Location = new System.Drawing.Point(38, 605);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(824, 18);
+            this.label22.Size = new System.Drawing.Size(828, 18);
             this.label22.TabIndex = 31;
             this.label22.Text = "On the section to edit your profile, at the bottom, you can add new members to yo" +
-    "ur team. And assign or not an admin role";
+    "ur team. And assign or not an admin role.";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
@@ -612,7 +612,7 @@
             this.panel3.Controls.Add(this.lnkAddNewMember);
             this.panel3.Controls.Add(this.lnkIntroduction);
             this.panel3.Controls.Add(this.label25);
-            this.panel3.Location = new System.Drawing.Point(168, 168);
+            this.panel3.Location = new System.Drawing.Point(168, 190);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(665, 257);
             this.panel3.TabIndex = 30;
@@ -760,9 +760,9 @@
             this.label21.Location = new System.Drawing.Point(32, 936);
             this.label21.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(373, 14);
+            this.label21.Size = new System.Drawing.Size(301, 14);
             this.label21.TabIndex = 40;
-            this.label21.Text = "* The reports section is only visible to you if you have an admin role.";
+            this.label21.Text = "* The reports section is only visible to admin accounts.";
             // 
             // label18
             // 
@@ -817,10 +817,10 @@
             this.label17.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label17.Location = new System.Drawing.Point(31, 914);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(716, 19);
+            this.label17.Size = new System.Drawing.Size(647, 19);
             this.label17.TabIndex = 36;
-            this.label17.Text = "In reports page there\'s charts with the numbers of bugs, state of bugs, severity " +
-    "and bugs assigned to.";
+            this.label17.Text = "You can see charts with the numbers of bugs, state of bugs, severity and bugs ass" +
+    "igned to.";
             // 
             // label14
             // 
@@ -847,10 +847,10 @@
             this.label15.Location = new System.Drawing.Point(31, 836);
             this.label15.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(529, 38);
+            this.label15.Size = new System.Drawing.Size(557, 38);
             this.label15.TabIndex = 34;
             this.label15.Text = "And here is the most important page, here you can add or delete projects.\r\nYou ca" +
-    "n access to a Project Page to see only bugs reported in that project.";
+    "n access to a Project Page to see only bugs reported in that project, etc.";
             // 
             // label12
             // 
@@ -919,7 +919,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label9.Location = new System.Drawing.Point(31, 569);
+            this.label9.Location = new System.Drawing.Point(29, 548);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 19);
             this.label9.TabIndex = 29;
@@ -934,13 +934,12 @@
             this.label8.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label8.Location = new System.Drawing.Point(31, 588);
+            this.label8.Location = new System.Drawing.Point(31, 567);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(615, 38);
+            this.label8.Size = new System.Drawing.Size(625, 57);
             this.label8.TabIndex = 28;
-            this.label8.Text = "Here you can edit details of your profile.\r\nYou can change some things but more i" +
-    "mportant: you can add members to your team.";
+            this.label8.Text = resources.GetString("label8.Text");
             // 
             // label7
             // 
@@ -949,7 +948,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label7.Location = new System.Drawing.Point(215, 519);
+            this.label7.Location = new System.Drawing.Point(211, 513);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(477, 18);
             this.label7.TabIndex = 27;
@@ -961,7 +960,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Presentation.Properties.Resources.MainMenuMark;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 128);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 122);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(835, 388);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -975,13 +974,13 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(31)))), ((int)(((byte)(33)))));
-            this.label6.Location = new System.Drawing.Point(100, 50);
+            this.label6.Location = new System.Drawing.Point(100, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(695, 57);
+            this.label6.Size = new System.Drawing.Size(672, 57);
             this.label6.TabIndex = 25;
-            this.label6.Text = "You create your account and now you see the Main Menu but you can\'t understand ho" +
-    "w all works.\r\nYou don\'t know how add people to your team, start working and carr" +
-    "y out control\r\nof your projects.\r\n";
+            this.label6.Text = "You just created your account, you see the Main Menu but you can\'t understand how" +
+    " all works.\r\nYou don\'t know how add people to your team, start working and carry" +
+    " out control\r\nof your projects.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5

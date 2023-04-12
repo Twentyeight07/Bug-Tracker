@@ -119,9 +119,9 @@
   </resheader>
   <data name="label42.Text" xml:space="preserve">
     <value>When you enter on a bug/task, you can see the details. 
-From here you can modify the state of the bug/task, and if you are admin,
+From here you can modify the state, and if you are admin,
 you can delete it, change the description or the severity.
-As well if you have admin permissions, you can change who is assigned to it</value>
+As well if you have admin permissions, you can change who is assigned to it.</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>To create a Project you need to provide:
@@ -140,12 +140,17 @@ with the same company name to get admin access. If you need another admin in you
 you have to create manually his account. 
 
 Important: you cannot change the admin role later, if you want to delete that privilage you need to 
-delete that user and create it again</value>
+delete that user and create it again.</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>To create a new member you need to enter in your profile section and navigate to the bottom. there you're going 
 to find the section to add a new member to your team, enter the name, email (user to login), a temporal password 
 and an admin role or not. that's all!</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Here you can change details of your profile as your password, email and if you're admin
+can change the Company name too. 
+But more important: you can add members to your team. And delete members too.</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Bug Trackr is a program that allows you to take control of your projects.
