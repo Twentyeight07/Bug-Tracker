@@ -3,18 +3,24 @@
 
 ## What is Bug Trackr? 
 
-Bug Trackr is a program that allows you to take control of your projects. You can track progress, adding bugs that can appear during the development for his correct control and resolution. Or just assign tasks to members of the team for development.
+Bug Trackr is a **native Windows program** that allows you to take control of your projects. You can track progress, adding bugs that can appear during the development for his correct control and resolution. Or just assign tasks to members of the team for development.
 
 *******************************************************
 
 ## Let's start from the beginning
 
+You can find the installer on the "Installer" folder or click on this link:
+[Installer folder](https://github.com/Twentyeight07/Bug-Tracker/blob/master/Installer/BugTrackerSetup.exe)
+Just click on "Download" and instal it
+
 In orden to use the program you need to create an account
 
 ![LoginPage](./Assets/Tutorial/CreateAnAccount.png)
+
 This is the Login page, is the first thing you're going to see when open Bug Trackr. Click on "Don't have an account?" to create one.
 
 ![SignIn](./Assets/Tutorial/SignIn.png)
+
 Now, you need to provide some details to create the account:
 
 + **Company Name:** This is a program oriented to the group work, so you should put a name to your group (company name field) don't matter if is not a company name, can be whatever you want.
@@ -115,3 +121,5 @@ As well if you have admin permissions, you can change who is assigned to it.
 **************************************************************
 
 That's pretty much it. With this you can start to work on your projects with your team. If I think there's something I forgot, I'll update this readme.
+
+if you want to contact me for any reason, this is my email: [eduardofreites1999@gmail.com](mailto:eduardofreites1999@gmail.com)
