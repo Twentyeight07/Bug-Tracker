@@ -10,8 +10,8 @@ Bug Trackr is a **native Windows program** that allows you to take control of yo
 ## Let's start from the beginning
 
 You can find the installer on the "Installer" folder or click on this link:
-[Installer folder](https://github.com/Twentyeight07/Bug-Tracker/blob/master/Installer/BugTrackerSetup.exe)
-Just click on "Download" and instal it
+[Installer folder](https://github.com/Twentyeight07/Bug-Tracker/blob/master/Installer/BugTrackerSetup.exe)  
+Then just click on "Download" and instal it
 
 In orden to use the program you need to create an account
 
