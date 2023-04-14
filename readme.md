@@ -1,5 +1,13 @@
 # Bug Tracker
 
+### Which technologies I used? 🔧
+
++ C#
++ PostgreSQL
++ .Net Framework 4
++ WinForms
+
+******************************************************
 
 ## What is Bug Trackr? 
 
